@@ -42,5 +42,8 @@ describe('User', () => {
     expect(newUser1.address).to.equal("15195 Nakia Tunnel, Erdmanport VA 19901-1697");
   });
 
+  it('should have an email', () => {
+    expect(newUser1.email).to.equal("Diana.Hayes1@hotmail.com");
+  });
 
 });
