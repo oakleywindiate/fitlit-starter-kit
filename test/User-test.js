@@ -50,5 +50,8 @@ describe('User', () => {
     expect(newUser1.strideLength).to.equal(4.3);
   });
 
+  it('should have a dailyStepGoal', () => {
+    expect(newUser1.dailyStepGoal).to.equal(10000);
+  });
 
 });
