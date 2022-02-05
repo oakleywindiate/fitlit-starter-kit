@@ -46,4 +46,9 @@ describe('User', () => {
     expect(newUser1.email).to.equal("Diana.Hayes1@hotmail.com");
   });
 
+  it('should have a strideLength', () => {
+    expect(newUser1.strideLength).to.equal(4.3);
+  });
+
+
 });
