@@ -8,6 +8,11 @@ class User {
     this.dailyStepGoal = user.dailyStepGoal;
     this.friends = user.friends;
   }
+
+  returnUserFirstName() {
+    const name = this.name.split(" ");
+    return name[0];
+  }
 }
 
 export default User;
