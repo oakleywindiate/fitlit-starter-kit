@@ -3,14 +3,37 @@ import User from '../src/User';
 
 describe('User', () => {
 
+  let user1;
+  let newUser1;
 
-  it('should be a function', function () {
+  beforeEach(() => {
+
+    user1 = {
+      "id": 1,
+      "name": "Luisa Hane",
+      "address": "15195 Nakia Tunnel, Erdmanport VA 19901-1697",
+      "email": "Diana.Hayes1@hotmail.com",
+      "strideLength": 4.3,
+      "dailyStepGoal": 10000,
+      "friends": [16, 4, 8],
+    }
+
+    newUser1 = new User(user1);
+  });
+
+
+  it('should be a function', () => {
     expect(User).to.be.a('function');
   });
 
-  it('should be an instance of User', function() {
-    const user = new User();
-    expect(user).to.be.an.instanceof(User);
+  it('should be an instance of User', () => {
+    expect(newUser1).to.be.an.instanceof(User);
+  });
+
+  it('should have an id', () => {
+    expect(newUser1.id).to.equal(1);
+
+
   });
 
 
