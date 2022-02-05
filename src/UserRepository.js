@@ -1,8 +1,10 @@
 
 class UserRepository {
   constructor(userData) {
-    this.userData = userData
-    console.log(this.userData)
+    this.userData = userData;
+  }
+  identifyUser(id) {
+    return this.userData.find((user) => user.id === id)
   }
 }
 
