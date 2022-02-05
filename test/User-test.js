@@ -16,11 +16,10 @@ describe('User', () => {
       "strideLength": 4.3,
       "dailyStepGoal": 10000,
       "friends": [16, 4, 8],
-    }
+    };
 
     newUser1 = new User(user1);
   });
-
 
   it('should be a function', () => {
     expect(User).to.be.a('function');
@@ -58,4 +57,7 @@ describe('User', () => {
     expect(newUser1.friends).to.deep.equal([16, 4, 8]);
   });
 
+  it('should to able to return user\s first name', () => {
+    expect(newUser1.returnUserFirstName()).to.equal("Luisa");    
+  });
 });
