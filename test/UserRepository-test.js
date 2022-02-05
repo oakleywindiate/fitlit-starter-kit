@@ -19,5 +19,9 @@ describe('User Repository', () => {
     expect(userRepo).to.be.an.instanceof(UserRepository);
   });
 
+  it('should hold user data', () => {
+    expect(userRepo.userData).to.deep.equal(userData);
+  });
+
 
 });
