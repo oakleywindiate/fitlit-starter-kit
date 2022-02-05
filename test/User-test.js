@@ -32,9 +32,10 @@ describe('User', () => {
 
   it('should have an id', () => {
     expect(newUser1.id).to.equal(1);
-
-
   });
 
+  it('should have a name', () => {
+    expect(newUser1.name).to.equal("Luisa Hane");
+  });
 
 });
