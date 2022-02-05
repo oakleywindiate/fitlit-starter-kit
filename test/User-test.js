@@ -54,4 +54,8 @@ describe('User', () => {
     expect(newUser1.dailyStepGoal).to.equal(10000);
   });
 
+  it('should have a friends', () => {
+    expect(newUser1.friends).to.deep.equal([16, 4, 8]);
+  });
+
 });
