@@ -38,4 +38,9 @@ describe('User', () => {
     expect(newUser1.name).to.equal("Luisa Hane");
   });
 
+  it('should have an address', () => {
+    expect(newUser1.address).to.equal("15195 Nakia Tunnel, Erdmanport VA 19901-1697");
+  });
+
+
 });
