@@ -3,3 +3,9 @@ body, html {
   background-repeat: no-repeat;
   height: 100%;
 }
+
+.user-info {
+  background-color: yellow;
+  width: 200px;
+  height: 400px;
+}
