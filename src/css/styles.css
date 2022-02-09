@@ -1,17 +1,33 @@
-body, html {
+html {
   /* background-image: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%); */
   background-image: linear-gradient(to top, #1e81b0 50%, #063970 99%, #154c79 100%);
   background-repeat: no-repeat;
-  display: flex;
+  /* display: flex; */
   /* flex-direction: column; */
   /* align-content: space-around; */
   height: 100%;
   width: auto;
+  margin: 0px;
+}
+
+body {
+  /* display: inline-block; */
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+}
+
+.title-and-welcome {
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  margin: 0px;
 }
 
 .user-and-friends {
   display: flex;
   flex-direction: column;
+  float: left;
   height: 100%;
   width: 30%;
 }
@@ -45,7 +61,8 @@ body, html {
 
 .activity-icons {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  float: right;
   height: 100%;
   width: 100%;
 }
@@ -63,10 +80,9 @@ body, html {
 .user-hydration, .user-steps, .user-sleep, .user-food {
   display: flex;
   flex-direction: column;
-  /* align-content: center; */
   background-color: #F5F5DC;
   border-radius: 100%;
-  height: 100%;
+  height: 50%;
   width: 100%;
   opacity: 90%;
 }
