@@ -1,11 +1,43 @@
 body, html {
-  background-image: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+  /* background-image: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%); */
+  background-image: linear-gradient(to top, #1e81b0 50%, #063970 99%, #154c79 100%);
   background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
   height: 100%;
 }
 
 .user-info {
-  background-color: yellow;
-  width: 300px;
-  height: 400px;
+  display:flex;
+  flex-direction: column;
+  background-color: #F5F5DC;
+  border-radius: 10px;
+  width: 350px;
+  height: 350px;
+  opacity: 90%;
+}
+
+.friends-list {
+  display:flex;
+  flex-direction: column;
+  align-content: center;
+  background-color: #F5F5DC;
+  border-radius: 10px;
+  width: 350px;
+  height: 500px;
+  opacity: 90%;
+}
+.profile-image {
+align-self: center;
+margin-top: 20px;
+}
+
+.activity-icons {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 33% 33% 33%;
+  color: black;
+  height: 800px;
+  width: 800px;
 }

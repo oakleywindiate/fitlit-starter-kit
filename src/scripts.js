@@ -7,7 +7,7 @@ import './css/styles.css';
 
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
 import './images/turing-logo.png'
-
+import './images/profile-svgrepo-com.svg'
 console.log('This is the JavaScript entry file - your code begins here.');
 
 // An example of how you tell webpack to use a JS file
@@ -27,8 +27,6 @@ const userStepAverage = document.querySelector('#userStepAverage')
 
 let userRepo = new UserRepository(userData)
 let user1 = new User(userRepo.identifyUser(1))
-console.log(user1.returnUserFirstName())
-console.log(userRepo.averageStepGoal())
 
 const stepComparison = () => {
 
@@ -37,15 +35,14 @@ const stepComparison = () => {
   console.log(`Your goal is ${result} above the average user!`)
   return `Your daily step goal is ${result} above the average user!`
 }
-// console.log(stepComparison())
 
 const displayUser = () => {
   let name = user1.returnUserFirstName()
- userName.innerText = user1.name
- userAddress.innerText = user1.address
- userEmail.innerText = user1.email
- welcomeBanner.innerText = `Welcome, ${name}!`
- userStepAverage.innerText = stepComparison()
+  welcomeBanner.innerText = `Welcome, ${name}!`
+  userName.innerText = user1.name
+  userAddress.innerText = user1.address
+  userEmail.innerText = user1.email
+  userStepAverage.innerText = stepComparison()
 
   return
 }
