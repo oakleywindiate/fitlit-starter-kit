@@ -4,7 +4,10 @@
 console.log(userData,"<>>>>userData")
 // An example of how you tell webpack to use a CSS file
 import './css/styles.css';
-
+// const Chart = require('chart.js');
+// const myChart = new Chart(ctx, {...});
+// import { Chart, registerables } from 'chart.js';
+// Chart.register(...registerables);
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
 import './images/turing-logo.png'
 import './images/profile-svgrepo-com.svg'
@@ -13,7 +16,6 @@ console.log('This is the JavaScript entry file - your code begins here.');
 // An example of how you tell webpack to use a JS file
 
 import userData from './data/users';
-
 import UserRepository from './UserRepository';
 import User from './User';
 
