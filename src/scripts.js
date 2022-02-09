@@ -15,3 +15,24 @@ console.log('This is the JavaScript entry file - your code begins here.');
 import userData from './data/users';
 
 import UserRepository from './UserRepository';
+import User from './User';
+
+
+const userName = document.querySelector('#userName')
+const userAddress = document.querySelector('#userAddress')
+const userEmail = document.querySelector('#userEmail')
+
+
+
+let userRepo = new UserRepository(userData)
+let user1 = new User(userRepo.identifyUser(1))
+console.log(user1)
+
+const displayUser = () => {
+ userName.innerText = user1.name
+ userAddress.innerText = user1.address
+ userEmail.innerText = user1.email
+ 
+  return
+}
+window.addEventListener('load', displayUser)
