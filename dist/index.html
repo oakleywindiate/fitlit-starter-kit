@@ -1,20 +1,52 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Fitlit</title>
-  </head>
-  <body>
-    <h1>Activity Tracker</h1>
+
+<head>
+  <meta charset='UTF-8'>
+  <title>Fitlit</title>
+</head>
+
+<body>
+  <aside>
+    <h1 class'activity-tracker-banner' id='activityTrackerBanner'>Activity Tracker</h1>
+    <h2 class='welcome-banner' id='welcomeBanner'>Welcome, User</h2>
     <img src="./images/turing-logo.png" alt="turing logo" height="100px" width="100px">
-    <section class='user-info'>
-      <ul>
+  </aside>
+  <section class='user-info'>
+    <ul>
       <li class='user-name' id='userName'>User Name</li>
       <li class='user-address' id='userAddress'>User Address</li>
       <li class='user-email' id='userEmail'>User Email</li>
+      <li class='user-stepAverage' id='userStepAverage'>Compare User Steps</li>
       <img class='user-image' scr='https://www.svgrepo.com/svg/128722/profile'>
+  </section>
+  <section class='friends-list-section' id='friendsListSection'>
+    <h3 class='friends-list' id='friendsList'>Friends</h3>
+  </section>
+  <section class='activity-icons' id='activityIcons'>
+    <section class='user-water' id='userWater'>
+      <img class='water-icon' id='waterIcon' alt=''>
+      <h3 class='water' id='water'>water</h3>
     </section>
-<!-- Do not include the scripts.js file here - it is done automatically by the webpack server -->
-    <script src="bundle.js"></script>
-  </body>
+    <section class='user-steps' id='userSteps'>
+      <img class='step-icon' id='stepIcon' alt=''>
+      <h3 class='steps' id='steps'>steps</h3>
+    </section>
+    <section class='user-sleep' id='userSleep'>
+      <img class='sleep-icon' id='sleepIcon' alt=''>
+      <h3 class='sleep' id='sleep'>sleep</h3>
+    </section>
+    <section class='user-food' id='userFood'>
+      <img class='food-icon' id='FoodIcon' alt=''>
+      <h3 class='food' id='food'>food</h3>
+    </section>
+    <section class='user-step-average-graph' id='userStepAverageGraph'>
+      <img class='step-graph' id='stepGraph' alt=''>
+      <h3 class='average-step-graph' id='averageStepGraph'>Average Steps</h3>
+    </section>
+  </section>
+  <!-- Do not include the scripts.js file here - it is done automatically by the webpack server -->
+  <script src="bundle.js"></script>
+</body>
+
 </html>
