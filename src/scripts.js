@@ -22,6 +22,7 @@ const userName = document.querySelector('#userName')
 const userAddress = document.querySelector('#userAddress')
 const userEmail = document.querySelector('#userEmail')
 const welcomeBanner = document.querySelector('#welcomeBanner')
+const userStepAverage = document.querySelector('#userStepAverage')
 
 
 let userRepo = new UserRepository(userData)
@@ -34,16 +35,18 @@ const stepComparison = () => {
   let average = userRepo.averageStepGoal()
   let result = (user1.dailyStepGoal - average) / user1.dailyStepGoal
   console.log(`Your goal is ${result} above the average user!`)
-  return `Your goal is ${result} above the average user!`
+  return `Your daily step goal is ${result} above the average user!`
 }
 // console.log(stepComparison())
 
 const displayUser = () => {
+  let name = user1.returnUserFirstName()
  userName.innerText = user1.name
  userAddress.innerText = user1.address
  userEmail.innerText = user1.email
- // welcomeBanner.innerText = user1.returnUserFirstName()
- stepComparison()
+ welcomeBanner.innerText = `Welcome, ${name}!`
+ userStepAverage.innerText = stepComparison()
+
   return
 }
 
