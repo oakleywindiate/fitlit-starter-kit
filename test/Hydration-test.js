@@ -3,22 +3,51 @@ import Hydration from '../src/Hydration';
 
 describe('Hydration', () => {
 
-  let hydration;
-<<<<<<< HEAD
+  let hydration1;
 
-  beforeEach(() => {
-
-=======
   let hydrationData;
 
   beforeEach(() => {
 
-    hydrationData = [
-      {userID: 1}, {ouncesConsumed: 3}
-    ];
+  hydration1 = [
+  {
+    "userID": 1,
+    "date": '2022/02/01',
+    "numOunces": 30,
+  },
+  {
+    "userID": 1,
+    "date": '2022/02/02',
+    "numOunces": 50,
+  },
+  {
+    "userID": 1,
+    "date": '2022/02/03',
+    "numOunces": 60,
+  },
+  {
+    "userID": 1,
+    "date": '2022/02/04',
+    "numOunces": 40,
+  },
+  {
+    "userID": 1,
+    "date": '2022/02/05',
+    "numOunces": 50,
+  },
+  {
+    "userID": 1,
+    "date": '2022/02/06',
+    "numOunces": 55,
+  },
+  {
+    "userID": 1,
+    "date": '2022/02/07',
+    "numOunces": 55,
+  }];
 
->>>>>>> main
-    hydration = new Hydration();
+
+    hydration1 = new Hydration();
   });
 
   it('should be a function', () => {
@@ -30,8 +59,6 @@ describe('Hydration', () => {
   });
 
 
-<<<<<<< HEAD
-=======
 //IN PROGRESS
   it('should to able to calculate daily average in ounces', () => {
     expect(null.drinkDailyAverage()).to.equal("");
@@ -44,6 +71,5 @@ describe('Hydration', () => {
   it('should to able show seven day average', () => {
     expect(null.drinkSevenDayAve()).to.equal("");
   });
->>>>>>> main
 
 });
