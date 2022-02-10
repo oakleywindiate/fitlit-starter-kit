@@ -12,6 +12,7 @@ Chart.register(...registerables);
 import './images/turing-logo.png'
 import './images/profile-svgrepo-com.svg'
 import './charts.js'
+import './apiCalls.js'
 console.log('This is the JavaScript entry file - your code begins here.');
 
 // An example of how you tell webpack to use a JS file
