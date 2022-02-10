@@ -1,27 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset='UTF-8'>
-    <title>Fitlit</title>
-  </head>
-  <body>
-    <aside class='title-and-welcome'>
-      <h1 class'activity-tracker-banner' id='activityTrackerBanner'>Activity Tracker</h1>
-      <h2 class='welcome-banner' id='welcomeBanner'>Welcome, User</h2>
-    </aside>
-    <section class='user-and-friends'>
-      <section class='user-info'>
-        <img class ='profile-image' src="./images/turing-logo.png" alt="turing logo" height="100px" width="100px"><br>
-        <ul>
-          <li class='user-data' id='userName'>User Name</li><br>
-          <li class='user-data' id='userAddress'>User Address</li><br>
-          <li class='user-data' id='userEmail'>User Email</li><br>
-          <li class='user-data' id='userStepAverage'>Compare User Steps</li>
-        </ul><br>
-      </section>
-      <section class='friends-list-area' id='friendsListSection'>
-        <h3 class='friends-list' id='friendsList'>Friends</h3>
-      </section>
+<head>
+  <meta charset='UTF-8'>
+  <title>Fitlit</title>
+</head>
+
+<body>
+  <aside class='title-and-welcome'>
+    <h1 class'activity-tracker-banner' id='activityTrackerBanner'>Activity Tracker</h1>
+    <h2 class='welcome-banner' id='welcomeBanner'>Welcome, User</h2>
+  </aside>
+  <wrapper class='wrapper1'>
+  <section class='user-and-friends'>
+    <section class='user-info'>
+      <img class ='profile-image' src="./images/turing-logo.png" alt="turing logo" height="100px" width="100px"><br>
+      <ul>
+        <li class='user-data' id='userName'>User Name</li><br>
+        <li class='user-data' id='userAddress'>User Address</li><br>
+        <li class='user-data' id='userEmail'>User Email</li><br>
+        <li class='user-data' id='userStepAverage'>Compare User Steps</li>
+      </ul><br>
     </section>
     <section class='activity-icons' id='activityIcons'>
       <section class='user-hydration' id='userHydration'>
@@ -45,7 +43,33 @@
         <h3 class='average-step-graph' id='averageStepGraph'>Average Steps</h3>
       </section>
     </section>
-    <!-- Do not include the scripts.js file here - it is done automatically by the webpack server -->
-    <script src="bundle.js"></script>
-  </body>
+  </section>
+</wrapper>
+  <section class='activity-icons' id='activityIcons'>
+    <wrapper class='wrapper2'>
+    <section class='user-hydration' id='userHydration'>
+      <img class='hydration-icon' id='HydrationIcon' alt=''>
+      <h3 class='hydration' id='hydration'>hydration</h3>
+    </section>
+    <section class='user-steps' id='userSteps'>
+      <img class='step-icon' id='stepIcon' alt=''>
+      <h3 class='steps' id='steps'>steps</h3>
+    </section>
+    <section class='user-sleep' id='userSleep'>
+      <img class='sleep-icon' id='sleepIcon' alt=''>
+      <h3 class='sleep' id='sleep'>sleep</h3>
+    </section>
+    <section class='user-food' id='userFood'>
+      <img class='food-icon' id='FoodIcon' alt=''>
+      <h3 class='food' id='food'>food</h3>
+    </section>
+    <section class='user-step-average-graph' id='userStepAverageGraph'>
+      <img class='step-graph' id='stepGraph' alt=''>
+      <h3 class='average-step-graph' id='averageStepGraph'>Average Steps</h3>
+    </section>
+  </section>
+</wrapper>
+  <!-- Do not include the scripts.js file here - it is done automatically by the webpack server -->
+  <script src="bundle.js"></script>
+</body>
 </html>
