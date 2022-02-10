@@ -4,7 +4,6 @@ import Hydration from '../src/Hydration';
 describe('Hydration', () => {
 
   let hydration1;
-
   let hydrationData;
 
   beforeEach(() => {
@@ -46,8 +45,8 @@ describe('Hydration', () => {
     "numOunces": 55,
   }];
 
+    hydration1 = new Hydration(hydrationData);
 
-    hydration1 = new Hydration();
   });
 
   it('should be a function', () => {
@@ -61,15 +60,15 @@ describe('Hydration', () => {
 
 //IN PROGRESS
   it('should to able to calculate daily average in ounces', () => {
-    expect(null.drinkDailyAverage()).to.equal("");
+    expect(hydration1.drinkDailyAverage()).to.equal("7 day average here");
   });
 
-  it('should to able to show daily amount consumed', () => {
-    expect(null.drinkDailyAmount()).to.equal("");
+  it('should to able to show daily amount consumed on specific day', () => {
+    expect(hydration1.drinkDailyAmount('2022/02/02')).to.equal(60);
   });
 
-  it('should to able show seven day average', () => {
-    expect(null.drinkSevenDayAve()).to.equal("");
+  it('should to able show data for seven days', () => {
+    expect(hydration1.drinkSevenDayAve()).to.equal("array of all data for 1 user?");
   });
 
 });
