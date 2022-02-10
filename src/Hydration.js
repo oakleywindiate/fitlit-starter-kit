@@ -11,8 +11,8 @@ class Hydration {
 
   }
 
-  drinkSevenDayAve() {
-    
+  drinkSevenDaysData() {
+
   }
 }
 

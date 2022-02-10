@@ -57,6 +57,15 @@ describe('Hydration', () => {
     expect(hydration).to.be.an.instanceof(Hydration);
   });
 
+  it('id', () => {
+    expect(hydration1.drinkDailyAverage()).to.equal("");
+  });
+  it('date', () => {
+    expect(hydration1.drinkDailyAverage()).to.equal("");
+  });
+  it('ounchesDrank', () => {
+    expect(hydration1.drinkDailyAverage()).to.equal("");
+  });
 
 //IN PROGRESS
   it('should to able to calculate daily average in ounces', () => {
@@ -68,7 +77,7 @@ describe('Hydration', () => {
   });
 
   it('should to able show data for seven days', () => {
-    expect(hydration1.drinkSevenDayAve()).to.equal("array of all data for 1 user?");
+    expect(hydration1.drinkSevenDaysData()).to.equal("array of all data for 1 user?");
   });
 
 });
