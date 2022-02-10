@@ -4,7 +4,10 @@
 console.log(userData,"<>>>>userData")
 // An example of how you tell webpack to use a CSS file
 import './css/styles.css';
-import Chart from 'chart.js/auto';
+import { Chart, registerables } from 'chart.js';
+Chart.register(...registerables);
+
+// import Chart from './chart.js/auto';
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
 import './images/turing-logo.png'
 import './images/profile-svgrepo-com.svg'
@@ -23,14 +26,13 @@ const userAddress = document.querySelector('#userAddress')
 const userEmail = document.querySelector('#userEmail')
 const welcomeBanner = document.querySelector('#welcomeBanner')
 const userStepAverage = document.querySelector('#userStepAverage')
-const ctx = document.getElementById('myChart').getContext('2d');
+// const ctx = document.getElementById('myChart').getContext('2d');
 
 
 let userRepo = new UserRepository(userData)
 let user1 = new User(userRepo.identifyUser(1))
 
 const stepComparison = () => {
-
   let average = userRepo.averageStepGoal()
   let result = (user1.dailyStepGoal - average) / user1.dailyStepGoal
   console.log(`Your goal is ${result} above the average user!`)
@@ -44,7 +46,6 @@ const displayUser = () => {
   userAddress.innerText = user1.address
   userEmail.innerText = user1.email
   userStepAverage.innerText = stepComparison()
-
   return
 }
 

@@ -3,7 +3,11 @@ const ctx = document.getElementById('myChart').getContext('2d');
 const ctx2 = document.getElementById('myChart2').getContext('2d');
 const ctx3 = document.getElementById('myChart3').getContext('2d');
 const ctx4 = document.getElementById('myChart4').getContext('2d');
-import Chart from 'chart.js/auto';
+
+// import Chart from './chart.js/auto';
+import { Chart, registerables } from 'chart.js';
+Chart.register(...registerables);
+
 const myChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
@@ -19,7 +23,7 @@ const myChart = new Chart(ctx, {
         }]
     },
     options: {
-        cutout: 95,
+        cutout: 80,
         hoverOffset: 4,
     }
 });
@@ -39,7 +43,7 @@ const myChart2 = new Chart(ctx2, {
         }]
     },
     options: {
-        cutout: 95,
+        cutout: 80,
         hoverOffset: 4,
     }
 });
@@ -59,7 +63,7 @@ const myChart3 = new Chart(ctx3, {
         }]
     },
     options: {
-        cutout: 95,
+        cutout: 80,
         hoverOffset: 4,
     }
 });
@@ -79,7 +83,7 @@ const myChart4 = new Chart(ctx4, {
         }]
     },
     options: {
-        cutout: 95,
+        cutout: 80,
         hoverOffset: 4,
     }
 });
