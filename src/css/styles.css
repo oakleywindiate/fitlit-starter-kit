@@ -25,6 +25,7 @@ body, html {
   display: flex;
   float: left;
   flex-direction: column;
+  float: left;
   height: 100%;
   width: 30%;
 }
@@ -65,4 +66,4 @@ body, html {
 }
 
 .user-hydration, .user-steps, .user-sleep, .user-food {
-  ]
+}
