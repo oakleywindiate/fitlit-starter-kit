@@ -11,9 +11,9 @@ Chart.register(...registerables);
 const myChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
-        labels: ['Hydration ml', ''],
+        labels: ['Hydration oz', ''],
         datasets: [{
-            label: 'Hydration ml',
+            label: 'Hydration oz',
             data: [1400, 1000 ],
             backgroundColor: [
                 '#1e7898',
@@ -23,7 +23,7 @@ const myChart = new Chart(ctx, {
         }]
     },
     options: {
-        cutout: 80,
+        // cutout: 80,
         hoverOffset: 4,
     }
 });
@@ -43,7 +43,7 @@ const myChart2 = new Chart(ctx2, {
         }]
     },
     options: {
-        cutout: 80,
+        // cutout: 80,
         hoverOffset: 4,
     }
 });
@@ -63,7 +63,7 @@ const myChart3 = new Chart(ctx3, {
         }]
     },
     options: {
-        cutout: 80,
+        // cutout: 80,
         hoverOffset: 4,
     }
 });
@@ -83,7 +83,7 @@ const myChart4 = new Chart(ctx4, {
         }]
     },
     options: {
-        cutout: 80,
+        // cutout: 80,
         hoverOffset: 4,
     }
 });
