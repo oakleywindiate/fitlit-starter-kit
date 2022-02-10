@@ -4,16 +4,16 @@
 console.log(userData,"<>>>>userData")
 // An example of how you tell webpack to use a CSS file
 import './css/styles.css';
-
+import Chart from 'chart.js/auto';
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
 import './images/turing-logo.png'
 import './images/profile-svgrepo-com.svg'
+import './charts.js'
 console.log('This is the JavaScript entry file - your code begins here.');
 
 // An example of how you tell webpack to use a JS file
 
 import userData from './data/users';
-
 import UserRepository from './UserRepository';
 import User from './User';
 
@@ -23,6 +23,7 @@ const userAddress = document.querySelector('#userAddress')
 const userEmail = document.querySelector('#userEmail')
 const welcomeBanner = document.querySelector('#welcomeBanner')
 const userStepAverage = document.querySelector('#userStepAverage')
+const ctx = document.getElementById('myChart').getContext('2d');
 
 
 let userRepo = new UserRepository(userData)
