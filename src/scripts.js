@@ -35,7 +35,6 @@ let user1 = new User(userRepo.identifyUser(1))
 const stepComparison = () => {
   let average = userRepo.averageStepGoal()
   let result = (user1.dailyStepGoal - average) / user1.dailyStepGoal
-  console.log(`Your goal is ${result} above the average user!`)
   return `Your daily step goal is ${result} above the average user!`
 }
 
