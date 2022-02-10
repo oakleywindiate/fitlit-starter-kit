@@ -2,6 +2,18 @@ class Hydration {
   constructor() {
 
   }
+
+  drinkDailyAverage(){
+
+  }
+
+  drinkDailyAmount(date) {
+
+  }
+
+  drinkSevenDayAve() {
+    
+  }
 }
 
 
