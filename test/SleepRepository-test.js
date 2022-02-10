@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import UserRepository from '../src/SleepRepository';
+import SleepRepository from '../src/SleepRepository';
 
 
 describe('Sleep Repository', () => {
@@ -23,5 +23,5 @@ describe('Sleep Repository', () => {
     expect(sleepRepo.sleepData).to.deep.equal(sleepData);
   });
 
-  
+
 });
