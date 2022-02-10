@@ -2,68 +2,42 @@
   box-sizing: border-box;
 }
 
-
 body, html {
-  background-image: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+  background-image: linear-gradient(to top, #99ccff 0%, #0066ff 90%, #0066ff 100%);
   height: 100%;
   width: auto;
   margin: 0;
+  margin-left: 2vh;
 }
 
-.wrapper1 {
+.profile-image {
+  display: block;
+  text-align: center;
+}
+
+.user-and-friends {
+  float: left;
   display: block;
   justify-content:space-between;
 }
 
-
-.title-and-welcome {
-  display: contents;
-  float: left;
-}
-
-.user-and-friends {
-  display: flex;
-  float: left;
-  flex-direction: column;
-  float: left;
-  height: 100%;
-  width: 30%;
-}
-
-.user-info {
-  float: left;
-  background-color: #F5F5DC;
-  border-radius: 10px;
-  height: 70%;
-  width: 120%;
-  opacity: 90%;
-}
-
-.profile-image {
-  align-self: center;
-  margin-top: 20px;
-}
-
-.friends-list-area {
-  margin-top: 20px;
-  align-content: center;
-  background-color: #F5F5DC;
-  border-radius: 10px;
-  height: 55%;
-  width: 120%;
-  opacity: 90%;
-}
-
-.wrapper2 {
+.grid {
+  margin-right: 60vh;
   display: grid;
-  grid-gap: red;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   float: right;
-  grid-template-columns: 200px 200px;
-  grid-template-rows: 200px 200px;
-  grid-row: auto auto;
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
+  grid-gap: 150px;
+  overflow: auto;
 }
 
-/* .user-hydration, .user-steps, .user-sleep, .user-food {
-} */
+.user-info, .friends-list{
+  background-color: #ffff;
+  border-radius: 15px;
+  width: 30vh;
+}
+
+.friends-list {
+height: 40vh;
+margin: 0;
+}
