@@ -4,11 +4,12 @@ import Hydration from '../src/Hydration';
 describe('Hydration', () => {
 
   let hydration1;
+  let hydration2;
   let hydrationData;
 
   beforeEach(() => {
 
-  hydration1 = [
+  hydrationData = [
   {
     "userID": 1,
     "date": '2022/02/01',
@@ -42,11 +43,16 @@ describe('Hydration', () => {
   {
     "userID": 1,
     "date": '2022/02/07',
-    "numOunces": 55,
+    "numOunces": 65,
+  },
+  {
+    "userID": 2,
+    "date": '2022/02/01',
+    "numOunces": 100,
   }];
 
-    hydration1 = new Hydration(hydrationData);
-
+    hydration1 = new Hydration(1, hydrationData);
+    hydration2 = new Hydration(2, hydrationData);
   });
 
   it('should be a function', () => {
@@ -54,13 +60,23 @@ describe('Hydration', () => {
   });
 
   it('should be an instance of User', () => {
-    expect(hydration).to.be.an.instanceof(Hydration);
+    expect(hydration1).to.be.an.instanceof(Hydration);
   });
 
+  it('should have an id', () => {
+    expect(hydration1.userID).to.equal(1);
+  });
 
-//IN PROGRESS
+  it('should have a date', () => {
+    expect(hydration2.date).to.equal('2022/02/01');
+  });
+
+  it('should have number of ounches drank', () => {
+    expect(hydration2.numOunces).to.equal(100);
+  });
+
   it('should to able to calculate daily average in ounces', () => {
-    expect(hydration1.drinkDailyAverage()).to.equal("7 day average here");
+    expect(hydration1.drinkDailyAverage()).to.equal(50);
   });
 
   it('should to able to show daily amount consumed on specific day', () => {
@@ -68,7 +84,6 @@ describe('Hydration', () => {
   });
 
   it('should to able show data for seven days', () => {
-    expect(hydration1.drinkSevenDayAve()).to.equal("array of all data for 1 user?");
+    expect(hydration1.drinkSevenDaysData('how to show from to dates?')).to.equal("array of all data for 1 user?");
   });
-
 });
