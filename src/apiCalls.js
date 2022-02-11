@@ -1,4 +1,5 @@
 // Your fetch requests will live here!
+import UserRepository from './UserRepository';
 
 const userData = fetch("https://fitlit-api.herokuapp.com/api/v1/users");
 const sleepData = fetch("https://fitlit-api.herokuapp.com/api/v1/sleep");
@@ -15,19 +16,21 @@ Promise.all([userData, sleepData, activityData, hydrationData])
   })
 })
 
-const process = (prom) => {
+const process = (prom => {
   const result = prom.then(data => {
-    console.log(data)
+    // console.log(data)
     sendData(data);
     return data;
   })
   // console.log(result);
 
-}
+})
 process();
 
 function sendData(para) {
-  console.log(para)
+  let userRepo = new UserRepository(para.userData)
+  console.log(userRepo)
+  // return userRepo
 }
 
 
