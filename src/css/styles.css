@@ -10,34 +10,57 @@ body, html {
   margin-left: 2vh;
 }
 
-.profile-image {
-  display: block;
+main {
+  display: flex;
+}
+
+ul {
+  list-style: none;
   text-align: center;
 }
 
-.user-and-friends {
-  float: left;
-  display: block;
-  justify-content:space-between;
+.activity-tracker-banner,
+.welcome-banner {
+  margin: 0px;
+}
+
+/* .profile-move {
+  position: relative;
+  align-items: center;
+}
+
+.profile-move img {
+  position: absolute;
+} */
+
+.user-info,
+.friends-section {
+  background: #ffff;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  width: 50vh;
+  height: 50vh;
+  font-size: 1.2em;
+}
+
+ul {
+  list-style: none;
+  display: inline;
 }
 
 .grid {
-  margin-right: 60vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  float: right;
-  grid-gap: 150px;
-  overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.user-info, .friends-list{
-  background-color: #ffff;
-  border-radius: 15px;
-  width: 30vh;
+.col {
+  width: 50%;
 }
 
-.friends-list {
-height: 40vh;
-margin: 0;
+.col .step {
+  width: 100%;
 }
+
+
+/* make last element 100% width */
