@@ -1,10 +1,10 @@
 // Your fetch requests will live here!
-import UserRepository from './UserRepository';
+// import UserRepository from './UserRepository';
 
-const userData = fetch("https://fitlit-api.herokuapp.com/api/v1/users");
-const sleepData = fetch("https://fitlit-api.herokuapp.com/api/v1/sleep");
-const activityData = fetch("https://fitlit-api.herokuapp.com/api/v1/activity");
-const hydrationData = fetch("https://fitlit-api.herokuapp.com/api/v1/hydration");
+export const userData = fetch("https://fitlit-api.herokuapp.com/api/v1/users");
+export const sleepData = fetch("https://fitlit-api.herokuapp.com/api/v1/sleep");
+export const activityData = fetch("https://fitlit-api.herokuapp.com/api/v1/activity");
+export const hydrationData = fetch("https://fitlit-api.herokuapp.com/api/v1/hydration");
   // console.log(userData)
   // .then(response => response.json())
   // .then(data => console.log(data))
@@ -25,13 +25,13 @@ const process = (prom => {
   // console.log(result);
 
 })
-process();
-
-function sendData(para) {
-  let userRepo = new UserRepository(para.userData)
-  console.log(userRepo)
-  // return userRepo
-}
+// process();
+//
+// function sendData(para) {
+//   let userRepo = new UserRepository(para.userData)
+//   console.log(userRepo)
+//   // return userRepo
+// }
 
 
 
