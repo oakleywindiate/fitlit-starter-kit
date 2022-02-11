@@ -29,6 +29,7 @@ const userStepAverage = document.querySelector('#userStepAverage')
 //   return userRepo
 // }
 // console.log(userRepo)
+// console.log("hydrationData", data.hydrationData[0].userID)
 
 const displayUser = (data) => {
   let userRepo = new UserRepository(data.userData)
@@ -38,7 +39,7 @@ const displayUser = (data) => {
   userName.innerText = user1.name
   userAddress.innerText = user1.address
   userEmail.innerText = user1.email
-  userStepAverage.innerText = user1.stepComparison()
+  userStepAverage.innerText = user1.stepComparison(userRepo, user1)
   return
 }
 
