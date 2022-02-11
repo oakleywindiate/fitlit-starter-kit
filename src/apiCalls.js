@@ -8,22 +8,22 @@ export const hydrationData = fetch("https://fitlit-api.herokuapp.com/api/v1/hydr
   // console.log(userData)
   // .then(response => response.json())
   // .then(data => console.log(data))
-// Promise.all([userData, sleepData, activityData, hydrationData])
-//
-// .then(data => {
-//   data.forEach(response => {
-//     process(response.json());
-//   })
-// })
-//
-// const process = (prom => {
-//   const result = prom.then(data => {
-//     // console.log(data)
-//     sendData(data);
-//     return data;
-//   })
-//   // console.log(result);
-//
+Promise.all([userData, sleepData, activityData, hydrationData])
+
+.then(data => {
+  data.forEach(response => {
+    process(response.json());
+  })
+})
+
+const process = (prom => {
+  const result = prom.then(data => {
+    console.log(result)
+    sendData(data);
+    return data;
+  })
+  // console.log(result);
+
 // })
 // process();
 //

@@ -1,22 +1,17 @@
-// This is the JavaScript entry file - your code begins here
-// Do not delete or rename this file ********
+// --------- IMPORTS ---------
 
-// console.log(userData,"<>>>>userData")
-// An example of how you tell webpack to use a CSS file
 import './css/styles.css';
 import { Chart, registerables } from 'chart.js';
 Chart.register(...registerables);
 import {userData, sleepData, activityData, hydrationData} from './apiCalls.js'
-// An example of how you tell webpack to use an image (also need to link to it in the index.html)
 import './images/turing-logo.png'
 import './images/profile-svgrepo-com.svg'
-console.log('This is the JavaScript entry file - your code begins here.');
-// An example of how you tell webpack to use a JS file
 import './charts.js'
-// import './apiCalls.js'
-// import data from './apiCalls.js';
 import UserRepository from './UserRepository';
 import User from './User';
+import Hydration from './Hydration';
+
+// --------- QUERY SELECTORS/VARIABLES ---------
 
 const userName = document.querySelector('#userName')
 const userAddress = document.querySelector('#userAddress')
@@ -24,12 +19,8 @@ const userEmail = document.querySelector('#userEmail')
 const welcomeBanner = document.querySelector('#welcomeBanner')
 const userStepAverage = document.querySelector('#userStepAverage')
 
-// const createRepo = (data) => {
-//   let userRepo = new UserRepository(data.userData)
-//   return userRepo
-// }
-// console.log(userRepo)
-// console.log("hydrationData", data.hydrationData[0].userID)
+
+// --------- FUNCTIONS ---------
 
 const displayUser = (data) => {
   let userRepo = new UserRepository(data.userData)
@@ -44,7 +35,6 @@ const displayUser = (data) => {
 }
 
 Promise.all([userData, sleepData, activityData, hydrationData])
-
 .then(data => {
   data.forEach(response => {
     process(response.json());
@@ -54,9 +44,16 @@ Promise.all([userData, sleepData, activityData, hydrationData])
 const process = (prom => {
   const result = prom.then(data => {
     displayUser(data)
+    console.log(data)
     return data;
   })
 
 })
 
+const displayHydration = (data) => {
+  console.log(data)
+  let hydration = new Hydration(data.hydrationData);
+
+  return
+}
 window.addEventListener('load', displayUser)
