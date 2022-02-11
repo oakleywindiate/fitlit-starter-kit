@@ -16,12 +16,19 @@ Promise.all([userData, sleepData, activityData, hydrationData])
 })
 
 const process = (prom) => {
-  prom.then(data => {
+  const result = prom.then(data => {
     console.log(data)
+    sendData(data);
+    return data;
   })
+  // console.log(result);
+
 }
+process();
 
-
+function sendData(para) {
+  console.log(para)
+}
 
 
 
@@ -46,3 +53,5 @@ const process = (prom) => {
 
 
 console.log('I will be a fetch request!')
+
+// export default data;

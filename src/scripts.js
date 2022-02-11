@@ -1,7 +1,7 @@
 // This is the JavaScript entry file - your code begins here
 // Do not delete or rename this file ********
 
-console.log(userData,"<>>>>userData")
+// console.log(userData,"<>>>>userData")
 // An example of how you tell webpack to use a CSS file
 import './css/styles.css';
 import { Chart, registerables } from 'chart.js';
@@ -17,7 +17,7 @@ console.log('This is the JavaScript entry file - your code begins here.');
 
 // An example of how you tell webpack to use a JS file
 
-import userData from './data/users';
+import data from './apiCalls.js';
 import UserRepository from './UserRepository';
 import User from './User';
 
@@ -30,7 +30,8 @@ const userStepAverage = document.querySelector('#userStepAverage')
 // const ctx = document.getElementById('myChart').getContext('2d');
 
 
-let userRepo = new UserRepository(userData)
+let userRepo = new UserRepository(data.userData)
+console.log(userRepo)
 let user1 = new User(userRepo.identifyUser(1))
 
 const stepComparison = () => {
