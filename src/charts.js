@@ -1,10 +1,12 @@
+import Hydration from './Hydration';
+import { Chart, registerables } from 'chart.js';
+Chart.register(...registerables);
+
 const ctx = document.getElementById('myChart').getContext('2d');
 const ctx2 = document.getElementById('myChart2').getContext('2d');
 const ctx3 = document.getElementById('myChart3').getContext('2d');
 const ctx4 = document.getElementById('myChart4').getContext('2d');
 
-import { Chart, registerables } from 'chart.js';
-Chart.register(...registerables);
 
 const myChart = new Chart(ctx, {
     type: 'doughnut',
