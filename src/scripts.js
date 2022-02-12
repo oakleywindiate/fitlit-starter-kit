@@ -3,7 +3,7 @@
 import './css/styles.css';
 import { Chart, registerables } from 'chart.js';
 Chart.register(...registerables);
-import {userData, sleepData, activityData, hydrationData} from './apiCalls.js'
+import {userData, sleepData, hydrationData} from './apiCalls.js'
 import './images/turing-logo.png'
 import './images/profile-svgrepo-com.svg'
 import './charts.js'
@@ -19,12 +19,23 @@ const userEmail = document.querySelector('#userEmail')
 const welcomeBanner = document.querySelector('#welcomeBanner')
 const userStepAverage = document.querySelector('#userStepAverage')
 
-
 // --------- FUNCTIONS ---------
+const onLoad = () => {
+  Promise.all([userData, sleepData, hydrationData])
+  .then(data => sendData(data) )
+}
 
-const displayUser = (data) => {
-  let userRepo = new UserRepository(data.userData)
-  let user1 = new User(userRepo.identifyUser(1))
+const sendData = (data) => {
+  let users = data[0].userData.map(user => new User(user))
+  let userRepo = new UserRepository(users)
+  console.log(userRepo)
+  let hydroData = data[2].hydrationData.map(hydro => new Hydration(hydro))
+  console.log(hydroData)
+  displayUser(userRepo)
+}
+
+const displayUser = (userRepo) => {
+  const user1 = userRepo.userData[0]
   let name = user1.returnUserFirstName()
   welcomeBanner.innerText = `Welcome, ${name}!`
   userName.innerText = user1.name
@@ -34,26 +45,4 @@ const displayUser = (data) => {
   return
 }
 
-Promise.all([userData, sleepData, activityData, hydrationData])
-.then(data => {
-  data.forEach(response => {
-    process(response.json());
-  })
-})
-
-const process = (prom => {
-  const result = prom.then(data => {
-    displayUser(data)
-    console.log(data)
-    return data;
-  })
-
-})
-
-const displayHydration = (data) => {
-  console.log(data)
-  let hydration = new Hydration(data.hydrationData);
-
-  return
-}
-window.addEventListener('load', displayUser)
+window.addEventListener('load', onLoad)
