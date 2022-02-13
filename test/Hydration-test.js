@@ -67,14 +67,14 @@ describe('Hydration', () => {
   });
 
   it('should to able to calculate daily average in ounces', () => {
-    expect(hydration1.drinkDailyAverage(1)).to.equal(50);
+    expect(hydration1.drinkDailyAverage(1)).to.equal(81.25);
   });
 
   it('should to able to show daily amount consumed on specific day', () => {
     expect(hydration1.drinkDailyAmount(1, '2022/02/03')).to.equal(60);
   });
 
-  it.only('should to able show data for seven days', () => {
+  it('should to able show data for seven days', () => {
     expect(hydration1.drinkSevenDaysData(1)).to.deep.equal([30, 50, 60, 40, 50, 55, 65]);
   });
 });
