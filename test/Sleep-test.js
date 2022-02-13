@@ -4,63 +4,67 @@ import Sleep from '../src/Sleep';
 describe('Sleep', () => {
 
   let sleep1;
-  let sleep2;
   let sleepData;
 
   beforeEach(() => {
 
-    sleepData = [
-    {
-      "userID": 1,
-      "date": '2022/02/01',
-      "hoursSlept": 6,
-      "sleepQuality": 9,
-    },
-    {
-      "userID": 1,
-      "date": '2022/02/02',
-      "hoursSlept": 7,
-      "sleepQuality": 10,
-    },
-    {
-      "userID": 1,
-      "date": '2022/02/03',
-      "hoursSlept": 5,
-      "sleepQuality": 4,
-    },
-    {
-      "userID": 1,
-      "date": '2022/02/04',
-      "hoursSlept": 6,
-      "sleepQuality": 6,
-    },
-    {
-      "userID": 1,
-      "date": '2022/02/05',
-      "hoursSlept": 9,
-      "sleepQuality": 10,
-    },
-    {
-      "userID": 1,
-      "date": '2022/02/06',
-      "hoursSlept": 7,
-      "sleepQuality": 5,
-    },
-    {
-      "userID": 1,
-      "date": '2022/02/07',
-      "hoursSlept": 8,
-      "sleepQuality": 9,
-    },
-    {
-      "userID": 2,
-      "date": '2022/02/01',
-      "hoursSlept": 10,
-      "sleepQuality": 10,
-    }];
+  sleepData = [
+  {
+    "userID": 1,
+    "date": '2022/01/31',
+    "hoursSlept": 10,
+    "sleepQuality": 10,
+  },
+  {
+    "userID": 1,
+    "date": '2022/02/01',
+    "hoursSlept": 6,
+    "sleepQuality": 9,
+  },
+  {
+    "userID": 1,
+    "date": '2022/02/02',
+    "hoursSlept": 7,
+    "sleepQuality": 10,
+  },
+  {
+    "userID": 1,
+    "date": '2022/02/03',
+    "hoursSlept": 5,
+    "sleepQuality": 4,
+  },
+  {
+    "userID": 1,
+    "date": '2022/02/04',
+    "hoursSlept": 6,
+    "sleepQuality": 7,
+  },
+  {
+    "userID": 1,
+    "date": '2022/02/05',
+    "hoursSlept": 9,
+    "sleepQuality": 10,
+  },
+  {
+    "userID": 1,
+    "date": '2022/02/06',
+    "hoursSlept": 7,
+    "sleepQuality": 5,
+  },
+  {
+    "userID": 1,
+    "date": '2022/02/07',
+    "hoursSlept": 8,
+    "sleepQuality": 9,
+  },
+  {
+    "userID": 2,
+    "date": '2022/02/01',
+    "hoursSlept": 10,
+    "sleepQuality": 10,
+  }];
 
-    sleep1 = new Sleep(1, sleepData);
-    sleep2 = new Sleep(2, sleepData);
+    sleep1 = new Sleep(sleepData);
   });
 
   it('should be a function', () => {
@@ -71,63 +75,31 @@ describe('Sleep', () => {
     expect(sleep1).to.be.an.instanceof(Sleep);
   });
 
-  it.skip('should have an id', () => {
-    expect(sleep1.userID).to.equal(1);
-
+  it('should be able to calculate daily average of sleep in hours', () => {
+    expect(sleep1.sleepDailyAverage(1)).to.equal(7.25);
   });
 
-  it.skip('should have a date', () => {
-    expect(sleep2.date).to.equal('2022/02/01');
-
+  it('should be able to calculate daily average of sleep quality between one and ten (one is worth and ten is best)', () => {
+    expect(sleep1.sleepQualityAverage(1)).to.equal(8);
   });
 
-  it.skip('should have hours per night', () => {
-    expect(sleep2.hoursSlept).to.equal(10);
-
+  it('should be able to show daily amount of sleep in hours on specific day', () => {
+    expect(sleep1.sleepDailyAmount(1, '2022/02/03')).to.equal(5);
   });
 
-  it.skip('should have sleep quality of the night', () => {
-    expect(sleep2.sleepQuality).to.equal(10);
-
+  it('should be able to show daily amount of sleep quality between one and ten on specific day', () => {
+    expect(sleep1.sleepDailyQuality(1, '2022/02/03')).to.equal(4);
   });
 
-
-
-//METHOD TESTS
-
-  it.skip('should have an average hours slept per day', () => {
-    expect(sleep1.sleepDailyAverage()).to.equal();
-
+  it('should be able to show daily amount of sleep in hours for seven days', () => {
+    expect(sleep1.sleepSevenDaysData(1)).to.deep.equal([6, 7, 5, 6, 9, 7, 8]);
   });
 
-  it.skip('should have an average sleep quality per day', () => {
-    expect(sleep1.sleepQualityAverage()).to.equal();
-
+  it('should be able to show daily amount of quality sleep between one and ten for seven days', () => {
+    expect(sleep1.sleepSevenDaysQualityData(1)).to.deep.equal([9, 10, 4, 7, 10, 5, 9]);
   });
 
-  it.skip('should have hours slept on specific day', () => {
-    expect(sleep1.sleepDailyAmount()).to.equal();
-
+  it('should be able to calculate daily average of sleep quality between one and ten for ALL users', () => {
+    expect(sleep1.sleepQualityAverageAll()).to.equal(8);
   });
-
-  it.skip('should have sleep quality on specific day', () => {
-    expect(sleep1.sleepDailyQuality()).to.equal();
-
-  });
-
-  it.skip('should be able to calculate hours slept for 7 days', () => {
-    expect(sleep1.sleepSevenDTotal()).to.equal();
-
-  });
-
-  it.skip('should be able to calculate quality of sleep for 7 days', () => {
-    expect(sleep1.sleepSevenDQuality()).to.equal();
-
-  });
-
-  it.skip('should be able to calculate average sleep quality for 7 days', () => {
-    expect(sleep1.sleepSevenDQualityAve()).to.equal();
-
-  });
-
 });
