@@ -15,16 +15,18 @@ The fitlit project is a kinesthetic learning activity that teaches developers ho
 
 #### Code Style & Framework
 * JavaScript
+* Mocha
+* Chai
 * HTML
 * CSS
 * Webpack
 * Chart.js
 
 #### Features
-* User Profile
-* User Friends
-* Compare step goals
-* Water Intake
+* Display User Profile
+* Display User Friends
+* Compare Step Goals
+* Daily and Weekly Water Intake
 * Activity Tracker
 
 #### Code Sample
@@ -42,16 +44,26 @@ const manageData = (data) => {
   displayUser(userRepo)
 }
 ```
-
+***
 ### Installation
 
-1. To edit this repo, fork and clone it to your local
-2. `cd` into repository
-3. Open in text editor
-4. To view webpage, run the command `open index.html` in your terminal
+1. To edit this repo, fork and clone it to your local device
+2. Download the appropriate technologies (Mocha/Chai) to access this project
+3. `cd` into project
+4. Run `npm install` to install project dependencies
+5. Run `npm start` in the terminal
+6. To view your webpage, use the local host address provided
+
+### Developer Team
+
+* [Jerry Vohrer](https://github.com/Jerry-Vrrr)
+* [Igor Decess](https://github.com/userigorgithub)
+* [Oakley Windiate](https://github.com/oakleywindiate)
 
 ### Credits
 
 This project was created by Turing School of Software and Design, a Colorado Non-Profit Organization.
+
+A link to the original repository can be found by clicking [here](https://github.com/turingschool-examples/fitlit-starter-kit)
 
 Interested in learning more about Turing? [click here](https://turing.edu/)
