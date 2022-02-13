@@ -30,14 +30,16 @@ The fitlit project is a kinesthetic learning activity that teaches developers ho
 #### Code Sample
 The following is one example of code that played an integral role in our webpage:
 ```javascript
-function setEmoji(e) {
-  var boardIndex = e.target.id - 1;
-  var currentPlayerIndex = game.turn - 1;
-  var currentPlayer = game.players[currentPlayerIndex];
-  if (game.gameBoard[boardIndex] === null) {
-    game.gameplay(boardIndex, currentPlayer)
-    e.target.classList += ` ${currentPlayer.emoji}`;
-  }
+const onLoad = () => {
+  Promise.all([userData, sleepData, hydrationData])
+  .then(data => manageData(data) )
+}
+
+const manageData = (data) => {
+  let users = data[0].userData.map(user => new User(user))
+  let userRepo = new UserRepository(users)
+  let hydroData = data[2].hydrationData.map(hydro => new Hydration(hydro))
+  displayUser(userRepo)
 }
 ```
 
