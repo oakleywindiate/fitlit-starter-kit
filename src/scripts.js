@@ -40,7 +40,6 @@ const manageData = (data) => {
   let hydroData = data[2].hydrationData.map(hydro => new Hydration(hydro))
   makeCharts(data)
   displayUser(userRepo)
-  console.log()
 }
 
 const displayUser = (userRepo) => {

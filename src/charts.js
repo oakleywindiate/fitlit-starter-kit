@@ -20,7 +20,7 @@ const hydrationChart = (ctx, data) =>    {
           }]
       },
       options: {
-          cutout: 90,
+          // cutout: 90,
           hoverOffset: 4,
       }
   });
@@ -30,20 +30,19 @@ const stepChart = (ctx2, data) => {
   const myChart2 = new Chart(ctx2, {
       type: 'doughnut',
       data: {
-          labels: ['Number Steps', 'Flights Climbed', 'minutesActive'],
+          labels: ['Number Steps', 'Minutes Active', ],
           datasets: [{
-              label: ['Number Steps', 'Flights Climbed', 'Minutes Active'],
+              label: ['Number Steps', 'Minutes Active', ],
               data: [data.activityData[0].numSteps, data.activityData[0].minutesActive, ],
               backgroundColor: [
                   '#be4d25',
                   '#F5F5DC',
-                  '#eab676',
               ],
               borderWidth: 0
           }]
       },
       options: {
-          cutout: 90,
+          // cutout: 90,
           hoverOffset: 4,
       }
   });
@@ -65,7 +64,7 @@ const sleepChart = (ctx3, data) => {
           }]
       },
       options: {
-          cutout: 90,
+          // cutout: 90,
           hoverOffset: 4,
       }
   });
@@ -87,7 +86,7 @@ const foodChart = (ctx4, data) => {
           }]
       },
       options: {
-          cutout: 90,
+          // cutout: 90,
           hoverOffset: 4,
       }
   });
