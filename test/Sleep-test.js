@@ -91,13 +91,12 @@ describe('Sleep', () => {
     expect(sleep1.sleepDailyQuality(1, '2022/02/03')).to.equal(4);
   });
 
-  it.skip('should be able to calculate hours slept for 7 days', () => {
-    expect(sleep1.sleepSevenDTotal()).to.equal();
-
+  it('should be able to show daily amount of sleep in hours for seven days', () => {
+    expect(sleep1.sleepSevenDaysData(1)).to.deep.equal([6, 7, 5, 6, 9, 7, 8]);
   });
 
-  it.skip('should be able to calculate quality of sleep for 7 days', () => {
-    expect(sleep1.sleepSevenDQuality()).to.equal();
+  it.skip('should be able to show daily amount of quality sleep between one and ten for seven days', () => {
+    expect(sleep1.sleepSevenDaysQualityData()).to.equal();
 
   });
 
