@@ -22,8 +22,9 @@ class Sleep {
     return findHoursSlept.hoursSlept;
   }
 
-  sleepDailyQuality() {
-
+  sleepDailyQuality(id, date) {
+    const findQualityOfSleep = this.sleepData.find(generalSleepData => generalSleepData.userID === id && generalSleepData.date === date);
+    return findQualityOfSleep.sleepQuality;
   }
 
   sleepSevenDTotal() {
