@@ -86,4 +86,9 @@ describe('Sleep', () => {
 
   });
 
+  it('should have sleep quality of the night', () => {
+    expect(sleep2.sleepQuality).to.equal(10);
+
+  });
+
 });
