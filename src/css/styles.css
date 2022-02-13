@@ -3,20 +3,29 @@
 }
 
 body, html {
-  background-image: linear-gradient(to top, #99ccff 0%, #0066ff 90%, #0066ff 100%);
+  font-family: 'Assistant', sans-serif;
+  background-image: linear-gradient(to top, #99ccff 50%, #0066ff 100%);
   height: 100%;
   width: auto;
   margin: 0;
   margin-left: 2vh;
+
 }
 
 main {
   display: flex;
+  overflow: hidden;
+}
+
+.title-and-welcome {
+  flex-direction: column;
 }
 
 ul {
   list-style: none;
   text-align: center;
+  line-height: 1.5em;
+  margin-top: 0;
 }
 
 .activity-tracker-banner,
@@ -24,24 +33,23 @@ ul {
   margin: 0px;
 }
 
-/* .profile-move {
-  position: relative;
-  align-items: center;
-}
-
-.profile-move img {
-  position: absolute;
-} */
-
 .user-info,
 .friends-section {
+  flex-direction: column;
   background: #ffff;
   border-radius: 10px;
   padding: 10px;
   margin: 10px;
   width: 50vh;
+  font-size: 1em;
+}
+
+.user-info {
+  height: 45vh;
+}
+
+.friends-section {
   height: 50vh;
-  font-size: 1.2em;
 }
 
 ul {
@@ -49,13 +57,24 @@ ul {
   display: inline;
 }
 
+li {
+  line-height: 1em;
+}
+
+.user-data {
+  padding-top: 15px;
+}
+
 .grid {
+  padding-left: 5%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .col {
-  width: 50%;
+  padding: 10px;
+  width: 40%;
 }
 
 .col .step {
