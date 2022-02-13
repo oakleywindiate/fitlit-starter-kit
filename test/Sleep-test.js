@@ -37,7 +37,7 @@ describe('Sleep', () => {
     "userID": 1,
     "date": '2022/02/04',
     "hoursSlept": 6,
-    "sleepQuality": 6,
+    "sleepQuality": 7,
   },
   {
     "userID": 1,
@@ -75,12 +75,11 @@ describe('Sleep', () => {
     expect(sleep1).to.be.an.instanceof(Sleep);
   });
 
-  it.skip('should have an average hours slept per day', () => {
-    expect(sleep1.sleepDailyAverage()).to.equal();
-
+  it('should be able to calculate daily average of sleep in hours', () => {
+    expect(sleep1.sleepDailyAverage(1)).to.equal(7.25);
   });
 
-  it.skip('should have an average sleep quality per day', () => {
+  it.skip('should be able to calculate daily average of sleep quality between one and ten (one is worth and ten is best)', () => {
     expect(sleep1.sleepQualityAverage()).to.equal();
 
   });
