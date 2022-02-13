@@ -61,24 +61,12 @@ describe('Hydration', () => {
     expect(hydration1).to.be.an.instanceof(Hydration);
   });
 
-  it('should have an id', () => {
-    expect(hydration1.userID).to.equal(1);
-  });
-
-  it('should have a date', () => {
-    expect(hydration2.date).to.equal('2022/02/01');
-  });
-
-  it('should have number of ounces drank', () => {
-    expect(hydration2.numOunces).to.equal(100);
-  });
-
   it.only('should to able to calculate daily average in ounces', () => {
     expect(hydration1.drinkDailyAverage(1)).to.equal(50);
   });
 
-  it('should to able to show daily amount consumed on specific day', () => {
-    expect(hydration1.drinkDailyAmount('2022/02/02')).to.equal(60);
+  it.only('should to able to show daily amount consumed on specific day', () => {
+    expect(hydration1.drinkDailyAmount(1, '2022/02/03')).to.equal(60);
   });
 
   it('should to able show data for seven days', () => {

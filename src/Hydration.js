@@ -2,30 +2,21 @@ class Hydration {
   constructor(generalHydroData) {
     this.hydrationData = generalHydroData;
 
-    // console.log(generalHydroData)
-    // this.userID = hydro.userID;
-    // this.date = hydro.date;
-    // this.numOunces = hydro.numOunces;
-    // this.hydrationData = [];
-    // console.log(hydro)
   }
 
-  // identifyUser(id) {
-  //   const filteredHydroData = this.hydrationData.filter((data) => data.userID === id)
-    // return hydro.find((user) => user.id === id)
-  // }
-
-  drinkDailyAverage(id){
-    const filteredHydroData = this.hydrationData.filter((data) => data.userID === id)
-    const mappedData = filteredHydroData.map(data => data.numOunces)
+  drinkDailyAverage(id) {
+    const filteredHydroData = this.hydrationData.filter(data => data.userID === id);
+    const mappedData = filteredHydroData.map(data => data.numOunces);
     const ounces = (previousValue, currentValue) => previousValue + currentValue;
-    console.log(mappedData)
     return ((mappedData.reduce(ounces)) / mappedData.length);
-
   }
 
-  drinkDailyAmount(date) {
-
+  drinkDailyAmount(userID, date) {
+    //use find to find specific data?
+    //connect id with specific date to display numOunces?
+    const findOuncesDrank = this.hydrationData.find(generalHydroData => generalHydroData.userID === userID && generalHydroData.date === date);
+    console.log(findOuncesDrank)
+    return findOuncesDrank.numOunces;
   }
 
   drinkSevenDaysData() {
