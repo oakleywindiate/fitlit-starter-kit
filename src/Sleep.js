@@ -5,6 +5,35 @@ class Sleep {
     this.hoursSlept = hoursSlept;
     this.sleepQuality = sleepQuality;
   }
+
+
+  sleepDailyAverage() {
+
+  }
+
+  sleepQualityAverage() {
+
+  }
+
+  sleepDailyAmount() {
+
+  }
+
+  sleepDailyQuality() {
+
+  }
+
+  sleepSevenDTotal() {
+
+  }
+
+  sleepSevenDQuality() {
+
+  }
+
+  sleepSevenDQualityAve() {
+    
+  }
 }
 
 
