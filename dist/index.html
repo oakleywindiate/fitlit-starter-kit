@@ -2,33 +2,37 @@
 <html>
 
 <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200&display=swap" rel="stylesheet">
   <meta charset='UTF-8'>
   <title>Fitlit</title>
-
 </head>
 
 <body>
-  <header class='title-and-welcome'>
-    <h1 class'activity-tracker-banner' id='activityTrackerBanner'>Activity Tracker</h1>
-    <h1 class='welcome-banner' id='welcomeBanner'>Welcome, User</h1>
-  </header>
   <main>
-    <section class='user-and-friends'>
-      <section class='user-info'>
-        <div class='profile-move'>
-          <img class='profile-image' src="./images/turing-logo.png" alt="turing logo" height="100px" width="100px">
-        </div>
-        <ul>
-          <li class='user-data' id='userName'>User Name</li>
-          <li class='user-data' id='userAddress'>User Address</li>
-          <li class='user-data' id='userEmail'>User Email</li>
-          <li class='user-data' id='userStepAverage'>Compare User Steps</li>
-        </ul>
+    <div>
+      <header class='title-and-welcome'>
+        <h1 class'activity-tracker-banner' id='activityTrackerBanner'></h1>
+        <h1 class='welcome-banner' id='welcomeBanner'>Welcome, User</h1>
+      </header>
+      <section class='user-and-friends'>
+        <section class='user-info'>
+          <div class='profile-move'>
+            <img class='profile-image' src="./images/turing-logo.png" alt="turing logo" height="100px" width="100px">
+          </div>
+          <ul>
+            <li class='user-data' id='userName'>User Name</li>
+            <li class='user-data' id='userAddress'>User Address</li>
+            <li class='user-data' id='userEmail'>User Email</li>
+            <li class='user-data' id='userStepAverage'>Compare User Steps</li>
+          </ul>
+        </section>
+        <section class='friends-section' id='friendsSection'>
+          <h3 class='friends-list' id='friendsList'>Friends</h3>
+        </section>
       </section>
-      <section class='friends-section' id='friendsSection'>
-        <h3 class='friends-list' id='friendsList'>Friends</h3>
-      </section>
-    </section>
+    </div>
     <section class='grid' id='grid'>
       <div class='col'>
         <section class='user-hydration' id='userHydration'>
@@ -60,7 +64,7 @@
       </div>
       <div class='col step'>
         <section class='user-step-average-graph' id='userStepAverageGraph'>
-          <h3 class='step-average' id='stepAverage'>Step Average</h3>
+          <h3 class='step-average' id='stepAverage'></h3>
         </section>
       </div>
     </section>
