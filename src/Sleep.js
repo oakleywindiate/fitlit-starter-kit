@@ -43,8 +43,10 @@ class Sleep {
     return separateQuality;
   }
 
-  sleepSevenDQualityAve() {
-
+  sleepQualityAverageAll() {
+    const mappedDataAll = this.sleepData.map(data => data.sleepQuality);
+    const qualityAll = (previousValue, currentValue) => previousValue + currentValue;
+    return Math.round((mappedDataAll.reduce(qualityAll)) / mappedDataAll.length);
   }
 }
 
