@@ -59,10 +59,15 @@ describe('Sleep', () => {
     expect(Sleep).to.be.a('function');
   });
 
-  it('should be an instance of User', () => {
-    expect(sleep).to.be.an.instanceof(Sleep);
+  it('should be an instance of Sleep', () => {
+    expect(sleep1).to.be.an.instanceof(Sleep);
   });
 
-//FUTURE TEST FILES HERE
+  it('should have an id', () => {
+    expect(sleep1.userID).to.equal(1);
+
+  });
+
+
 
 });
