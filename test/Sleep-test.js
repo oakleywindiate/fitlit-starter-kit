@@ -4,6 +4,7 @@ import Sleep from '../src/Sleep';
 describe('Sleep', () => {
 
   let sleep1;
+  let sleep2;
   let sleepData;
 
   beforeEach(() => {
@@ -50,9 +51,16 @@ describe('Sleep', () => {
       "date": '2022/02/07',
       "hoursSlept": 8,
       "sleepQuality": 9,
+    },
+    {
+      "userID": 2,
+      "date": '2022/02/01',
+      "hoursSlept": 10,
+      "sleepQuality": 10,
     }];
 
     sleep1 = new Sleep(1, sleepData);
+    sleep2 = new Sleep(2, sleepData);
   });
 
   it('should be a function', () => {
@@ -68,6 +76,9 @@ describe('Sleep', () => {
 
   });
 
-
+  it('should have a date', () => {
+    expect(sleep1.date).to.equal('2022/02/01');
+    
+  });
 
 });
