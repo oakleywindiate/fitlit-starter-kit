@@ -1,7 +1,6 @@
 class Hydration {
   constructor(generalHydroData) {
     this.hydrationData = generalHydroData;
-
   }
 
   drinkDailyAverage(id) {
@@ -12,17 +11,17 @@ class Hydration {
   }
 
   drinkDailyAmount(userID, date) {
-    //use find to find specific data?
-    //connect id with specific date to display numOunces?
     const findOuncesDrank = this.hydrationData.find(generalHydroData => generalHydroData.userID === userID && generalHydroData.date === date);
-    console.log(findOuncesDrank)
     return findOuncesDrank.numOunces;
   }
 
-  drinkSevenDaysData() {
-
+  drinkSevenDaysData(id) {
+    const targetID = this.hydrationData.filter(generalHydroData => generalHydroData.userID === id);
+    const targetIndex = targetID.length - 7;
+    const returnSevenDays = targetID.slice(targetIndex, 8);
+    const separateOunces = returnSevenDays.map(data => data.numOunces);
+    return separateOunces;
   }
 }
-
 
 export default Hydration;

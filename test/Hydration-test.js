@@ -11,6 +11,11 @@ describe('Hydration', () => {
   hydrationData = [
   {
     "userID": 1,
+    "date": '2022/01/31',
+    "numOunces": 300,
+  },
+  {
+    "userID": 1,
     "date": '2022/02/01',
     "numOunces": 30,
   },
@@ -61,15 +66,15 @@ describe('Hydration', () => {
     expect(hydration1).to.be.an.instanceof(Hydration);
   });
 
-  it.only('should to able to calculate daily average in ounces', () => {
+  it('should to able to calculate daily average in ounces', () => {
     expect(hydration1.drinkDailyAverage(1)).to.equal(50);
   });
 
-  it.only('should to able to show daily amount consumed on specific day', () => {
+  it('should to able to show daily amount consumed on specific day', () => {
     expect(hydration1.drinkDailyAmount(1, '2022/02/03')).to.equal(60);
   });
 
-  it('should to able show data for seven days', () => {
-    expect(hydration1.drinkSevenDaysData('how to show from to dates?')).to.equal("array of all data for 1 user?");
+  it.only('should to able show data for seven days', () => {
+    expect(hydration1.drinkSevenDaysData(1)).to.deep.equal([30, 50, 60, 40, 50, 55, 65]);
   });
 });
