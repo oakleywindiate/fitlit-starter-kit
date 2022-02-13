@@ -1,7 +1,8 @@
 class Sleep {
-  constructor(userID, date) {
+  constructor(userID, date, hoursSlept) {
     this.userID = userID;
     this.date = date;
+    this.hoursSlept = hoursSlept;
   }
 }
 

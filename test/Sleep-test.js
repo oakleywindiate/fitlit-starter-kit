@@ -77,8 +77,13 @@ describe('Sleep', () => {
   });
 
   it('should have a date', () => {
-    expect(sleep1.date).to.equal('2022/02/01');
-    
+    expect(sleep2.date).to.equal('2022/02/01');
+
+  });
+
+  it('should have hours per night', () => {
+    expect(sleep2.hoursSlept).to.equal(10);
+
   });
 
 });
