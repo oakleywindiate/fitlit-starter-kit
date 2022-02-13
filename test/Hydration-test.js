@@ -62,7 +62,7 @@ describe('Hydration', () => {
     expect(Hydration).to.be.a('function');
   });
 
-  it('should be an instance of User', () => {
+  it('should be an instance of Hydration', () => {
     expect(hydration1).to.be.an.instanceof(Hydration);
   });
 
