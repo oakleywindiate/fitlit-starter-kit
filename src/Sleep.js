@@ -10,8 +10,11 @@ class Sleep {
     return ((mappedData.reduce(hours)) / mappedData.length);
   }
 
-  sleepQualityAverage() {
-
+  sleepQualityAverage(id) {
+    const filteredQualityData = this.sleepData.filter(data => data.userID === id);
+    const mappedData2 = filteredQualityData.map(data => data.sleepQuality);
+    const quality = (previousValue, currentValue) => previousValue + currentValue;
+    return ((mappedData2.reduce(quality)) / mappedData2.length);
   }
 
   sleepDailyAmount() {
@@ -34,6 +37,5 @@ class Sleep {
 
   }
 }
-
 
 export default Sleep;
