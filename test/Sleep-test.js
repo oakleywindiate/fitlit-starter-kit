@@ -95,9 +95,8 @@ describe('Sleep', () => {
     expect(sleep1.sleepSevenDaysData(1)).to.deep.equal([6, 7, 5, 6, 9, 7, 8]);
   });
 
-  it.skip('should be able to show daily amount of quality sleep between one and ten for seven days', () => {
-    expect(sleep1.sleepSevenDaysQualityData()).to.equal();
-
+  it('should be able to show daily amount of quality sleep between one and ten for seven days', () => {
+    expect(sleep1.sleepSevenDaysQualityData(1)).to.deep.equal([9, 10, 4, 7, 10, 5, 9]);
   });
 
   it.skip('should be able to calculate average sleep quality for 7 days', () => {

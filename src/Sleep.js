@@ -35,8 +35,12 @@ class Sleep {
     return separateHours;
   }
 
-  sleepSevenDaysQualityData() {
-
+  sleepSevenDaysQualityData(id) {
+    const targetID2 = this.sleepData.filter(generalSleepData => generalSleepData.userID === id);
+    const targetIndex2 = targetID2.length - 7;
+    const returnSevenDays2 = targetID2.slice(targetIndex2, 8);
+    const separateQuality = returnSevenDays2.map(data => data.sleepQuality);
+    return separateQuality;
   }
 
   sleepSevenDQualityAve() {
