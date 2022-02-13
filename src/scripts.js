@@ -3,6 +3,7 @@ import './css/styles.css';
 import { userData, sleepData, hydrationData, activityData } from './apiCalls.js'
 import './images/turing-logo.png'
 import './images/profile-svgrepo-com.svg'
+// import './images/sleep.svg'
 import { Chart, registerables } from 'chart.js';
 Chart.register(...registerables);
 import UserRepository from './UserRepository';
