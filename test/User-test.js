@@ -58,6 +58,6 @@ describe('User', () => {
   });
 
   it('should to able to return user\s first name', () => {
-    expect(newUser1.returnUserFirstName()).to.equal("Luisa");    
+    expect(newUser1.returnUserFirstName()).to.equal("Luisa");
   });
 });
