@@ -29,14 +29,14 @@ const onLoad = () => {
   .then(data => manageData(data) )
 }
 
-const makeCharts = (data, h2oAvg, h2oToday) => {
+const makeCharts = (data, h2oAvg, h2oToday, dailySleep) => {
   const ctx = document.getElementById('myChart1').getContext('2d');
   const ctx2 = document.getElementById('myChart2').getContext('2d');
   const ctx3 = document.getElementById('myChart3').getContext('2d');
   const ctx4 = document.getElementById('myChart4').getContext('2d');
   hydrationChart(ctx, h2oAvg, h2oToday)
   stepChart(ctx2, data[3])
-  sleepChart(ctx3, data[1])
+  sleepChart(ctx3, sleepData)
   foodChart(ctx4, 'banana')
 }
 
@@ -46,9 +46,10 @@ const manageData = (data) => {
   const user1 = userRepo.userData[getRandomIndex(userRepo.userData)]
   let hydroData = new Hydration(data[2].hydrationData)
   let h2oAvg = hydroData.drinkDailyAverage(user1.id)
-  // console.log(hydroData.drinkSevenDaysData(user1.id))
+  let sleepData = new Sleep(data[1].sleepData)
+  let dailySleep = sleepData.sleepDailyAmount(user1.id)
   let h2oToday = hydroData.drinkDailyAmount(user1.id)
-  makeCharts(data, h2oAvg, h2oToday)
+  makeCharts(data, h2oAvg, h2oToday, dailySleep)
   displayUser(userRepo, user1)
 }
 
@@ -60,6 +61,10 @@ const displayUser = (userRepo, user1) => {
   userAddress.innerText = user1.address
   userEmail.innerText = user1.email
   userStepAverage.innerText = user1.stepComparison(userRepo, user1)
+  sleepWeek.innerText =
+  sleepAvg.innerText = ''
+  extraData.innerText = ''
+  // waterWeek.innerText = ''
   return
 }
 
