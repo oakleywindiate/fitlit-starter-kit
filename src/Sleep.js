@@ -7,14 +7,14 @@ class Sleep {
     const filteredSleepData = this.sleepData.filter(data => data.userID === id);
     const mappedData = filteredSleepData.map(data => data.hoursSlept);
     const hours = (previousValue, currentValue) => previousValue + currentValue;
-    return ((mappedData.reduce(hours)) / mappedData.length);
+    return Math.round((mappedData.reduce(hours)) / mappedData.length);
   }
 
   sleepQualityAverage(id) {
     const filteredQualityData = this.sleepData.filter(data => data.userID === id);
     const mappedData2 = filteredQualityData.map(data => data.sleepQuality);
     const quality = (previousValue, currentValue) => previousValue + currentValue;
-    return ((mappedData2.reduce(quality)) / mappedData2.length);
+    return Math.round((mappedData2.reduce(quality)) / mappedData2.length);
   }
 
   sleepDailyAmount(id) {
