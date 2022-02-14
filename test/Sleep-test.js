@@ -79,16 +79,16 @@ describe('Sleep', () => {
     expect(sleep1.sleepDailyAverage(1)).to.equal(7.25);
   });
 
-  it('should be able to calculate daily average of sleep quality between one and ten (one is worth and ten is best)', () => {
+  it('should be able to calculate daily average of sleep quality between one and ten (one is worst and ten is best)', () => {
     expect(sleep1.sleepQualityAverage(1)).to.equal(8);
   });
 
   it('should be able to show daily amount of sleep in hours on specific day', () => {
-    expect(sleep1.sleepDailyAmount(1, '2022/02/03')).to.equal(5);
+    expect(sleep1.sleepDailyAmount(1)).to.equal(5);
   });
 
   it('should be able to show daily amount of sleep quality between one and ten on specific day', () => {
-    expect(sleep1.sleepDailyQuality(1, '2022/02/03')).to.equal(4);
+    expect(sleep1.sleepDailyQuality(1)).to.equal(4);
   });
 
   it('should be able to show daily amount of sleep in hours for seven days', () => {
