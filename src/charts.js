@@ -55,7 +55,7 @@ const sleepChart = (ctx3, data) => {
           labels: ['Sleep Hours', 'Sleep Quality'],
           datasets: [{
               label: 'Sleep',
-              data: [data.sleepData[0].hoursSlept, data.sleepData[0].sleepQuality],
+              data: [data, 3],
               backgroundColor: [
                   '#145369',
                   '#F5F5DC',
