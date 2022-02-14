@@ -48,14 +48,14 @@ const stepChart = (ctx2, data) => {
   });
 }
 
-const sleepChart = (ctx3, data) => {
+const sleepChart = (ctx3, dailySleep, sleepQuality) => {
   const myChart3 = new Chart(ctx3, {
       type: 'doughnut',
       data: {
           labels: ['Sleep Hours', 'Sleep Quality'],
           datasets: [{
               label: 'Sleep',
-              data: [data, 3],
+              data: [dailySleep, sleepQuality],
               backgroundColor: [
                   '#145369',
                   '#F5F5DC',
