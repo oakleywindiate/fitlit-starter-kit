@@ -9,6 +9,7 @@ Chart.register(...registerables);
 import UserRepository from './UserRepository';
 import User from './User';
 import Hydration from './Hydration';
+import Sleep from './Sleep';
 import {hydrationChart, stepChart, sleepChart, foodChart} from './charts.js'
 
 // --------- QUERY SELECTORS/VARIABLES ---------
@@ -28,12 +29,12 @@ const onLoad = () => {
   .then(data => manageData(data) )
 }
 
-const makeCharts = (data) => {
+const makeCharts = (data, h2oAvg, h2oToday) => {
   const ctx = document.getElementById('myChart1').getContext('2d');
   const ctx2 = document.getElementById('myChart2').getContext('2d');
   const ctx3 = document.getElementById('myChart3').getContext('2d');
   const ctx4 = document.getElementById('myChart4').getContext('2d');
-  hydrationChart(ctx, data[2].hydrationData)
+  hydrationChart(ctx, h2oAvg, h2oToday)
   stepChart(ctx2, data[3])
   sleepChart(ctx3, data[1])
   foodChart(ctx4, 'banana')
@@ -42,13 +43,17 @@ const makeCharts = (data) => {
 const manageData = (data) => {
   let users = data[0].userData.map(user => new User(user))
   let userRepo = new UserRepository(users)
-  let hydroData = data[2].hydrationData.map(hydro => new Hydration(hydro))
-  makeCharts(data)
-  displayUser(userRepo)
+  const user1 = userRepo.userData[getRandomIndex(userRepo.userData)]
+  let hydroData = new Hydration(data[2].hydrationData)
+  let h2oAvg = hydroData.drinkDailyAverage(user1.id)
+  // console.log(hydroData.drinkSevenDaysData(user1.id))
+  let h2oToday = hydroData.drinkDailyAmount(user1.id)
+  makeCharts(data, h2oAvg, h2oToday)
+  displayUser(userRepo, user1)
 }
 
-const displayUser = (userRepo) => {
-  const user1 = userRepo.userData[getRandomIndex(userRepo.userData)]
+const displayUser = (userRepo, user1) => {
+  // console.log(user1.id)
   let name = user1.returnUserFirstName()
   welcomeBanner.innerText = `Welcome, ${name}!`
   userName.innerText = user1.name

@@ -10,9 +10,11 @@ class Hydration {
     return ((mappedData.reduce(ounces)) / mappedData.length);
   }
 
-  drinkDailyAmount(userID, date) {
-    const findOuncesDrank = this.hydrationData.find(generalHydroData => generalHydroData.userID === userID && generalHydroData.date === date);
-    return findOuncesDrank.numOunces;
+  drinkDailyAmount(id) {
+    const filterOneUser = this.hydrationData.filter(data => data.userID === id);
+    const findIndex = filterOneUser.length - 1;
+    const findOuncesDrank = filterOneUser[findIndex].numOunces;
+    return findOuncesDrank;
   }
 
   drinkSevenDaysData(id) {
