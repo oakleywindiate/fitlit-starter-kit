@@ -20,11 +20,8 @@ class Hydration {
   drinkSevenDaysData(id) {
     const targetID = this.hydrationData.filter(generalHydroData => generalHydroData.userID === id);
     const targetIndex = targetID.length - 7;
-    console.log(targetIndex)
-    const returnSevenDays = targetID.slice(targetIndex, 8);
-    console.log(returnSevenDays)
+    const returnSevenDays = targetID.slice(targetIndex);
     const separateOunces = returnSevenDays.map(data => data.numOunces);
-    console.log(separateOunces)
     return separateOunces;
   }
 }
