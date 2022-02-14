@@ -1,4 +1,3 @@
-
 class UserRepository {
   constructor(users) {
     this.userData = users;
@@ -10,7 +9,7 @@ class UserRepository {
 
   averageStepGoal() {
     const stepGoals = this.userData.map(steps => {
-      return steps.dailyStepGoal;
+    return steps.dailyStepGoal;
     });
     const reducer = (previousValue, currentValue) => previousValue + currentValue;
     return Math.round((stepGoals.reduce(reducer)) / stepGoals.length);
