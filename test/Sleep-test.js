@@ -84,11 +84,11 @@ describe('Sleep', () => {
   });
 
   it('should be able to show daily amount of sleep in hours on specific day', () => {
-    expect(sleep1.sleepDailyAmount(1, '2022/02/03')).to.equal(5);
+    expect(sleep1.sleepDailyAmount(1)).to.equal(8);
   });
 
   it('should be able to show daily amount of sleep quality between one and ten on specific day', () => {
-    expect(sleep1.sleepDailyQuality(1, '2022/02/03')).to.equal(4);
+    expect(sleep1.sleepDailyQuality(1)).to.equal(9);
   });
 
   it('should be able to show daily amount of sleep in hours for seven days', () => {
