@@ -17,6 +17,10 @@ const userAddress = document.querySelector('#userAddress')
 const userEmail = document.querySelector('#userEmail')
 const welcomeBanner = document.querySelector('#welcomeBanner')
 const userStepAverage = document.querySelector('#userStepAverage')
+const sleepWeek = document.querySelector('#sleepWeek')
+const sleepAvg = document.querySelector('#sleepAvg')
+const extraData = document.querySelector('#extraData')
+const waterWeek = document.querySelector('#waterWeek')
 
 // --------- FUNCTIONS ---------
 const onLoad = () => {
