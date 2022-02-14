@@ -4,14 +4,14 @@ import { Chart, registerables } from 'chart.js';
 Chart.register(...registerables);
 export {hydrationChart, stepChart, sleepChart, foodChart}
 
-const hydrationChart = (ctx, data) =>    {
+const hydrationChart = (ctx, h2oAvg, h2oToday) =>    {
   const myChart1 = new Chart(ctx, {
       type: 'doughnut',
       data: {
-          labels: [`Ounces Drank`, 'Ounce Goal' ],
+          labels: [`Ounces Drank Today`, 'Weekly Average' ],
           datasets: [{
               label: 'Hydration oz',
-              data: [data[0].numOunces, 80 ],
+              data: [h2oAvg, h2oToday],
               backgroundColor: [
                   '#1e7898',
                   '#F5F5DC',
