@@ -76,7 +76,7 @@ describe('Sleep', () => {
   });
 
   it('should be able to calculate daily average of sleep in hours', () => {
-    expect(sleep1.sleepDailyAverage(1)).to.equal(7.25);
+    expect(sleep1.sleepDailyAverage(1)).to.equal(7);
   });
 
   it('should be able to calculate daily average of sleep quality between one and ten (one is worth and ten is best)', () => {
