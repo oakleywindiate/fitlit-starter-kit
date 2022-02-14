@@ -20,7 +20,7 @@ const hydrationChart = (ctx, h2oAvg, h2oToday) =>    {
           }]
       },
       options: {
-          // cutout: 90,
+          // cutout: 100,
           hoverOffset: 4,
       }
   });
@@ -42,7 +42,7 @@ const stepChart = (ctx2, data) => {
           }]
       },
       options: {
-          // cutout: 90,
+          // cutout: 150,
           hoverOffset: 4,
       }
   });
@@ -55,7 +55,7 @@ const sleepChart = (ctx3, data) => {
           labels: ['Sleep Hours', 'Sleep Quality'],
           datasets: [{
               label: 'Sleep',
-              data: [data.sleepData[0].hoursSlept, data.sleepData[0].sleepQuality],
+              data: [data, 3],
               backgroundColor: [
                   '#145369',
                   '#F5F5DC',
@@ -64,7 +64,7 @@ const sleepChart = (ctx3, data) => {
           }]
       },
       options: {
-          // cutout: 90,
+          // cutout: 150,
           hoverOffset: 4,
       }
   });
@@ -86,7 +86,7 @@ const foodChart = (ctx4, data) => {
           }]
       },
       options: {
-          // cutout: 90,
+          // cutout: 100,
           hoverOffset: 4,
       }
   });

@@ -17,9 +17,11 @@ class Sleep {
     return ((mappedData2.reduce(quality)) / mappedData2.length);
   }
 
-  sleepDailyAmount(id, date) {
-    const findHoursSlept = this.sleepData.find(generalSleepData => generalSleepData.userID === id && generalSleepData.date === date);
-    return findHoursSlept.hoursSlept;
+  sleepDailyAmount(id) {
+    const findHoursSlept = this.sleepData.filter(data => data.userID === id);
+    const sleepIndex = findHoursSlept.length - 1;
+    const sleep = findHoursSlept[sleepIndex].hoursSlept;
+    return sleep;
   }
 
   sleepDailyQuality(id, date) {
