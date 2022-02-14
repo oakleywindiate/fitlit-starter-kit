@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -8,11 +7,10 @@
   <meta charset='UTF-8'>
   <title>Fitlit</title>
 </head>
-
 <body>
   <div class='background'></div>
   <main>
-    <div>
+    <section>
       <header class='title-and-welcome'>
         <h1 class'activity-tracker-banner' id='activityTrackerBanner'>Health Yeah!</h1>
         <h1 class='welcome-banner' id='welcomeBanner'>Welcome, User</h1>
@@ -40,7 +38,7 @@
           </ul>
         </section>
       </section>
-    </div>
+    </section>
     <section class='grid' id='grid'>
       <div class='col'>
         <section class='user-hydration' id='userHydration'>
@@ -77,9 +75,7 @@
       </div>
     </section>
   </main>
-  <!-- Do not include the scripts.js file here - it is done automatically by the webpack server -->
   <script src="bundle.js"></script>
   <script type="text/javascript" src="./src/charts.js"></script>
 </body>
-
 </html>
