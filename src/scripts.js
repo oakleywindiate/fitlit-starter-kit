@@ -20,7 +20,8 @@ const welcomeBanner = document.querySelector('#welcomeBanner')
 const userStepAverage = document.querySelector('#userStepAverage')
 const sleepWeek = document.querySelector('#sleepWeek')
 const sleepAvg = document.querySelector('#sleepAvg')
-const extraData = document.querySelector('#extraData')
+const allTimeHours = document.querySelector('#allTimeHours')
+const allTimeQuality = document.querySelector('#allTimeQuality')
 const waterWeek = document.querySelector('#waterWeek')
 
 // --------- FUNCTIONS ---------
@@ -29,14 +30,14 @@ const onLoad = () => {
   .then(data => manageData(data) )
 }
 
-const makeCharts = (data, h2oAvg, h2oToday, dailySleep) => {
+const makeCharts = (data, h2oAvg, h2oToday, dailySleep, sleepQuality) => {
   const ctx = document.getElementById('myChart1').getContext('2d');
   const ctx2 = document.getElementById('myChart2').getContext('2d');
   const ctx3 = document.getElementById('myChart3').getContext('2d');
   const ctx4 = document.getElementById('myChart4').getContext('2d');
   hydrationChart(ctx, h2oAvg, h2oToday)
   stepChart(ctx2, data[3])
-  sleepChart(ctx3, sleepData)
+  sleepChart(ctx3, dailySleep, sleepQuality)
   foodChart(ctx4, 'banana')
 }
 
@@ -48,12 +49,21 @@ const manageData = (data) => {
   let h2oAvg = hydroData.drinkDailyAverage(user1.id)
   let sleepData = new Sleep(data[1].sleepData)
   let dailySleep = sleepData.sleepDailyAmount(user1.id)
+  let sleepQuality = sleepData.sleepDailyQuality(user1.id)
+  let sleepSevenDay = sleepData.sleepSevenDaysData(user1.id)
+  let sleepQualityWeek = sleepData.sleepSevenDaysQualityData(user1.id)
+  let sleepDailyAverage = sleepData.sleepDailyAverage(user1.id)
+  let sleepQualityAverage = sleepData.sleepQualityAverage(user1.id)
   let h2oToday = hydroData.drinkDailyAmount(user1.id)
-  makeCharts(data, h2oAvg, h2oToday, dailySleep)
-  displayUser(userRepo, user1)
+  let h2oSevenDay = hydroData.drinkSevenDaysData(user1.id)
+  console.log('sleep', )
+  console.log()
+
+  makeCharts(data, h2oAvg, h2oToday, dailySleep, sleepQuality,)
+  displayUser(userRepo, user1, h2oSevenDay, sleepSevenDay, sleepQualityWeek, sleepQualityAverage, sleepDailyAverage)
 }
 
-const displayUser = (userRepo, user1) => {
+const displayUser = (userRepo, user1, h2oSevenDay, sleepSevenDay, sleepQualityWeek, sleepQualityAverage, sleepDailyAverage) => {
   // console.log(user1.id)
   let name = user1.returnUserFirstName()
   welcomeBanner.innerText = `Welcome, ${name}!`
@@ -61,10 +71,11 @@ const displayUser = (userRepo, user1) => {
   userAddress.innerText = user1.address
   userEmail.innerText = user1.email
   userStepAverage.innerText = user1.stepComparison(userRepo, user1)
-  sleepWeek.innerText =
-  sleepAvg.innerText = ''
-  extraData.innerText = ''
-  // waterWeek.innerText = ''
+  sleepWeek.innerText = `Hours Slept Per Day This Week: ${sleepSevenDay}`
+  sleepAvg.innerText = `Sleep Quality Per Day This Week: ${sleepQualityWeek}`
+  allTimeQuality.innerText = `All Time Average Sleep Quality: ${sleepQualityAverage}`
+  allTimeHours.innerText = `All Time Average Sleep Hours: ${sleepDailyAverage}`
+  waterWeek.innerText = `Water Consumed Per Day This Week: ${h2oSevenDay}`
   return
 }
 
