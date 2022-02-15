@@ -22,6 +22,16 @@ const hydrationChart = (ctx, h2oAvg, h2oToday) =>    {
       options: {
           // cutout: 100,
           hoverOffset: 4,
+          plugins: {
+            title: {
+              display: true,
+              font: {
+                size: 20
+              },
+              text: "Hydration",
+              color: "#FFF",
+            }
+          }
       }
   });
 }
@@ -44,6 +54,16 @@ const stepChart = (ctx2, data) => {
       options: {
           // cutout: 150,
           hoverOffset: 4,
+          plugins: {
+            title: {
+              display: true,
+              font: {
+                size: 20
+              },
+              text: "Steps",
+              color: "#FFF",
+            }
+          }
       }
   });
 }
@@ -66,7 +86,17 @@ const sleepChart = (ctx3, dailySleep, sleepQuality) => {
       options: {
           // cutout: 150,
           hoverOffset: 4,
-      }
+          plugins: {
+            title: {
+              display: true,
+              font: {
+                size: 20
+              },
+              text: "Sleep",
+              color: "#FFF",
+            }
+          }
+        }
   });
 }
 
@@ -74,7 +104,7 @@ const foodChart = (ctx4, data) => {
   const myChart4 = new Chart(ctx4, {
       type: 'doughnut',
       data: {
-          labels: ['Calories', 'Calorie Goal'],
+          labels: ['Daily Calories', 'Calorie Goal'],
           datasets: [{
               label: ['Calories', 'Calorie Goal'],
               data: [ 1200, 3300 ],
@@ -88,6 +118,16 @@ const foodChart = (ctx4, data) => {
       options: {
           // cutout: 100,
           hoverOffset: 4,
+          plugins: {
+            title: {
+              display: true,
+              font: {
+                size: 20
+              },
+              text: "Calories",
+              color: "#FFF",
+            }
+          }
       }
   });
 }

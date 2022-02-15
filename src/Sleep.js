@@ -2,7 +2,7 @@ class Sleep {
   constructor(generalSleepData) {
     this.sleepData = generalSleepData;
   }
-
+  
   sleepDailyAverage(id) {
     const filteredSleepData = this.sleepData.filter(data => data.userID === id);
     const mappedData = filteredSleepData.map(data => data.hoursSlept);
