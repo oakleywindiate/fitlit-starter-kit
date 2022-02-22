@@ -17,7 +17,7 @@ class Hydration {
     return findOuncesDrank;
   }
 
-  calculate7DaysDrinkAvg(id) {
+  show7DaysDrinkAmount(id) {
     const targetID = this.hydrationData.filter(generalHydroData => generalHydroData.userID === id);
     const targetIndex = targetID.length - 7;
     const returnSevenDays = targetID.slice(targetIndex);
