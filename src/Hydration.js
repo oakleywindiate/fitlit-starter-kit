@@ -3,7 +3,7 @@ class Hydration {
     this.hydrationData = generalHydroData;
   }
 
-  calculateDailyDrinkAverage(id) {
+  calculateDailyDrinkAvg(id) {
     const filteredHydroData = this.hydrationData.filter(data => data.userID === id);
     const mappedData = filteredHydroData.map(data => data.numOunces);
     const ounces = (previousValue, currentValue) => previousValue + currentValue;
@@ -17,7 +17,7 @@ class Hydration {
     return findOuncesDrank;
   }
 
-  calculate7DaysDrinkAverage(id) {
+  calculate7DaysDrinkAvg(id) {
     const targetID = this.hydrationData.filter(generalHydroData => generalHydroData.userID === id);
     const targetIndex = targetID.length - 7;
     const returnSevenDays = targetID.slice(targetIndex);

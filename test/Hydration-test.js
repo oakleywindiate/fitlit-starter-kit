@@ -67,14 +67,14 @@ describe('Hydration', () => {
   });
 
   it('should be able to calculate daily average amount of hydration in ounces', () => {
-    expect(hydration1.calculateDailyDrinkAverage(1)).to.equal(81.25);
+    expect(hydration1.calculateDailyDrinkAvg(1)).to.equal(81.25);
   });
 
-  it('should be able to show daily amount of hydration in ounces consumed on most recent day', () => {
+  it('should be able to show daily amount of hydration in ounces on specific day', () => {
     expect(hydration1.showDailyDrinkAmount(1)).to.equal(65);
   });
 
   it('should be able to calculate daily amount of hydration in ounces for seven days', () => {
-    expect(hydration1.calculate7DaysDrinkAverage(1)).to.deep.equal([30, 50, 60, 40, 50, 55, 65]);
+    expect(hydration1.calculate7DaysDrinkAvg(1)).to.deep.equal([30, 50, 60, 40, 50, 55, 65]);
   });
 });
