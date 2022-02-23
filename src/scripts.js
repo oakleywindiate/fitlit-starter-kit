@@ -48,21 +48,21 @@ const classInstantiation = (data) => {
 
 const manageHydroData = (hydroData, user1) => {
   const ctx = document.getElementById('myChart1').getContext('2d');
-  let h2oAvg = hydroData.drinkDailyAverage(user1.id)
-  let h2oToday = hydroData.drinkDailyAmount(user1.id)
-  let h2oSevenDay = hydroData.drinkSevenDaysData(user1.id)
+  let h2oAvg = hydroData.calculateDailyDrinkAvg(user1.id)
+  let h2oToday = hydroData.showDailyDrinkAmount(user1.id)
+  let h2oSevenDay = hydroData.show7DaysDrinkAmount(user1.id)
   displayHydroData(h2oSevenDay)
   hydrationChart(ctx, h2oAvg, h2oToday)
 }
 
 const manageSleepData = (sleepData, user1) => {
   const ctx3 = document.getElementById('myChart3').getContext('2d');
-  let dailySleep = sleepData.sleepDailyAmount(user1.id)
-  let sleepQuality = sleepData.sleepDailyQuality(user1.id)
-  let sleepSevenDay = sleepData.sleepSevenDaysData(user1.id)
-  let sleepQualityWeek = sleepData.sleepSevenDaysQualityData(user1.id)
-  let sleepDailyAverage = sleepData.sleepDailyAverage(user1.id)
-  let sleepQualityAverage = sleepData.sleepQualityAverage(user1.id)
+  let dailySleep = sleepData.showDailySleepAmount(user1.id)
+  let sleepQuality = sleepData.showDailySlQuality(user1.id)
+  let sleepSevenDay = sleepData.show7DaysSleepAmount(user1.id)
+  let sleepQualityWeek = sleepData.show7DaysSlQuality(user1.id)
+  let sleepDailyAverage = sleepData.calculateDailySleepAvg(user1.id)
+  let sleepQualityAverage = sleepData.calculateDailySlQualityAvg(user1.id)
   displaySleepData(sleepSevenDay, sleepQualityWeek, sleepQualityAverage, sleepDailyAverage)
   sleepChart(ctx3, dailySleep, sleepQuality)
 }
