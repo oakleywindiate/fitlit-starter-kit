@@ -75,31 +75,31 @@ describe('Sleep', () => {
     expect(sleep1).to.be.an.instanceof(Sleep);
   });
 
-  it('should be able to calculate daily average of sleep in hours', () => {
-    expect(sleep1.sleepDailyAverage(1)).to.equal(7);
+  it('should be able to calculate daily average amount of sleep in hours', () => {
+    expect(sleep1.calculateDailySleepAvg(1)).to.equal(7);
   });
 
-  it('should be able to calculate daily average of sleep quality between one and ten (one is worst and ten is best)', () => {
-    expect(sleep1.sleepQualityAverage(1)).to.equal(8);
+  it('should be able to calculate daily average of sleep quality with rating between one and ten (one is worst and ten is best)', () => {
+    expect(sleep1.calculateDailySlQualityAvg(1)).to.equal(8);
   });
 
   it('should be able to show daily amount of sleep in hours on specific day', () => {
-    expect(sleep1.sleepDailyAmount(1)).to.equal(8);
+    expect(sleep1.showDailySleepAmount(1)).to.equal(8);
   });
 
   it('should be able to show daily amount of sleep quality between one and ten on specific day', () => {
-    expect(sleep1.sleepDailyQuality(1)).to.equal(9);
+    expect(sleep1.showDailySlQuality(1)).to.equal(9);
   });
 
   it('should be able to show daily amount of sleep in hours for seven days', () => {
-    expect(sleep1.sleepSevenDaysData(1)).to.deep.equal([6, 7, 5, 6, 9, 7, 8]);
+    expect(sleep1.show7DaysSleepAmount(1)).to.deep.equal([6, 7, 5, 6, 9, 7, 8]);
   });
 
   it('should be able to show daily amount of quality sleep between one and ten for seven days', () => {
-    expect(sleep1.sleepSevenDaysQualityData(1)).to.deep.equal([9, 10, 4, 7, 10, 5, 9]);
+    expect(sleep1.show7DaysSlQuality(1)).to.deep.equal([9, 10, 4, 7, 10, 5, 9]);
   });
 
   it('should be able to calculate daily average of sleep quality between one and ten for ALL users', () => {
-    expect(sleep1.sleepQualityAverageAll()).to.equal(8);
+    expect(sleep1.calculateSlQualityAvgAll()).to.equal(8);
   });
 });
