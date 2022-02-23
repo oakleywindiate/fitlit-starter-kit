@@ -7,7 +7,7 @@ body, html {
   height: 100%;
   width: auto;
   margin: 0;
-  padding: 0;
+  padding-bottom: 10%;
 }
 
 main {
@@ -16,12 +16,30 @@ main {
   padding-left: 1%;
 }
 
+header {
+  background-color: #555B6E;
+  width: 100vw;
+  height: 8vh;
+}
+
 .title-and-welcome {
-  flex-direction: column;
+  padding-top: 5px;
+  color: #FFF;
+}
+
+.activity-tracker-banner {
+  float: right;
+}
+
+.welcome-banner {
+  float: left;
+  margin-right: 30em;
+  margin-left: -4em;
 }
 
 ul,
 h3 {
+  margin-left: -6%;
   list-style: none;
   text-align: center;
   line-height: 1.5em;
@@ -39,13 +57,12 @@ li {
 
 .user-info,
 .friends-section {
+  color: white;
+  margin-left: -5%;
   display: flex;
   flex-direction: column;
-  background: #ffff;
-  border-radius: 10px;
-  padding: 10px;
-  margin: 10px;
-  width: 30vw;
+  background: #6D9E9B;
+  width: 33vw;
   font-size: 1em;
   align-items: center;
 }
@@ -55,7 +72,8 @@ li {
 }
 
 .friends-section {
-  height: 47vh;
+  height: 50vh;
+  margin-top: 10px;
 }
 
 .user-data {
@@ -64,21 +82,36 @@ li {
 }
 
 .grid {
-  padding-top: 5%;
+  gap: 10%;
   padding-left: 5%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
 }
 
 .col {
-  width: 35%;
+  width: 38%;
 }
 
 .background {
-  background-image: linear-gradient(to top, #99ccff 50%, #0066ff 100%);
+  background-color: #FAF9F9;
   width: 100vw;
   height: 100vh;
   z-index: -1;
   position: fixed;
+}
+
+#Layer_1 {
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+#sleepPicture {
+  height: 20vh;
+  position: absolute;
+  right: 44%;
+  top: 77%;
+}
+
+.friends-list {
+  margin-top: 25px;;
 }
