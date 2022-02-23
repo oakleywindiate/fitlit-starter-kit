@@ -8,7 +8,7 @@ const hydrationChart = (ctx, h2oAvg, h2oToday) =>    {
   const myChart1 = new Chart(ctx, {
       type: 'doughnut',
       data: {
-          labels: [`Ounces Drank Today`, 'Weekly Average' ],
+          labels: [`Ounces Today`, 'Weekly Average' ],
           datasets: [{
               label: 'Hydration oz',
               data: [h2oAvg, h2oToday],
@@ -20,16 +20,14 @@ const hydrationChart = (ctx, h2oAvg, h2oToday) =>    {
           }]
       },
       options: {
-        events: [],
           // cutout: 100,
-          hoverOffset: 4,
+          hoverOffset: 0,
           plugins: {
             title: {
               display: true,
               font: {
                 size: 20
               },
-              text: "Hydration",
               color: "#FFF",
             }
           }
@@ -53,9 +51,8 @@ const stepChart = (ctx2, data) => {
           }]
       },
       options: {
-        events: [],
           // cutout: 150,
-          hoverOffset: 4,
+          hoverOffset: 0,
           plugins: {
             title: {
               display: true,
@@ -86,9 +83,8 @@ const sleepChart = (ctx3, dailySleep, sleepQuality) => {
           }]
       },
       options: {
-        events: [],
           // cutout: 150,
-          hoverOffset: 4,
+          hoverOffset: 0,
           plugins: {
             title: {
               display: true,
@@ -119,9 +115,8 @@ const foodChart = (ctx4, data) => {
           }]
       },
       options: {
-        events: [],
           // cutout: 100,
-          hoverOffset: 4,
+          hoverOffset: 0,
           plugins: {
             title: {
               display: true,
