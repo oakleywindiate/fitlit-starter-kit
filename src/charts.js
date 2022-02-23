@@ -8,28 +8,32 @@ const hydrationChart = (ctx, h2oAvg, h2oToday) =>    {
   const myChart1 = new Chart(ctx, {
       type: 'doughnut',
       data: {
-          labels: [`Ounces Drank Today`, 'Weekly Average' ],
+          labels: [`Ounces Today`, 'Weekly Average' ],
           datasets: [{
               label: 'Hydration oz',
               data: [h2oAvg, h2oToday],
               backgroundColor: [
                   '#1e7898',
-                  '#F5F5DC',
+                  '#FFF',
               ],
-              borderWidth: 0
           }]
       },
       options: {
-          // cutout: 100,
-          hoverOffset: 4,
+          cutout: 130,
+          borderWidth: 1,
+          borderColor: '#000000',
+          hoverOffset: 0,
           plugins: {
+            legend: {
+              display: false
+            },
             title: {
               display: true,
               font: {
                 size: 20
               },
               text: "Hydration",
-              color: "#FFF",
+              color: "#000000",
             }
           }
       }
@@ -45,23 +49,27 @@ const stepChart = (ctx2, data) => {
               label: ['Number Steps', 'Minutes Active', ],
               data: [data.activityData[0].numSteps, data.activityData[0].minutesActive, ],
               backgroundColor: [
-                  '#be4d25',
-                  '#F5F5DC',
+                  '#FFD6BA',
+                  '#FFF',
               ],
-              borderWidth: 0
           }]
       },
       options: {
-          // cutout: 150,
-          hoverOffset: 4,
+          cutout: 130,
+          borderWidth: 1,
+          borderColor: '#000000',
+          hoverOffset: 0,
           plugins: {
+            legend: {
+              display: false
+            },
             title: {
               display: true,
               font: {
                 size: 20
               },
               text: "Steps",
-              color: "#FFF",
+              color: "#000000",
             }
           }
       }
@@ -78,22 +86,26 @@ const sleepChart = (ctx3, dailySleep, sleepQuality) => {
               data: [dailySleep, sleepQuality],
               backgroundColor: [
                   '#145369',
-                  '#F5F5DC',
+                  '#FFF',
               ],
-              borderWidth: 0
           }]
       },
       options: {
-          // cutout: 150,
-          hoverOffset: 4,
+          cutout: 130,
+          borderWidth: 1,
+          borderColor: '#000000',
+          hoverOffset: 0,
           plugins: {
+            legend: {
+              display: false
+            },
             title: {
               display: true,
               font: {
                 size: 20
               },
               text: "Sleep",
-              color: "#FFF",
+              color: "#000000",
             }
           }
         }
@@ -109,23 +121,27 @@ const foodChart = (ctx4, data) => {
               label: ['Calories', 'Calorie Goal'],
               data: [ 1200, 3300 ],
               backgroundColor: [
-                  '#96be25',
-                  '#F5F5DC',
+                  '#BEE3DB',
+                  '#FFF',
               ],
-              borderWidth: 0
           }]
       },
       options: {
-          // cutout: 100,
-          hoverOffset: 4,
+          cutout: 130,
+          borderWidth: 1,
+          borderColor: '#000000',
+          hoverOffset: 0,
           plugins: {
-            title: {
-              display: true,
-              font: {
-                size: 20
-              },
+          legend: {
+            display: false
+          },
+          title: {
+            display: true,
+            font: {
+              size: 20
+            },
               text: "Calories",
-              color: "#FFF",
+              color: "#000000",
             }
           }
       }
