@@ -29,7 +29,8 @@ const waterWeek = document.querySelector('#waterWeek')
 
 const onLoad = () => {
   Promise.all([userData, sleepData, hydrationData, activityData])
-  .then(data => classInstantiation(data) )
+  .then(data => classInstantiation(data))
+  .catch(error => console.log('Ops, error here!'))
 }
 
 const classInstantiation = (data) => {
