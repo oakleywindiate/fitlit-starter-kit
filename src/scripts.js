@@ -12,18 +12,7 @@ import Sleep from './Sleep';
 import {hydrationChart, stepChart, sleepChart, foodChart} from './charts.js';
 import {displayHydroData, displaySleepData, displayUserData} from './domUpdates.js';
 
-// --------- QUERY SELECTORS/VARIABLES ---------
 
-const userName = document.querySelector('#userName')
-const userAddress = document.querySelector('#userAddress')
-const userEmail = document.querySelector('#userEmail')
-const welcomeBanner = document.querySelector('#welcomeBanner')
-const userStepAverage = document.querySelector('#userStepAverage')
-const sleepWeek = document.querySelector('#sleepWeek')
-const sleepAvg = document.querySelector('#sleepAvg')
-const allTimeHours = document.querySelector('#allTimeHours')
-const allTimeQuality = document.querySelector('#allTimeQuality')
-const waterWeek = document.querySelector('#waterWeek')
 
 // --------- FUNCTIONS ---------
 
