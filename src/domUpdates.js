@@ -1,12 +1,19 @@
 export {displayHydroData, displaySleepData, displayUserData};
 
+// --------- QUERY SELECTORS/VARIABLES ---------
 
-// const displayUser = (userRepo, user1, h2oSevenDay, sleepSevenDay, sleepQualityWeek, sleepQualityAverage, sleepDailyAverage) => {
+const userName = document.querySelector('#userName')
+const userAddress = document.querySelector('#userAddress')
+const userEmail = document.querySelector('#userEmail')
+const welcomeBanner = document.querySelector('#welcomeBanner')
+const userStepAverage = document.querySelector('#userStepAverage')
+const sleepWeek = document.querySelector('#sleepWeek')
+const sleepAvg = document.querySelector('#sleepAvg')
+const allTimeHours = document.querySelector('#allTimeHours')
+const allTimeQuality = document.querySelector('#allTimeQuality')
+const waterWeek = document.querySelector('#waterWeek')
 
-
-
-
-
+// --------- FUNCTIONS ---------
 
 const displayHydroData = (h2oSevenDay) => {
   waterWeek.innerText = `Water Consumed Per Day This Week: ${h2oSevenDay}`
