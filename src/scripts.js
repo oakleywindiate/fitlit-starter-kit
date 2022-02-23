@@ -9,7 +9,8 @@ import UserRepository from './UserRepository';
 import User from './User';
 import Hydration from './Hydration';
 import Sleep from './Sleep';
-import {hydrationChart, stepChart, sleepChart, foodChart} from './charts.js'
+import {hydrationChart, stepChart, sleepChart, foodChart} from './charts.js';
+import {displayHydroData, displaySleepData, displayUserData} from './domUpdates.js';
 
 // --------- QUERY SELECTORS/VARIABLES ---------
 
@@ -28,52 +29,48 @@ const waterWeek = document.querySelector('#waterWeek')
 
 const onLoad = () => {
   Promise.all([userData, sleepData, hydrationData, activityData])
-  .then(data => manageData(data) )
+  .then(data => classInstantiation(data) )
 }
 
-const manageData = (data) => {
+const classInstantiation = (data) => {
   let users = data[0].userData.map(user => new User(user))
+  let hydroData = new Hydration(data[2].hydrationData)
+  let sleepData = new Sleep(data[1].sleepData)
   let userRepo = new UserRepository(users)
   let user1 = userRepo.userData[getRandomIndex(userRepo.userData)]
-  let hydroData = new Hydration(data[2].hydrationData)
+  // manageData(data,  userRepo)
+  manageHydroData(hydroData, user1)
+  manageSleepData(sleepData, user1)
+  displayUserData(userRepo, user1)
+  manageActivityData(data)
+}
+
+const manageHydroData = (hydroData, user1) => {
+  const ctx = document.getElementById('myChart1').getContext('2d');
   let h2oAvg = hydroData.drinkDailyAverage(user1.id)
-  let sleepData = new Sleep(data[1].sleepData)
+  let h2oToday = hydroData.drinkDailyAmount(user1.id)
+  let h2oSevenDay = hydroData.drinkSevenDaysData(user1.id)
+  displayHydroData(h2oSevenDay)
+  hydrationChart(ctx, h2oAvg, h2oToday)
+}
+
+const manageSleepData = (sleepData, user1) => {
+  const ctx3 = document.getElementById('myChart3').getContext('2d');
   let dailySleep = sleepData.sleepDailyAmount(user1.id)
   let sleepQuality = sleepData.sleepDailyQuality(user1.id)
   let sleepSevenDay = sleepData.sleepSevenDaysData(user1.id)
   let sleepQualityWeek = sleepData.sleepSevenDaysQualityData(user1.id)
   let sleepDailyAverage = sleepData.sleepDailyAverage(user1.id)
   let sleepQualityAverage = sleepData.sleepQualityAverage(user1.id)
-  let h2oToday = hydroData.drinkDailyAmount(user1.id)
-  let h2oSevenDay = hydroData.drinkSevenDaysData(user1.id)
-
-  makeCharts(data, h2oAvg, h2oToday, dailySleep, sleepQuality,)
-  displayUser(userRepo, user1, h2oSevenDay, sleepSevenDay, sleepQualityWeek, sleepQualityAverage, sleepDailyAverage)
-}
-
-const makeCharts = (data, h2oAvg, h2oToday, dailySleep, sleepQuality) => {
-  const ctx = document.getElementById('myChart1').getContext('2d');
-  const ctx2 = document.getElementById('myChart2').getContext('2d');
-  const ctx3 = document.getElementById('myChart3').getContext('2d');
-  const ctx4 = document.getElementById('myChart4').getContext('2d');
-  hydrationChart(ctx, h2oAvg, h2oToday)
-  stepChart(ctx2, data[3])
+  displaySleepData(sleepSevenDay, sleepQualityWeek, sleepQualityAverage, sleepDailyAverage)
   sleepChart(ctx3, dailySleep, sleepQuality)
-  foodChart(ctx4)
 }
 
-const displayUser = (userRepo, user1, h2oSevenDay, sleepSevenDay, sleepQualityWeek, sleepQualityAverage, sleepDailyAverage) => {
-  let name = user1.returnUserFirstName()
-  welcomeBanner.innerText = `Welcome, ${name}!`
-  userName.innerText = user1.name
-  userAddress.innerText = user1.address
-  userEmail.innerText = user1.email
-  userStepAverage.innerText = user1.stepComparison(userRepo, user1)
-  sleepWeek.innerText = `Hours Slept Per Day This Week: ${sleepSevenDay}`
-  sleepAvg.innerText = `Sleep Quality Per Day This Week: ${sleepQualityWeek}`
-  allTimeQuality.innerText = `All Time Average Sleep Quality: ${sleepQualityAverage}`
-  allTimeHours.innerText = `All Time Average Sleep Hours: ${sleepDailyAverage}`
-  waterWeek.innerText = `Water Consumed Per Day This Week: ${h2oSevenDay}`
+const manageActivityData = (data) => {
+  const ctx2 = document.getElementById('myChart2').getContext('2d');
+  const ctx4 = document.getElementById('myChart4').getContext('2d');
+  stepChart(ctx2, data[3])
+  foodChart(ctx4)
 }
 
 function getRandomIndex(array) {
