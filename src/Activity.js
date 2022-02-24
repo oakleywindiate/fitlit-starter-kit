@@ -37,6 +37,11 @@ class Activity {
     })
     return `You exceeded your step goal ${counter} day(s)`
   }
+  showClimbingRecord(user) {
+    const findUser = this.activityData.filter(data => data.userID === user.id)
+    const sortUser = findUser.sort((a, b) => b.flightsOfStairs - a.flightsOfStairs)
+    return sortUser[0].flightsOfStairs;
+  }
 }
 
 

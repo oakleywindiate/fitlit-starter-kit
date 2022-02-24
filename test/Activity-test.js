@@ -138,7 +138,12 @@ describe('Activity', () => {
     expect(activity1.calculateStepGoal(userData[0])).to.equal('60.00');
   });
 
-  it.only('should be able to calculate if the user exceeded their step goal on any date', () => {
+  it('should be able to calculate if the user exceeded their step goal on any date', () => {
     expect(activity1.calculateDaysExceededStepGoal(userData[0])).to.equal('You exceeded your step goal 1 day(s)');
   });
+
+  it.only('should be able to calculate a users all-time stair climbing record', () => {
+    expect(activity1.showClimbingRecord(userData[0])).to.equal(20);
+  });
+
 });
