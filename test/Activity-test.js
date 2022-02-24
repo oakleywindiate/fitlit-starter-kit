@@ -8,9 +8,6 @@ describe('Activity', () => {
   let activityData;
   let userData;
 
-  let currentUser =
-  let currentRepo = new UserRepository(users);
-
   beforeEach(() => {
 
   userData = [
@@ -40,8 +37,9 @@ describe('Activity', () => {
       "strideLength": 4.4,
       "dailyStepGoal": 5000,
       "friends": [19,11,42,33]
+      }
     ]
-  }
+
 
   activityData = [
   {
@@ -109,6 +107,7 @@ describe('Activity', () => {
   }];
 
     activity1 = new Activity(activityData);
+
   });
 
   it('should be a function', () => {
@@ -119,11 +118,19 @@ describe('Activity', () => {
     expect(activity1).to.be.an.instanceof(Activity);
   });
 
+  // it.skip('should be able to identify a user by userID', () => {
+  //   expect(activity1.identifyUser(1)).to.equal(activityData[0]);
+  // });
+
   it('should be able to calculate the miles a user has walked based on their steps for a specific day', () => {
-    expect().to.equal();
+    expect(activity1.calculateMiles(userData[0])).to.equal('4.89');
   });
 
   it('should be able to calculate the total number of minutes a user was active on a specific date', () => {
-    expect(hydration1.calculateDailyDrinkAvg(1)).to.equal(81.25);
+    expect(activity1.showMinutesActive(userData[0])).to.equal(60);
+  });
+
+  it.only('should be able to calculate the total number of minutes a user was active on a specific date', () => {
+    expect(activity1.calculateAvgWeeklyMinActive(userData[0])).to.equal('75.71');
   });
 });
