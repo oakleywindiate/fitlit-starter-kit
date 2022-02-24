@@ -130,7 +130,11 @@ describe('Activity', () => {
     expect(activity1.showMinutesActive(userData[0])).to.equal(60);
   });
 
-  it.only('should be able to calculate the total number of minutes a user was active on a specific date', () => {
+  it('should be able to calculate the total number of minutes a user was active on a specific date', () => {
     expect(activity1.calculateAvgWeeklyMinActive(userData[0])).to.equal('75.71');
+  });
+
+  it.only('should be able to calculate if the user reached their step goal on a specific date', () => {
+    expect(activity1.calculateStepGoal(userData[0])).to.equal('60.00');
   });
 });

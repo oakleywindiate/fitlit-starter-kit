@@ -21,6 +21,11 @@ class Activity {
     }, 0)
     return (reduceDays / 7).toFixed(2);
   }
+  calculateStepGoal(user) {
+    const findUser = this.activityData.filter(data => data.userID === user.id)
+    const findIndex = findUser.length - 1;
+    return ((findUser[findIndex].numSteps / user.dailyStepGoal) * 100).toFixed(2);
+  }
 }
 
 
