@@ -26,6 +26,17 @@ class Activity {
     const findIndex = findUser.length - 1;
     return ((findUser[findIndex].numSteps / user.dailyStepGoal) * 100).toFixed(2);
   }
+  calculateDaysExceededStepGoal(user) {
+    let counter = 0
+    const findUser = this.activityData.filter(data => data.userID === user.id)
+    const mapUsers = findUser.map(person => {
+      if (person.numSteps > user.dailyStepGoal) {
+        counter++
+      }
+      return counter
+    })
+    return `You exceeded your step goal ${counter} day(s)`
+  }
 }
 
 

@@ -59,7 +59,7 @@ describe('Activity', () => {
   {
     "userID": 1,
     "date": '2022/02/02',
-    "numSteps": 6000,
+    "numSteps": 16000,
     "minutesActive": 100,
     "flightsOfStairs": 10,
   },
@@ -134,7 +134,11 @@ describe('Activity', () => {
     expect(activity1.calculateAvgWeeklyMinActive(userData[0])).to.equal('75.71');
   });
 
-  it.only('should be able to calculate if the user reached their step goal on a specific date', () => {
+  it('should be able to calculate if the user reached their step goal on a specific date', () => {
     expect(activity1.calculateStepGoal(userData[0])).to.equal('60.00');
+  });
+
+  it.only('should be able to calculate if the user exceeded their step goal on any date', () => {
+    expect(activity1.calculateDaysExceededStepGoal(userData[0])).to.equal('You exceeded your step goal 1 day(s)');
   });
 });
