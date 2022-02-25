@@ -36,7 +36,6 @@ const addSleepData = () => {
 }
 getAllFetch();
 
-
 const addHydrationData = () => {
   fetch(hydrationData, {
     method: 'POST',
@@ -75,7 +74,6 @@ const addActivityData = () => {
 }
 getAllFetch();
 
-
 const displayError = (error) => {
   console.log(error,"errrrrror")
   console.log(error.message)
@@ -83,6 +81,15 @@ const displayError = (error) => {
     errorTag.innerText = "OPPS, SORRY! Something went wrong!";
   } else {
     errorTag.innerText = error.message;
+  }
+}
+
+const checkErrors = (response) => {
+  console.log(response,"resssponse")
+  if (!response.ok) {
+    throw new Error("Please make sure all fields are filled up!!!")
+  } else {
+    response.json()
   }
 }
 
