@@ -100,7 +100,7 @@ describe('Activity', () => {
   },
   {
     "userID": 2,
-    "date": '2022/02/01',
+    "date": '2022/02/07',
     "numSteps": 9000,
     "minutesActive": 100,
     "flightsOfStairs": 16,
@@ -142,8 +142,19 @@ describe('Activity', () => {
     expect(activity1.calculateDaysExceededStepGoal(userData[0])).to.equal('You exceeded your step goal 1 day(s)');
   });
 
-  it.only('should be able to calculate a users all-time stair climbing record', () => {
+  it('should be able to calculate a users all-time stair climbing record', () => {
     expect(activity1.showClimbingRecord(userData[0])).to.equal(20);
   });
 
+  it('should be able to calculate average stairs climbed for all users on a specific date', () => {
+    expect(activity1.calculateAllUserAvgStairClimb(userData[0])).to.equal(14);
+  });
+
+  it('should be able to calculate average steps taken for all users on a specific date', () => {
+    expect(activity1.calculateAllUserAvgSteps(userData[0])).to.equal(7500);
+  });
+
+  it('should be able to calculate average minutes active for all users on a specific date', () => {
+    expect(activity1.calculateAllUserAvgMinActive(userData[0])).to.equal(80);
+  });
 });
