@@ -37,6 +37,25 @@ const addSleepData = () => {
 getAllFetch();
 
 
+const addHydrationData = () => {
+  fetch(hydrationData, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      "userID": enterID,
+      "date": enterDate,
+      "numOunces": enterNumOunces,
+    })
+  })
+  .then(response => {
+    return checkErrors(response)
+  })
+  .then(data => addHydrationToPage(data))
+  .catch((error) => displayError(error))
+}
+getAllFetch();
+
+
 const displayError = (error) => {
   console.log(error,"errrrrror")
   console.log(error.message)
