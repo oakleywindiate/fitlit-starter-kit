@@ -12,14 +12,14 @@ const sleepAvg = document.querySelector('#sleepAvg')
 const allTimeHours = document.querySelector('#allTimeHours')
 const allTimeQuality = document.querySelector('#allTimeQuality')
 const waterWeek = document.querySelector('#waterWeek')
-const ticker = document.querySelector('.ticker')
-  , list = document.querySelector('.ticker-list')
-const ticker1 = document.querySelector('#ticker-item1')
-const ticker2 = document.querySelector('#ticker-item1')
-const ticker3 = document.querySelector('#ticker-item1')
-const ticker4 = document.querySelector('#ticker-item1')
-const ticker5 = document.querySelector('#ticker-item1')
-const ticker6 = document.querySelector('#ticker-item1')
+const ticker = document.querySelector('#ticker')
+  // , list = document.querySelector('#ticker-list')
+const ticker1 = document.querySelector('#tickerItem1')
+const ticker2 = document.querySelector('#tickerItem2')
+const ticker3 = document.querySelector('#tickerItem3')
+const ticker4 = document.querySelector('#tickerItem4')
+const ticker5 = document.querySelector('#tickerItem5')
+const ticker6 = document.querySelector('#tickerItem6')
 
 // --------- FUNCTIONS ---------
 
@@ -43,11 +43,12 @@ const displayUserData = (userRepo, user1) => {
   userStepAverage.innerText = user1.stepComparison(userRepo, user1)
 }
 
-const displayTickerItems = () => {
-  ticker1.innerText = ''
-  ticker2.innerText = ''
+const displayTickerItems = (sleepSevenDay, sleepQualityWeek) => {
+  console.log(ticker1)
+  ticker1.innerText = sleepSevenDay
+  ticker2.innerText = sleepQualityWeek
   ticker3.innerText = ''
   ticker4.innerText = ''
-  ticker5.innerText = ''
+  ticker5.innerText = 'karate'
   ticker6.innerText = ''
 }
