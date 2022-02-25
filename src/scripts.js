@@ -1,7 +1,7 @@
 // --------- IMPORTS ---------
 
 import './css/styles.css';
-import { userData, sleepData, hydrationData, activityData } from './apiCalls.js'
+import { userData, sleepData, hydrationData, activityData, getAllFetch } from './apiCalls.js'
 import './images/turing-logo.png'
 import { Chart, registerables } from 'chart.js';
 Chart.register(...registerables);
@@ -17,9 +17,9 @@ import {displayHydroData, displaySleepData, displayUserData} from './domUpdates.
 // --------- FUNCTIONS ---------
 
 const onLoad = () => {
+  getAllFetch();
   Promise.all([userData, sleepData, hydrationData, activityData])
   .then(data => classInstantiation(data))
-  .catch(error => console.log('Ops, error here!'))
 }
 
 const classInstantiation = (data) => {
