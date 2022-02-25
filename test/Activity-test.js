@@ -150,6 +150,9 @@ describe('Activity', () => {
     expect(activity1.calculateAllUserAvgStairClimb(userData[0])).to.equal(14);
   });
 
-  
+  it('should be able to calculate average steps taken for all users on a specific date', () => {
+    expect(activity1.calculateAllUserAvgSteps(userData[0])).to.equal(7500);
+  });
 
+  
 });

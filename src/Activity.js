@@ -44,16 +44,22 @@ class Activity {
   }
 
   calculateAllUserAvgStairClimb() {
-
     const findLatestLog = this.activityData.filter(data => data.date === this.activityData[this.activityData.length - 1].date)
     const findStairsClimbed = findLatestLog.reduce((acc, log) => {
       return acc += log.flightsOfStairs
     }, 0)
     return (findStairsClimbed / findLatestLog.length)
-
   }
 
-  
+  calculateAllUserAvgSteps() {
+    const findLatestLog = this.activityData.filter(data => data.date === this.activityData[this.activityData.length - 1].date)
+    const findStepsTaken = findLatestLog.reduce((acc, log) => {
+      return acc += log.numSteps
+    }, 0)
+    return (findStepsTaken / findLatestLog.length)
+  }
+
+
 }
 
 
