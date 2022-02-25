@@ -154,5 +154,7 @@ describe('Activity', () => {
     expect(activity1.calculateAllUserAvgSteps(userData[0])).to.equal(7500);
   });
 
-  
+  it('should be able to calculate average minutes active for all users on a specific date', () => {
+    expect(activity1.calculateAllUserAvgMinActive(userData[0])).to.equal(80);
+  });
 });

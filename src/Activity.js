@@ -59,13 +59,13 @@ class Activity {
     return (findStepsTaken / findLatestLog.length)
   }
 
-
+  calculateAllUserAvgMinActive() {
+    const findLatestLog = this.activityData.filter(data => data.date === this.activityData[this.activityData.length - 1].date)
+    const findMinActive = findLatestLog.reduce((acc, log) => {
+      return acc += log.minutesActive
+    }, 0)
+    return (findMinActive / findLatestLog.length)
+  }
 }
-
-
-// const reduceDays = findSevenDays.reduce((acc, day) => {
-//   return acc += day.minutesActive
-// }, 0)
-// return (reduceDays / 7).toFixed(2);
 
 export default Activity;
