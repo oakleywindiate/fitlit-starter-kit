@@ -10,9 +10,7 @@ import User from './User';
 import Hydration from './Hydration';
 import Sleep from './Sleep';
 import {hydrationChart, stepChart, sleepChart, foodChart} from './charts.js';
-import {displayHydroData, displaySleepData, displayUserData} from './domUpdates.js';
-
-
+import {displayHydroData, displaySleepData, displayUserData, displayTickerItems} from './domUpdates.js';
 
 // --------- FUNCTIONS ---------
 
@@ -27,6 +25,7 @@ const classInstantiation = (data) => {
   let hydroData = new Hydration(data[2].hydrationData)
   let sleepData = new Sleep(data[1].sleepData)
   let userRepo = new UserRepository(users)
+  console.log(userRepo)
   let user1 = userRepo.userData[getRandomIndex(userRepo.userData)]
   // manageData(data,  userRepo)
   manageHydroData(hydroData, user1)

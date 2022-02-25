@@ -1,4 +1,4 @@
-export {displayHydroData, displaySleepData, displayUserData};
+export {displayHydroData, displaySleepData, displayUserData, displayTickerItems};
 
 // --------- QUERY SELECTORS/VARIABLES ---------
 
@@ -12,6 +12,14 @@ const sleepAvg = document.querySelector('#sleepAvg')
 const allTimeHours = document.querySelector('#allTimeHours')
 const allTimeQuality = document.querySelector('#allTimeQuality')
 const waterWeek = document.querySelector('#waterWeek')
+const ticker = document.querySelector('.ticker')
+  , list = document.querySelector('.ticker-list')
+const ticker1 = document.querySelector('#ticker-item1')
+const ticker2 = document.querySelector('#ticker-item1')
+const ticker3 = document.querySelector('#ticker-item1')
+const ticker4 = document.querySelector('#ticker-item1')
+const ticker5 = document.querySelector('#ticker-item1')
+const ticker6 = document.querySelector('#ticker-item1')
 
 // --------- FUNCTIONS ---------
 
@@ -33,4 +41,13 @@ const displayUserData = (userRepo, user1) => {
   userAddress.innerText = user1.address
   userEmail.innerText = user1.email
   userStepAverage.innerText = user1.stepComparison(userRepo, user1)
+}
+
+const displayTickerItems = () => {
+  ticker1.innerText = ''
+  ticker2.innerText = ''
+  ticker3.innerText = ''
+  ticker4.innerText = ''
+  ticker5.innerText = ''
+  ticker6.innerText = ''
 }
