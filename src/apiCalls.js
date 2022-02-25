@@ -55,6 +55,26 @@ const addHydrationData = () => {
 }
 getAllFetch();
 
+const addActivityData = () => {
+  fetch(activityData, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      "userID": enterID,
+      "date": enterDate,
+      "flightsOfStairs": enterFlightsOfStairs,
+      "minutesActive": enterMinutesActive,
+      "numSteps": enterNumSteps,
+    })
+  })
+  .then(response => {
+    return checkErrors(response)
+  })
+  .then(data => addActivityToPage(data))
+  .catch((error) => displayError(error))
+}
+getAllFetch();
+
 
 const displayError = (error) => {
   console.log(error,"errrrrror")
