@@ -25,7 +25,6 @@ const classInstantiation = (data) => {
   let hydroData = new Hydration(data[2].hydrationData)
   let sleepData = new Sleep(data[1].sleepData)
   let userRepo = new UserRepository(users)
-  console.log(userRepo)
   let user1 = userRepo.userData[getRandomIndex(userRepo.userData)]
   // manageData(data,  userRepo)
   manageHydroData(hydroData, user1)
@@ -51,7 +50,8 @@ const manageSleepData = (sleepData, user1) => {
   let sleepQualityWeek = sleepData.show7DaysSlQuality(user1.id)
   let sleepDailyAverage = sleepData.calculateDailySleepAvg(user1.id)
   let sleepQualityAverage = sleepData.calculateDailySlQualityAvg(user1.id)
-  displaySleepData(sleepSevenDay, sleepQualityWeek, sleepQualityAverage, sleepDailyAverage)
+  displayTickerItems(sleepSevenDay, sleepQualityWeek)
+  displaySleepData(sleepQualityAverage, sleepDailyAverage)
   sleepChart(ctx3, dailySleep, sleepQuality)
 }
 

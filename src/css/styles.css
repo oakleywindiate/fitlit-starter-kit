@@ -82,7 +82,7 @@ li {
 }
 
 .grid {
-  gap: 10%;
+  /* gap: 10%; */
   padding-left: 5%;
   display: flex;
   flex-wrap: wrap;
@@ -119,13 +119,17 @@ li {
 .ticker {
   overflow: hidden;
   display: flex;
-  width: 100vw;
+  height: 10vh;
+  width: 100vh;
 }
 .ticker-list {
   display: flex;
   overflow: hidden;
-  margin-top: 20px;
-  white-space: nowrap;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  white-space: normal;
   animation: ticker 20s infinite linear;
 }
 .ticker:hover .ticker-list {
@@ -133,8 +137,13 @@ li {
 }
 .ticker-item {
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
   margin-right: 20px;
   background-color: #73ded7;
+  text-align: center;
   height: 75px;
   width: 300px;
 }
