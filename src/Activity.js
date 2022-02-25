@@ -42,7 +42,24 @@ class Activity {
     const sortUser = findUser.sort((a, b) => b.flightsOfStairs - a.flightsOfStairs)
     return sortUser[0].flightsOfStairs;
   }
+
+  calculateAllUserAvgStairClimb() {
+
+    const findLatestLog = this.activityData.filter(data => data.date === this.activityData[this.activityData.length - 1].date)
+    const findStairsClimbed = findLatestLog.reduce((acc, log) => {
+      return acc += log.flightsOfStairs
+    }, 0)
+    return (findStairsClimbed / findLatestLog.length)
+
+  }
+
+  
 }
 
+
+// const reduceDays = findSevenDays.reduce((acc, day) => {
+//   return acc += day.minutesActive
+// }, 0)
+// return (reduceDays / 7).toFixed(2);
 
 export default Activity;
