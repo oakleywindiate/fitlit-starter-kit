@@ -123,13 +123,16 @@ li {
 }
 .ticker-list {
   display: flex;
+  overflow: hidden;
   margin-top: 20px;
-  animation: ticker 15s infinite linear;
+  white-space: nowrap;
+  animation: ticker 20s infinite linear;
 }
 .ticker:hover .ticker-list {
   animation-play-state: paused;
 }
 .ticker-item {
+  overflow: hidden;
   margin-right: 20px;
   background-color: #73ded7;
   height: 75px;
@@ -138,6 +141,6 @@ li {
 
 @keyframes ticker {
   100% {
-    transform: translateX(-100%); /*try changing this to -100vw*/
+    transform: translateX(-100vw);
   }
 }
