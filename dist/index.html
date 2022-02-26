@@ -98,13 +98,35 @@
         </section>
         <section class='friends-section' id='friendsSection'>
           <section class=input-section hidden>
-            <form>
-              <label for="hydration">Ounces:</label>
-              <input type="text" id="inputOunces">
-              <label for="activity">Activity:</label>
-              <input type="text" id="activityInput">
-              <label for="sleep">Sleep:</label>
-              <input type="text" id="sleepInput">
+            <form class="hydration-form" id=hydrationForm hidden>
+              <label for="userId">User ID:</label>
+              <input type="text" id="hydrationIdInput">
+              <label for="date">Date:</label>
+              <input type="text" placeholder="YYYY/MM/DD" id="hydrationDateInput">
+              <label for="numOunces">Number of Ounces:</label>
+              <input type="text" id="hydrationOuncesInput">
+            </form>
+            <form class="sleep-form" id=sleepForm hidden>
+              <label for="userId">User ID:</label>
+              <input type="text" id="sleepIdInput">
+              <label for="date">Date:</label>
+              <input type="text" placeholder="YYYY/MM/DD" id="sleepDateInput">
+              <label for="hoursSlept">Hours Slept:</label>
+              <input type="text" id="sleepHoursInput">
+              <label for="qualitySleep">Quality of Sleep:</label>
+              <input type="text" placeholder="1 - 10" id="sleepQualityInput">
+            </form>
+            <form class="activity-form" id=activityForm hidden>
+              <label for="userId">User ID:</label>
+              <input type="text" id="sleepId">
+              <label for="date">Date:</label>
+              <input type="text" placeholder="YYYY/MM/DD" id="sleepDate">
+              <label for="numSteps">Number of Steps:</label>
+              <input type="text" id="numStepsInput">
+              <label for="minutesActive">Minutes Active:</label>
+              <input type="text" id="sleepQualityInput">
+              <label for="flightsOfStairs">Flights of Stairs:</label>
+              <input type="text" id="flightsOfStairsInput">
             </form>
           </section>
         </section>
