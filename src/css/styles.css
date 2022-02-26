@@ -23,7 +23,7 @@ header {
 }
 
 .hidden {
- display: none;
+  display: none;
 }
 
 .title-and-welcome {
@@ -118,7 +118,6 @@ button:hover{
 
 .input-section {
   width: 30vw;
-  margin-top: -10em;
 }
 
 form {
