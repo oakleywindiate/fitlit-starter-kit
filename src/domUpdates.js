@@ -9,9 +9,9 @@ const welcomeBanner = document.querySelector('#welcomeBanner')
 const userStepAverage = document.querySelector('#userStepAverage')
 const sleepWeek = document.querySelector('#sleepWeek')
 const sleepAvg = document.querySelector('#sleepAvg')
-const allTimeHours = document.querySelector('#allTimeHours')
-const allTimeQuality = document.querySelector('#allTimeQuality')
-const waterWeek = document.querySelector('#waterWeek')
+// const allTimeHours = document.querySelector('#allTimeHours')
+// const allTimeQuality = document.querySelector('#allTimeQuality')
+// const waterWeek = document.querySelector('#waterWeek')
 const ticker = document.querySelector('#ticker')
   // , list = document.querySelector('#ticker-list')
 const ticker1 = document.querySelector('#tickerItem1')
@@ -30,8 +30,8 @@ const displayHydroData = (h2oSevenDay) => {
 const displaySleepData = (sleepSevenDay, sleepQualityWeek, sleepQualityAverage, sleepDailyAverage) => {
   sleepWeek.innerText = `Hours Slept Per Day This Week: ${sleepSevenDay}`
   sleepAvg.innerText = `Sleep Quality Per Day This Week: ${sleepQualityWeek}`
-  allTimeQuality.innerText = `All Time Average Sleep Quality: ${sleepQualityAverage}`
-  allTimeHours.innerText = `All Time Average Sleep Hours: ${sleepDailyAverage}`
+  // allTimeQuality.innerText = `All Time Average Sleep Quality: ${sleepQualityAverage}`
+  // allTimeHours.innerText = `All Time Average Sleep Hours: ${sleepDailyAverage}`
 }
 
 const displayUserData = (userRepo, user1) => {
