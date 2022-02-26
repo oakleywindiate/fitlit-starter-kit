@@ -26,7 +26,9 @@ const sleepQualityInput = document.querySelector('#sleepQualityInput')
 
 const activityIdInput = document.querySelector('#activityIdInput')
 const activityDateInput = document.querySelector('#activityDateInput')
-const activityOuncesInput = document.querySelector('#activityOuncesInput')
+const activityNumStepsInput = document.querySelector('#numStepsInput')
+const activityMinutesActiveInput = document.querySelector('#minutesActiveInput')
+const activityFlightsOfStairsInput = document.querySelector('#flightsOfStairsInput')
 
 // --------- FUNCTIONS ---------
 
