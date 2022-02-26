@@ -91,20 +91,45 @@
             <li class='user-data' id='userStepAverage'>Compare User Steps</li>
           </ul>
         </section>
-        <section class=button-section id='buttonSection'>
+        <section class="button-section" id='buttonSection'>
           <button class='hydration-data' id='hydrationData'>Enter Hydration Data</button>
           <button class='activity-data'id='activityData'>Enter Activity Data</button>
           <button class='sleep-data'id='sleepData'>Enter Sleep Data</button>
         </section>
         <section class='friends-section' id='friendsSection'>
-          <section class=input-section hidden>
-            <form>
-              <label for="hydration">Ounces:</label>
-              <input type="text" id="inputOunces">
-              <label for="activity">Activity:</label>
-              <input type="text" id="activityInput">
-              <label for="sleep">Sleep:</label>
-              <input type="text" id="sleepInput">
+          <section class="input-section">
+            <form class="hydration-form hidden" id="hydrationForm">
+              <label for="userId">User ID:</label>
+              <input type="text" id="hydrationIdInput">
+              <label for="date">Date:</label>
+              <input type="text" placeholder="YYYY/MM/DD" id="hydrationDateInput">
+              <label for="numOunces">Number of Ounces:</label>
+              <input type="text" id="hydrationOuncesInput">
+              <input type="submit" value="Submit">
+            </form>
+            <form class="sleep-form hidden" id="sleepForm">
+              <label for="userId">User ID:</label>
+              <input type="text" id="sleepIdInput">
+              <label for="date">Date:</label>
+              <input type="text" placeholder="YYYY/MM/DD" id="sleepDateInput">
+              <label for="hoursSlept">Hours Slept:</label>
+              <input type="text" id="sleepHoursInput">
+              <label for="qualitySleep">Quality of Sleep:</label>
+              <input type="text" placeholder="1 - 10" id="sleepQualityInput">
+              <input type="submit" value="Submit">
+            </form>
+            <form class="activity-form hidden" id="activityForm">
+              <label for="userId">User ID:</label>
+              <input type="text" id="activityIdInput">
+              <label for="date">Date:</label>
+              <input type="text" placeholder="YYYY/MM/DD" id="activityDateInput">
+              <label for="numSteps">Number of Steps:</label>
+              <input type="text" id="numStepsInput">
+              <label for="minutesActive">Minutes Active:</label>
+              <input type="text" id="minutesActiveInput">
+              <label for="flightsOfStairs">Flights of Stairs:</label>
+              <input type="text" id="flightsOfStairsInput">
+              <input type="submit" value="Submit">
             </form>
           </section>
         </section>
