@@ -11,7 +11,7 @@ import Hydration from './Hydration';
 import Sleep from './Sleep';
 import Activity from './Activity';
 import {hydrationChart, stepChart, sleepChart, foodChart} from './charts.js';
-import {displayHydroData, displaySleepData, displayUserData, displaySleepTicker, displayHydroTicker, displayActivityTicker} from './domUpdates.js';
+import {displayHydroData, displayUserData, displaySleepTicker, displayHydroTicker, displayActivityTicker} from './domUpdates.js';
 
 // --------- FUNCTIONS ---------
 
@@ -51,7 +51,6 @@ const manageSleepData = (sleepData, user1) => {
   let sleepDailyAverage = sleepData.calculateDailySleepAvg(user1.id)
   let sleepQualityAverage = sleepData.calculateDailySlQualityAvg(user1.id)
   displaySleepTicker(sleepSevenDay, sleepQualityWeek)
-  displaySleepData(sleepQualityAverage, sleepDailyAverage)
   sleepChart(ctx3, dailySleep, sleepQuality)
 }
 
@@ -69,8 +68,7 @@ const manageActivityData = (data, user) => {
   foodChart(ctx4)
 }
 
-// const hydroButton = document.querySelector('hydrationData')
-// const activityButton = document.querySelector('activityData')
+
 const buttonSection = document.querySelector('#buttonSection')
 
 const openForm = () => {
