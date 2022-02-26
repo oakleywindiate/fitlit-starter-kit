@@ -109,11 +109,16 @@ button {
  height: 6vh;
  font-family: 'Assistant', sans-serif;
  font-size: 2em;
+ cursor: pointer;
+}
+
+button:hover{
+   transform: scale(1.1);
 }
 
 .input-section {
   width: 30vw;
-  margin-top: -5em;
+  margin-top: -10em;
 }
 
 form {
