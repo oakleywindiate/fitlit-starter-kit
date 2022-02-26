@@ -1,4 +1,4 @@
-export {displayHydroData, displaySleepData, displayUserData, displayTickerItems};
+export {displayHydroData, displaySleepData, displayUserData, displaySleepTicker, displayHydroTicker, displayActivityTicker};
 
 // --------- QUERY SELECTORS/VARIABLES ---------
 
@@ -43,12 +43,19 @@ const displayUserData = (userRepo, user1) => {
   userStepAverage.innerText = user1.stepComparison(userRepo, user1)
 }
 
-const displayTickerItems = (sleepSevenDay, sleepQualityWeek) => {
-  console.log(ticker1)
-  ticker1.innerText = sleepSevenDay
-  ticker2.innerText = sleepQualityWeek
-  ticker3.innerText = ''
-  ticker4.innerText = ''
+const displaySleepTicker = (sleepSevenDay, sleepQualityWeek) => {
+  ticker1.innerText = `7 day sleep hours by day = ${sleepSevenDay}`
+  ticker2.innerText = `7 day sleep hours by day = ${sleepQualityWeek}`
   ticker5.innerText = 'karate'
   ticker6.innerText = ''
+}
+
+const displayHydroTicker = (h2oSevenDay) => {
+  ticker3.innerText = `Ounces of water drank past 7 days = ${h2oSevenDay}`
+}
+
+const displayActivityTicker = (dailyMiles, avgUserSteps, avgUserMinActive, avgUserStairsClimbed) => {
+ticker4.innerText = `You walked ${dailyMiles} miles today!`
+ticker5.innerText = `The average user took ${avgUserSteps} steps, climbed ${avgUserStairsClimbed} flights and was active for ${avgUserMinActive} mins today.`
+ticker6.innerText = ''
 }
