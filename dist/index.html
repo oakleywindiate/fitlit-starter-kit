@@ -81,37 +81,6 @@
           	<path style="opacity:0.23;fill:#F2F2F2;enable-background:new    ;" d="M356.121,158.79c0,48.3-21.56,91.56-55.59,120.68v0.01
           		c-27.75,23.75-63.8,38.1-103.2,38.1c-19.26,0-37.73-3.43-54.81-9.72l8.41-16.17l39.93-76.74h0.01l12.13-23.33h0.01l52.93-101.73
           		l32.01-61.51C329.151,57.06,356.121,104.78,356.121,158.79z"/>
-          </g>
-          <g>
-          </g>
-          <g>
-          </g>
-          <g>
-          </g>
-          <g>
-          </g>
-          <g>
-          </g>
-          <g>
-          </g>
-          <g>
-          </g>
-          <g>
-          </g>
-          <g>
-          </g>
-          <g>
-          </g>
-          <g>
-          </g>
-          <g>
-          </g>
-          <g>
-          </g>
-          <g>
-          </g>
-          <g>
-          </g>
           </svg>
           <div class='profile-move'>
           </div>
@@ -121,6 +90,21 @@
             <li class='user-data' id='userEmail'>User Email</li>
             <li class='user-data' id='userStepAverage'>Compare User Steps</li>
           </ul>
+        </section>
+        <section class=button-section>
+          <button class='hydration-data'>Enter Hydration Data</button>
+          <button class='activity-data'>Enter Activity Data</button>
+          <button class='sleep-data'>Enter Sleep Data</button>
+        </section>
+        <section class=input-section hidden>
+          <form>
+            <label for="hydration">Ounces:</label>
+            <input type="text" id="inputOunces">
+            <label for="activity">Activity:</label>
+            <input type="text" id="activityInput">
+            <label for="sleep">Sleep:</label>
+            <input type="text" id="sleepInput">
+          </form>
         </section>
         <section class='friends-section' id='friendsSection'>
           <h3 class='friends-list' id='friendsList'>Weekly Data</h3>
@@ -137,6 +121,14 @@
     <section class='grid' id='grid'>
       <div class='col'>
         <section class='user-hydration' id='userHydration'>
+          <?xml version="1.0" encoding="iso-8859-1"?>
+          <svg id='waterGlass' version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+          <polygon style="fill:#46B6DB;" points="375.783,512 136.217,512 71.434,0 440.566,0 "/>
+          <polygon style="fill:#2CA2C9;" points="426.108,0 362.949,499.177 134.593,499.177 136.217,512 375.783,512 440.566,0 "/>
+          <polygon style="fill:#CAF0FB;" points="351.198,459.461 160.796,459.461 109.314,52.534 402.686,52.534 "/>
+          <polygon style="fill:#3892B0;" points="135.076,256.162 160.796,459.461 351.198,459.461 376.924,256.162 "/>
+          </svg>
           <img class='hydration-icon' id='HydrationIcon' alt=''>
           <canvas class='chart-container' id="myChart1" height='20%'></canvas>
           <h3 class='hydration' id='hydration'></h3>
@@ -187,37 +179,6 @@
           <path style="fill:#FFE77C;" d="M211.478,125.125c-7.959,5.328-17.528,8.44-27.826,8.44c-27.662,0-50.087-22.424-50.087-50.087
           	s22.424-50.087,50.087-50.087c10.298,0,19.867,3.111,27.826,8.44c-13.422,8.986-22.261,24.282-22.261,41.647
           	S198.056,116.139,211.478,125.125z"/>
-          <g>
-          </g>
-          <g>
-          </g>
-          <g>
-          </g>
-          <g>
-          </g>
-          <g>
-          </g>
-          <g>
-          </g>
-          <g>
-          </g>
-          <g>
-          </g>
-          <g>
-          </g>
-          <g>
-          </g>
-          <g>
-          </g>
-          <g>
-          </g>
-          <g>
-          </g>
-          <g>
-          </g>
-          <g>
-          </g>
-          </svg>
         </img>
           <img class='sleep-icon' id='sleepIcon' alt=''>
           <canvas id="myChart3"></canvas>

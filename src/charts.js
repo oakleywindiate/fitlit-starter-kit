@@ -19,7 +19,7 @@ const hydrationChart = (ctx, h2oAvg, h2oToday) =>    {
           }]
       },
       options: {
-          cutout: 130,
+          cutout: 120,
           borderWidth: 1,
           borderColor: '#000000',
           hoverOffset: 0,
@@ -55,7 +55,7 @@ const stepChart = (ctx2, data) => {
           }]
       },
       options: {
-          cutout: 130,
+          cutout: 120,
           borderWidth: 1,
           borderColor: '#000000',
           hoverOffset: 0,
@@ -91,7 +91,7 @@ const sleepChart = (ctx3, dailySleep, sleepQuality) => {
           }]
       },
       options: {
-          cutout: 130,
+          cutout: 120,
           borderWidth: 1,
           borderColor: '#000000',
           hoverOffset: 0,
@@ -127,7 +127,7 @@ const foodChart = (ctx4, data) => {
           }]
       },
       options: {
-          cutout: 130,
+          cutout: 120,
           borderWidth: 1,
           borderColor: '#000000',
           hoverOffset: 0,
