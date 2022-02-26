@@ -18,7 +18,6 @@ const ticker5 = document.querySelector('#tickerItem5')
 const ticker6 = document.querySelector('#tickerItem6')
 
 // --------- FUNCTIONS ---------
-
 const displayHydroData = (h2oSevenDay) => {
   waterWeek.innerText = `Water Consumed Per Day This Week: ${h2oSevenDay}`
 }

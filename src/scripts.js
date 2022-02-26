@@ -1,5 +1,4 @@
 // --------- IMPORTS ---------
-
 import './css/styles.css';
 import { userData, sleepData, hydrationData, activityData, getAllFetch } from './apiCalls.js'
 import './images/turing-logo.png'
@@ -12,6 +11,22 @@ import Sleep from './Sleep';
 import Activity from './Activity';
 import {hydrationChart, stepChart, sleepChart, foodChart} from './charts.js';
 import {displayHydroData, displayUserData, displaySleepTicker, displayHydroTicker, displayActivityTicker} from './domUpdates.js';
+
+//----------QUERY-SELECTORS------
+const buttonSection = document.querySelector('#buttonSection')
+
+const hydrationIdInput = document.querySelector('#hydrationIdInput')
+const hydrationDateInput = document.querySelector('#hydrationDateInput')
+const hydrationOuncesInput = document.querySelector('#hydrationOuncesInput')
+
+const sleepIdInput = document.querySelector('#sleepIdInput')
+const sleepDateInput = document.querySelector('#sleepDateInput')
+const sleepHoursInput = document.querySelector('#sleepHoursInput')
+const sleepQualityInput = document.querySelector('#sleepQualityInput')
+
+const activityIdInput = document.querySelector('#activityIdInput')
+const activityDateInput = document.querySelector('#activityDateInput')
+const activityOuncesInput = document.querySelector('#activityOuncesInput')
 
 // --------- FUNCTIONS ---------
 
@@ -62,14 +77,11 @@ const manageActivityData = (data, user) => {
   let avgUserSteps = activityData.calculateAllUserAvgSteps()
   let avgUserMinActive = activityData.calculateAllUserAvgMinActive()
   let avgUserStairsClimbed = activityData.calculateAllUserAvgStairClimb()
-  // console.log(avgUserStairsClimbed)
   displayActivityTicker(dailyMiles, avgUserSteps, avgUserMinActive, avgUserStairsClimbed)
   stepChart(ctx2, data[3])
   foodChart(ctx4)
 }
 
-
-const buttonSection = document.querySelector('#buttonSection')
 
 const openForm = () => {
   if (event.target.className == 'hydration-data' ) {
@@ -84,9 +96,17 @@ const openForm = () => {
   }
 }
 
-function getRandomIndex(array) {
-    return Math.floor(Math.random() * array.length);
-};
+const manageHydroInputs = () => {
+
+}
+
+const manageSleepInputs = () => {
+
+}
+
+const manageActivityInputs = () => {
+
+}
 
 function show(section) {
   section.classList.remove('hidden')
@@ -95,6 +115,10 @@ function show(section) {
 function hide(section) {
   section.classList.add('hidden')
 }
+
+function getRandomIndex(array) {
+    return Math.floor(Math.random() * array.length);
+};
 
 window.addEventListener('load', onLoad)
 window.addEventListener('click', openForm)
