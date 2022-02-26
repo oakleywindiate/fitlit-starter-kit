@@ -91,30 +91,22 @@
             <li class='user-data' id='userStepAverage'>Compare User Steps</li>
           </ul>
         </section>
-        <section class=button-section>
-          <button class='hydration-data'>Enter Hydration Data</button>
-          <button class='activity-data'>Enter Activity Data</button>
-          <button class='sleep-data'>Enter Sleep Data</button>
-        </section>
-        <section class=input-section hidden>
-          <form>
-            <label for="hydration">Ounces:</label>
-            <input type="text" id="inputOunces">
-            <label for="activity">Activity:</label>
-            <input type="text" id="activityInput">
-            <label for="sleep">Sleep:</label>
-            <input type="text" id="sleepInput">
-          </form>
+        <section class=button-section id='buttonSection'>
+          <button class='hydration-data' id='hydrationData'>Enter Hydration Data</button>
+          <button class='activity-data'id='activityData'>Enter Activity Data</button>
+          <button class='sleep-data'id='sleepData'>Enter Sleep Data</button>
         </section>
         <section class='friends-section' id='friendsSection'>
-          <h3 class='friends-list' id='friendsList'>Weekly Data</h3>
-          <ul>
-            <li class='user-data' id='sleepWeek'>Sleep hrs/quality per day</li>
-            <li class='user-data' id='sleepAvg'>Average Sleep Quality</li>
-            <li class='user-data' id='allTimeHours'>All Time Sleep Hours</li>
-            <li class='user-data' id='allTimeQuality'>All Time Sleep Quality</li>
-            <li class='user-data' id='waterWeek'>Water oz per day</li>
-          </ul>
+          <section class=input-section hidden>
+            <form>
+              <label for="hydration">Ounces:</label>
+              <input type="text" id="inputOunces">
+              <label for="activity">Activity:</label>
+              <input type="text" id="activityInput">
+              <label for="sleep">Sleep:</label>
+              <input type="text" id="sleepInput">
+            </form>
+          </section>
         </section>
       </section>
     </section>

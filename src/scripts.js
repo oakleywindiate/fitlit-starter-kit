@@ -11,7 +11,7 @@ import Hydration from './Hydration';
 import Sleep from './Sleep';
 import Activity from './Activity';
 import {hydrationChart, stepChart, sleepChart, foodChart} from './charts.js';
-import {displayHydroData, displaySleepData, displayUserData, displaySleepTicker, displayHydroTicker, displayActivityTicker} from './domUpdates.js';
+import {displayHydroData, displayUserData, displaySleepTicker, displayHydroTicker, displayActivityTicker} from './domUpdates.js';
 
 // --------- FUNCTIONS ---------
 
@@ -51,7 +51,6 @@ const manageSleepData = (sleepData, user1) => {
   let sleepDailyAverage = sleepData.calculateDailySleepAvg(user1.id)
   let sleepQualityAverage = sleepData.calculateDailySlQualityAvg(user1.id)
   displaySleepTicker(sleepSevenDay, sleepQualityWeek)
-  displaySleepData(sleepQualityAverage, sleepDailyAverage)
   sleepChart(ctx3, dailySleep, sleepQuality)
 }
 
@@ -69,8 +68,33 @@ const manageActivityData = (data, user) => {
   foodChart(ctx4)
 }
 
+
+const buttonSection = document.querySelector('#buttonSection')
+
+const openForm = () => {
+  if (event.target.className == 'hydration-data' ) {
+
+    console.log('hydro')
+  }
+  else if (event.target.className == 'activity-data' ) {
+    console.log('activity')
+  }
+  else if (event.target.className == 'sleep-data' ) {
+    console.log('sleep')
+  }
+}
+
 function getRandomIndex(array) {
     return Math.floor(Math.random() * array.length);
 };
 
+function show(section) {
+  section.classList.remove('hidden')
+}
+
+function hide(section) {
+  section.classList.add('hidden')
+}
+
 window.addEventListener('load', onLoad)
+window.addEventListener('click', openForm)
