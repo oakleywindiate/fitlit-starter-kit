@@ -16,7 +16,7 @@ class User {
 
   stepComparison(userRepo, user1) {
     const average = userRepo.averageStepGoal();
-    const result = (user1.dailyStepGoal - average) / user1.dailyStepGoal;
+    const result = ((user1.dailyStepGoal - average) / user1.dailyStepGoal).toFixed(2);
     return `Your daily step goal is ${result}% above the average user!`;
   }
 }
