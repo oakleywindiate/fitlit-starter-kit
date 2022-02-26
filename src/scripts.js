@@ -9,8 +9,9 @@ import UserRepository from './UserRepository';
 import User from './User';
 import Hydration from './Hydration';
 import Sleep from './Sleep';
+import Activity from './Activity';
 import {hydrationChart, stepChart, sleepChart, foodChart} from './charts.js';
-import {displayHydroData, displaySleepData, displayUserData, displayTickerItems} from './domUpdates.js';
+import {displayHydroData, displaySleepData, displayUserData, displaySleepTicker, displayHydroTicker, displayActivityTicker} from './domUpdates.js';
 
 // --------- FUNCTIONS ---------
 
@@ -26,11 +27,10 @@ const classInstantiation = (data) => {
   let sleepData = new Sleep(data[1].sleepData)
   let userRepo = new UserRepository(users)
   let user1 = userRepo.userData[getRandomIndex(userRepo.userData)]
-  // manageData(data,  userRepo)
   manageHydroData(hydroData, user1)
   manageSleepData(sleepData, user1)
   displayUserData(userRepo, user1)
-  manageActivityData(data)
+  manageActivityData(data, user1)
 }
 
 const manageHydroData = (hydroData, user1) => {
@@ -38,7 +38,7 @@ const manageHydroData = (hydroData, user1) => {
   let h2oAvg = hydroData.calculateDailyDrinkAvg(user1.id)
   let h2oToday = hydroData.showDailyDrinkAmount(user1.id)
   let h2oSevenDay = hydroData.show7DaysDrinkAmount(user1.id)
-  displayHydroData(h2oSevenDay)
+  displayHydroTicker(h2oSevenDay)
   hydrationChart(ctx, h2oAvg, h2oToday)
 }
 
@@ -50,14 +50,21 @@ const manageSleepData = (sleepData, user1) => {
   let sleepQualityWeek = sleepData.show7DaysSlQuality(user1.id)
   let sleepDailyAverage = sleepData.calculateDailySleepAvg(user1.id)
   let sleepQualityAverage = sleepData.calculateDailySlQualityAvg(user1.id)
-  displayTickerItems(sleepSevenDay, sleepQualityWeek)
+  displaySleepTicker(sleepSevenDay, sleepQualityWeek)
   displaySleepData(sleepQualityAverage, sleepDailyAverage)
   sleepChart(ctx3, dailySleep, sleepQuality)
 }
 
-const manageActivityData = (data) => {
+const manageActivityData = (data, user) => {
   const ctx2 = document.getElementById('myChart2').getContext('2d');
   const ctx4 = document.getElementById('myChart4').getContext('2d');
+  const activityData = new Activity(data[3].activityData)
+  let dailyMiles = activityData.calculateMiles(user)
+  let avgUserSteps = activityData.calculateAllUserAvgSteps()
+  let avgUserMinActive = activityData.calculateAllUserAvgMinActive()
+  let avgUserStairsClimbed = activityData.calculateAllUserAvgStairClimb()
+  // console.log(avgUserStairsClimbed)
+  displayActivityTicker(dailyMiles, avgUserSteps, avgUserMinActive, avgUserStairsClimbed)
   stepChart(ctx2, data[3])
   foodChart(ctx4)
 }
