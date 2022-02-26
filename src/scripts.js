@@ -15,15 +15,18 @@ import {displayHydroData, displayUserData, displaySleepTicker, displayHydroTicke
 //----------QUERY-SELECTORS------
 const buttonSection = document.querySelector('#buttonSection')
 
+const hydrationForm = document.querySelector('#hydrationForm')
 const hydrationIdInput = document.querySelector('#hydrationIdInput')
 const hydrationDateInput = document.querySelector('#hydrationDateInput')
 const hydrationOuncesInput = document.querySelector('#hydrationOuncesInput')
 
+const sleepForm = document.querySelector('#sleepForm')
 const sleepIdInput = document.querySelector('#sleepIdInput')
 const sleepDateInput = document.querySelector('#sleepDateInput')
 const sleepHoursInput = document.querySelector('#sleepHoursInput')
 const sleepQualityInput = document.querySelector('#sleepQualityInput')
 
+const activityForm = document.querySelector('#activityForm')
 const activityIdInput = document.querySelector('#activityIdInput')
 const activityDateInput = document.querySelector('#activityDateInput')
 const activityNumStepsInput = document.querySelector('#numStepsInput')
@@ -87,14 +90,17 @@ const manageActivityData = (data, user) => {
 
 const openForm = () => {
   if (event.target.className == 'hydration-data' ) {
-
-    console.log('hydro')
+    show(hydrationForm)
+    hide(buttonSection)
+    // hydrationForm.classList.toggle("hidden");
   }
   else if (event.target.className == 'activity-data' ) {
-    console.log('activity')
+    show(sleepForm)
+    hide(buttonSection)
   }
   else if (event.target.className == 'sleep-data' ) {
-    console.log('sleep')
+    show(activityForm)
+    hide(buttonSection)
   }
 }
 
@@ -111,11 +117,11 @@ const manageActivityInputs = () => {
 }
 
 function show(section) {
-  section.classList.remove('hidden')
+  section.classList.toggle('hidden')
 }
 
 function hide(section) {
-  section.classList.add('hidden')
+  section.classList.toggle('hidden')
 }
 
 function getRandomIndex(array) {
