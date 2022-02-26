@@ -75,6 +75,7 @@ const buttonSection = document.querySelector('#buttonSection')
 
 const openForm = () => {
   if (event.target.className == 'hydration-data' ) {
+
     console.log('hydro')
   }
   else if (event.target.className == 'activity-data' ) {
@@ -88,6 +89,14 @@ const openForm = () => {
 function getRandomIndex(array) {
     return Math.floor(Math.random() * array.length);
 };
+
+function show(section) {
+  section.classList.remove('hidden')
+}
+
+function hide(section) {
+  section.classList.add('hidden')
+}
 
 window.addEventListener('load', onLoad)
 window.addEventListener('click', openForm)
