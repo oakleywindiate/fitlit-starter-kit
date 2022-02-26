@@ -69,8 +69,25 @@ const manageActivityData = (data, user) => {
   foodChart(ctx4)
 }
 
+// const hydroButton = document.querySelector('hydrationData')
+// const activityButton = document.querySelector('activityData')
+const buttonSection = document.querySelector('#buttonSection')
+
+const openForm = () => {
+  if (event.target.className == 'hydration-data' ) {
+    console.log('hydro')
+  }
+  else if (event.target.className == 'activity-data' ) {
+    console.log('activity')
+  }
+  else if (event.target.className == 'sleep-data' ) {
+    console.log('sleep')
+  }
+}
+
 function getRandomIndex(array) {
     return Math.floor(Math.random() * array.length);
 };
 
 window.addEventListener('load', onLoad)
+window.addEventListener('click', openForm)
