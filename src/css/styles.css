@@ -1,45 +1,57 @@
+/* GLOBAL RULES */
+
 * {
-  box-sizing: border-box;
+  font-family: 'Assistant', sans-serif;
+  /* box-sizing: border-box; */
 }
 
-body, html {
-  font-family: 'Assistant', sans-serif;
+html {
   height: 100%;
   width: auto;
-  margin: 0;
-  padding-bottom: 10%;
+  /* padding-bottom: 10%; */
+}
+
+body {
+  margin: 0px;
 }
 
 main {
   display: flex;
   overflow: hidden;
-  padding-left: 1%;
+  /* padding-left: 1%; */
 }
 
 header {
   background-color: #555B6E;
-  width: 100vw;
-  height: 7vh;
+  /* width: 100vw; */
+  height: 10vh;
 }
 
 .hidden {
   display: none;
 }
 
+/* SECTION RULES */
+
 .title-and-welcome {
-  padding-top: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding-top: 5px; */
   color: #FFF;
 }
 
 .activity-tracker-banner {
-  float: right;
+  margin-right: 1%;
+  /* float: right; */
 }
 
 .welcome-banner {
-  float: left;
-  margin-right: 30em;
-  margin-left: -3em;
+  /* float: left; */
+  /* margin-right: 30em; */
+  margin-left: 1%;
 }
+
 #userName {
   font-size: 2.5em;
 }
@@ -67,27 +79,22 @@ ul {
 }
 
 ul,
-h3 {
+h2 {
   margin-left: -6%;
   list-style: none;
   text-align: center;
   margin-top: 0;
 }
 
-h1 {
-  margin: 0px;
-  padding-left: 10%;
-}
-
 .user-info,
-.friends-section {
-  color: white;
-  margin-left: -5%;
+.data-and-friends-section {
+  color: #FFF;
+  /* margin-left: -5%; */
   display: flex;
   flex-direction: column;
   background: #6D9E9B;
   width: 33vw;
-  font-size: 1em;
+  font-size: 20px;
   align-items: center;
 }
 
@@ -102,12 +109,12 @@ button {
  background-color: #6D9E9B;
  border-style: none;
  margin-top: 1em;
- margin-left: -.5em;
+ /* margin-left: -.5em; */
  margin-bottom: 1em;
  padding-left: 3em;
  width: 100%;
  height: 6vh;
- font-family: 'Assistant', sans-serif;
+ /* font-family: 'Assistant', sans-serif; */
  font-size: 2em;
  cursor: pointer;
 }
@@ -125,48 +132,49 @@ form {
   flex-direction: column;
 }
 
-.friends-section {
-  height: 25vh;
+.data-and-friends-section {
+  height: 10vh;
 }
 
 .grid {
-  margin-top: -1.4em;
-  padding-left: 8%;
+  /* margin-top: -1.4em; */
+  /* padding-left: 8%; */
   display: flex;
   flex-wrap: wrap;
+
 }
 
 #myChart1,
 #myChart3 {
-  margin-left: -1em;
+  /* margin-left: -1em; */
 }
 
 #myChart2,
 #myChart4 {
-  margin-left: -1em;
+  /* margin-left: -1em; */
 }
 
 #myChart3,
 #myChart4 {
-  margin-top: -1.5em;
+  /* margin-top: -1.5em; */
 }
 
-.col {
+/* .col {
   width: 37%;
-}
+} */
 
-.background {
+/* .background {
   background-color: #FAF9F9;
   width: 100vw;
   height: 100vh;
   z-index: -1;
   position: fixed;
-}
+} */
 
 #Layer_1 {
   margin-top: 20px;
   margin-bottom: 15px;
-  width: 20vh;
+  width: 15vh;
 }
 
 #sleepPicture {
@@ -183,9 +191,9 @@ form {
   top: 23%;
 }
 
-.friends-list {
+/* .friends-list {
   margin-top: 25px;;
-}
+} */
 
 .ticker {
   overflow: hidden;
@@ -193,6 +201,7 @@ form {
   height: 10vh;
   width: auto;
 }
+
 .ticker-list {
   display: flex;
   overflow: hidden;
@@ -203,9 +212,11 @@ form {
   white-space: normal;
   animation: ticker 20s infinite linear;
 }
+
 .ticker:hover .ticker-list {
   animation-play-state: paused;
 }
+
 .ticker-item {
   /* overflow: hidden; */
   display: flex;

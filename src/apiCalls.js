@@ -1,3 +1,5 @@
+const errorTag = document.querySelector('.js-error');
+
 let userData;
 let sleepData;
 let hydrationData;
