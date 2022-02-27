@@ -38,15 +38,16 @@ const addSleepData = () => {
 }
 getAllFetch();
 
-const addHydrationData = () => {
-  fetch(hydrationData, {
+const addHydrationData = (hydroLog) => {
+  fetch('http://localhost:3001/api/v1/hydration', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      "userID": enterID,
-      "date": enterDate,
-      "numOunces": enterNumOunces,
-    })
+    body: JSON.stringify(hydroLog)
+    // {
+    //   "userID": enterID,
+    //   "date": enterDate,
+    //   "numOunces": enterNumOunces,
+    // })
   })
   .then(response => {
     return checkErrors(response)
@@ -94,5 +95,23 @@ const checkErrors = (response) => {
     response.json()
   }
 }
+
+const hydroForm = document.querySelector('#hydrationForm')
+
+const submitHydroData = (e) => {
+
+  e.preventDefault();
+  const formData = new FormData(e.target);
+  const hydroLog = {
+    userID: parseInt(formData.get('hydro-id')),
+    date: formData.get('date'),
+    numOunces: parseInt(formData.get('numOunces')),
+  };
+  console.log(hydroLog)
+  addHydrationData(hydroLog);
+  // e.target.reset();
+}
+
+hydroForm.addEventListener('submit', submitHydroData)
 
 export {userData, sleepData, hydrationData, activityData, getAllFetch}
