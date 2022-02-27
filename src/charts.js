@@ -68,7 +68,7 @@ const stepChart = (ctx2, data) => {
               font: {
                 size: 20
               },
-              text: "Steps",
+              text: "Activity",
               color: "#000000",
             }
           }
@@ -147,4 +147,5 @@ const foodChart = (ctx4, data) => {
       }
   });
 }
+
 export default Chart;
