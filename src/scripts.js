@@ -1,7 +1,9 @@
 // --------- IMPORTS ---------
 import './css/styles.css';
 import { userData, sleepData, hydrationData, activityData, getAllFetch } from './apiCalls.js'
-// import './images/turing-logo.png'
+import './images/water-svgrepo-com.png'
+import './images/beds-sleep-svgrepo-com.png'
+import './images/shoe-svgrepo-com.png'
 import { Chart, registerables } from 'chart.js';
 Chart.register(...registerables);
 import UserRepository from './UserRepository';
