@@ -140,7 +140,7 @@ form {
   /* margin-top: -1.4em; */
   /* padding-left: 8%; */
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 
 }
 
@@ -177,7 +177,7 @@ form {
   width: 15vh;
 }
 
-#sleepPicture {
+/* #sleepPicture {
   height: 17vh;
   position: absolute;
   right: 42.5%;
@@ -189,17 +189,27 @@ form {
   position: absolute;
   right: 43.5%;
   top: 23%;
-}
+} */
 
 /* .friends-list {
   margin-top: 25px;;
 } */
 
+
+img {
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  width: 10vh;
+  margin-left: 40%;
+}
+
 .ticker {
   overflow: hidden;
   display: flex;
-  height: 10vh;
+  height: 20vh;
   width: auto;
+  float: right;
 }
 
 .ticker-list {
@@ -229,7 +239,7 @@ form {
   font-weight: bold;
   text-align: center;
   /* padding: 8px; */
-  height: 75px;
+  height: 20vh;
   width: auto;
 }
 
