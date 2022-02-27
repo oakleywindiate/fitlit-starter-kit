@@ -91,7 +91,6 @@ const openForm = () => {
   if (event.target.className == 'hydration-data' ) {
     show(hydrationForm)
     hide(buttonSection)
-    // hydrationForm.classList.toggle("hidden");
   }
   else if (event.target.className == 'sleep-data' ) {
     show(sleepForm)
