@@ -94,11 +94,11 @@ const openForm = () => {
     hide(buttonSection)
     // hydrationForm.classList.toggle("hidden");
   }
-  else if (event.target.className == 'activity-data' ) {
+  else if (event.target.className == 'sleep-data' ) {
     show(sleepForm)
     hide(buttonSection)
   }
-  else if (event.target.className == 'sleep-data' ) {
+  else if (event.target.className == 'activity-data' ) {
     show(activityForm)
     hide(buttonSection)
   }
