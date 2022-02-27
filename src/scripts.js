@@ -1,7 +1,7 @@
 // --------- IMPORTS ---------
 import './css/styles.css';
 import { userData, sleepData, hydrationData, activityData, getAllFetch } from './apiCalls.js'
-import './images/turing-logo.png'
+// import './images/turing-logo.png'
 import { Chart, registerables } from 'chart.js';
 Chart.register(...registerables);
 import UserRepository from './UserRepository';
@@ -9,7 +9,7 @@ import User from './User';
 import Hydration from './Hydration';
 import Sleep from './Sleep';
 import Activity from './Activity';
-import {hydrationChart, stepChart, sleepChart, foodChart} from './charts.js';
+import {hydrationChart, activityChart, sleepChart} from './charts.js';
 import {displayHydroData, displayUserData, displaySleepTicker, displayHydroTicker, displayActivityTicker} from './domUpdates.js';
 
 //----------QUERY-SELECTORS------
@@ -76,17 +76,16 @@ const manageSleepData = (sleepData, user1) => {
 
 const manageActivityData = (data, user) => {
   const ctx2 = document.getElementById('myChart2').getContext('2d');
-  const ctx4 = document.getElementById('myChart4').getContext('2d');
+  // const ctx4 = document.getElementById('myChart4').getContext('2d');
   const activityData = new Activity(data[3].activityData)
   let dailyMiles = activityData.calculateMiles(user)
   let avgUserSteps = activityData.calculateAllUserAvgSteps()
   let avgUserMinActive = activityData.calculateAllUserAvgMinActive()
   let avgUserStairsClimbed = activityData.calculateAllUserAvgStairClimb()
   displayActivityTicker(dailyMiles, avgUserSteps, avgUserMinActive, avgUserStairsClimbed)
-  stepChart(ctx2, data[3])
-  foodChart(ctx4)
+  activityChart(ctx2, data[3])
+  // foodChart(ctx4)
 }
-
 
 const openForm = () => {
   if (event.target.className == 'hydration-data' ) {
