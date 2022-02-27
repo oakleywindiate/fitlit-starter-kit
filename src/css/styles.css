@@ -52,7 +52,7 @@ header {
   margin-left: 1%;
 }
 
-#userName {
+/* #userName {
   font-size: 2.5em;
 }
 
@@ -69,7 +69,7 @@ header {
 #userEmail,
 #userStepAverage {
   font-size: .8em;
-}
+} */
 
 ul {
   display: flex;
@@ -89,10 +89,11 @@ h2 {
 .user-info,
 .data-and-friends-section {
   color: #FFF;
-  /* margin-left: -5%; */
+  /* margin-bottom: 5%; */
   display: flex;
   flex-direction: column;
   background: #6D9E9B;
+  /* height: 100%; */
   width: 33vw;
   font-size: 20px;
   align-items: center;
@@ -140,12 +141,16 @@ form {
   /* margin-top: -1.4em; */
   /* padding-left: 8%; */
   display: flex;
-  /* flex-wrap: wrap; */
+  /* height: 50vh; */
+  /* flex-direction: column; */
+  flex-wrap: wrap;
 
 }
 
 #myChart1,
+#myChart2,
 #myChart3 {
+
   /* margin-left: -1em; */
 }
 
@@ -159,9 +164,12 @@ form {
   /* margin-top: -1.5em; */
 }
 
-/* .col {
-  width: 37%;
-} */
+.col-circle {
+  /* display: flex; */
+  /* flex-direction: column; */
+  height: 50vh;
+  width: 33%;
+}
 
 /* .background {
   background-color: #FAF9F9;
@@ -174,7 +182,7 @@ form {
 #Layer_1 {
   margin-top: 20px;
   margin-bottom: 15px;
-  width: 15vh;
+  width: 10vh;
 }
 
 /* #sleepPicture {
@@ -201,15 +209,15 @@ img {
   /* justify-content: center; */
   /* align-items: center; */
   width: 10vh;
-  margin-left: 40%;
+  margin-left: 38%;
 }
 
 .ticker {
   overflow: hidden;
   display: flex;
-  height: 20vh;
-  width: auto;
-  float: right;
+  height: 30vh;
+  width: 100%;
+  /* float: left; */
 }
 
 .ticker-list {
@@ -217,8 +225,7 @@ img {
   overflow: hidden;
   align-items: flex-end;
   justify-content: flex-end;
-  margin-top: 0;
-  margin-bottom: 20px;
+  margin-top: 20px;
   white-space: normal;
   animation: ticker 20s infinite linear;
 }
@@ -239,8 +246,8 @@ img {
   font-weight: bold;
   text-align: center;
   /* padding: 8px; */
-  height: 20vh;
-  width: auto;
+  height: 30vh;
+  width: 8vw;
 }
 
 @keyframes ticker {
