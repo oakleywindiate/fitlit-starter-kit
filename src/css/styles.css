@@ -60,14 +60,10 @@ ul {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  gap: 5px;
-}
-
-ul,
-h2 {
-  margin-left: -6%;
-  list-style: none;
   text-align: center;
+  list-style: none;
+  margin-left: -6%;
+  gap: 5px;
 }
 
 .user-info,

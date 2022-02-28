@@ -1,10 +1,22 @@
+// --------- IMPORTS ---------
+
 import {show, hide, banner} from './scripts.js';
+
+//---------- QUERY-SELECTORS ------
+
 const errorTag = document.querySelector('.js-error');
+const hydroForm = document.querySelector('#hydrationForm')
+const sleepForm = document.querySelector('#sleepForm')
+const activityForm = document.querySelector('#activityForm')
+
+// --------- GLOBAL VARIABLES ---------
 
 let userData;
 let sleepData;
 let hydrationData;
 let activityData;
+
+// --------- FUNCTIONS ---------
 
 const getAllFetch = () => {
   userData = fetch("http://localhost:3001/api/v1/users")
@@ -31,7 +43,6 @@ const addSleepData = (sleepLog) => {
   })
   .catch((error) => displayError(error))
 }
-getAllFetch();
 
 const addHydrationData = (hydroLog) => {
   fetch('http://localhost:3001/api/v1/hydration', {
@@ -44,7 +55,6 @@ const addHydrationData = (hydroLog) => {
   })
   .catch((error) => displayError(error))
 }
-getAllFetch();
 
 const addActivityData = (activityLog) => {
   fetch('http://localhost:3001/api/v1/activity', {
@@ -57,7 +67,6 @@ const addActivityData = (activityLog) => {
   })
   .catch((error) => displayError(error))
 }
-getAllFetch();
 
 const displayError = (error) => {
   if (error.message === "Failed to fetch!") {
@@ -74,10 +83,6 @@ const checkErrors = (response) => {
     response.json()
   }
 }
-
-const hydroForm = document.querySelector('#hydrationForm')
-const sleepForm = document.querySelector('#sleepForm')
-const activityForm = document.querySelector('#activityForm')
 
 const submitHydroData = (e) => {
   e.preventDefault();
@@ -127,8 +132,12 @@ const submitActivityData = (e) => {
   show(banner)
 }
 
+// --------- EVENT LISTENERS ---------
+
 hydroForm.addEventListener('submit', submitHydroData)
 sleepForm.addEventListener('submit', submitSleepData)
 activityForm.addEventListener('submit', submitActivityData)
+
+// --------- EXPORTS ---------
 
 export {userData, sleepData, hydrationData, activityData, getAllFetch}

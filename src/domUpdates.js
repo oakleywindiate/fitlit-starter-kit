@@ -1,4 +1,4 @@
-// --------- QUERY SELECTORS/VARIABLES ---------
+// --------- QUERY SELECTORS ---------
 
 const userName = document.querySelector('#userName')
 const userAddress = document.querySelector('#userAddress')
@@ -42,9 +42,11 @@ const displayHydroTicker = (h2oSevenDay) => {
 }
 
 const displayActivityTicker = (dailyMiles, avgUserSteps, avgUserMinActive, avgUserStairsClimbed) => {
-ticker4.innerText = `You walked ${dailyMiles} miles today!`
-ticker5.innerText = `The average user took ${avgUserSteps} steps, climbed ${avgUserStairsClimbed} flights and was active for ${avgUserMinActive} mins today.`
-ticker6.innerText = '🚃 Choo - Choo!!!'
+  ticker4.innerText = `You walked ${dailyMiles} miles today!`
+  ticker5.innerText = `The average user took ${avgUserSteps} steps, climbed ${avgUserStairsClimbed} flights and was active for ${avgUserMinActive} mins today.`
+  ticker6.innerText = '🚃 Choo - Choo!!!'
 }
+
+// --------- EXPORTS ---------
 
 export {displayHydroData, displayUserData, displaySleepTicker, displayHydroTicker, displayActivityTicker};

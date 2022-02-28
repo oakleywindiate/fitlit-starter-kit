@@ -1,8 +1,11 @@
+// --------- IMPORTS ---------
+
 import Hydration from './Hydration';
 import UserRepository from './UserRepository';
 import { Chart, registerables } from 'chart.js';
 Chart.register(...registerables);
-export {hydrationChart, activityChart, sleepChart}
+
+// --------- FUNCTIONS ---------
 
 const hydrationChart = (ctx, h2oAvg, h2oToday) =>    {
   const myChart1 = new Chart(ctx, {
@@ -112,4 +115,7 @@ const sleepChart = (ctx3, dailySleep, sleepQuality) => {
   });
 }
 
+// --------- EXPORTS ---------
+
 export default Chart;
+export {hydrationChart, activityChart, sleepChart}
