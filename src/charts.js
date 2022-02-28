@@ -49,7 +49,7 @@ const activityChart = (ctx2, data, id) => {
               label: ['Number Steps', 'Minutes Active', ],
               data: [data.activityData[id].numSteps, data.activityData[id].minutesActive, ],
               backgroundColor: [
-                  '#FFD6BA',
+                  '#eb6f6c',
                   '#FFF',
               ],
           }]
@@ -85,7 +85,7 @@ const sleepChart = (ctx3, dailySleep, sleepQuality) => {
               label: 'Sleep',
               data: [dailySleep, sleepQuality],
               backgroundColor: [
-                  '#145369',
+                  '#edc242',
                   '#FFF',
               ],
           }]
