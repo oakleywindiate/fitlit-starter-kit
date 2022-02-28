@@ -1,4 +1,4 @@
-import {show, hide} from './scripts.js';
+import {show, hide, banner} from './scripts.js';
 const errorTag = document.querySelector('.js-error');
 
 let userData;
@@ -60,8 +60,6 @@ const addActivityData = (activityLog) => {
 getAllFetch();
 
 const displayError = (error) => {
-  console.log(error,"errrrrror")
-  console.log(error.message)
   if (error.message === "Failed to fetch!") {
     errorTag.innerText = "OPPS, SORRY! Something went wrong!";
   } else {
@@ -70,7 +68,6 @@ const displayError = (error) => {
 }
 
 const checkErrors = (response) => {
-  console.log(response,"resssponse")
   if (!response.ok) {
     throw new Error("Please make sure all fields are filled up!!!")
   } else {
@@ -90,11 +87,11 @@ const submitHydroData = (e) => {
     date: formData.get('hydro-date'),
     numOunces: parseInt(formData.get('num-ounces')),
   };
-  console.log(hydroLog)
   addHydrationData(hydroLog);
   e.target.reset();
   hide(hydroForm)
   show(buttonSection)
+  show(banner)
 }
 
 const submitSleepData = (e) => {
@@ -106,11 +103,11 @@ const submitSleepData = (e) => {
     hoursSlept: parseInt(formData.get('sleep-hours')),
     sleepQuality: parseInt(formData.get('sleep-quality')),
   };
-  console.log(sleepLog)
   addSleepData(sleepLog);
   e.target.reset();
   hide(sleepForm)
   show(buttonSection)
+  show(banner)
 }
 
 const submitActivityData = (e) => {
@@ -123,11 +120,11 @@ const submitActivityData = (e) => {
     minutesActive: parseInt(formData.get('min-active')),
     flightsOfStairs: parseInt(formData.get('flights-climbed')),
   };
-  console.log(activityLog)
   addActivityData(activityLog);
   e.target.reset();
   hide(activityForm)
   show(buttonSection)
+  show(banner)
 }
 
 hydroForm.addEventListener('submit', submitHydroData)

@@ -110,4 +110,5 @@ const getRandomIndex = (array) => {
 
 window.addEventListener('load', onLoad)
 window.addEventListener('click', openForm)
-export {show, hide};
+
+export {show, hide, banner};
