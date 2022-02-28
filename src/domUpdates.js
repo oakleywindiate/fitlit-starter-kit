@@ -1,4 +1,3 @@
-
 // --------- QUERY SELECTORS/VARIABLES ---------
 
 const userName = document.querySelector('#userName')

@@ -1,4 +1,5 @@
 // --------- IMPORTS ---------
+
 import './css/styles.css';
 import { userData, sleepData, hydrationData, activityData, getAllFetch } from './apiCalls.js'
 import './images/profile-svgrepo-com.png'
@@ -15,7 +16,7 @@ import Activity from './Activity';
 import {hydrationChart, activityChart, sleepChart} from './charts.js';
 import {displayHydroData, displayUserData, displaySleepTicker, displayHydroTicker, displayActivityTicker} from './domUpdates.js';
 
-//----------QUERY-SELECTORS------
+//---------- QUERY-SELECTORS ------
 
 const buttonSection = document.querySelector('#buttonSection')
 const hydrationForm = document.querySelector('#hydrationForm')
@@ -104,6 +105,8 @@ const hide = (section) => {
 const getRandomIndex = (array) => {
     return Math.floor(Math.random() * array.length);
 };
+
+// --------- EVENT LISTENERS ---------
 
 window.addEventListener('load', onLoad)
 window.addEventListener('click', openForm)
