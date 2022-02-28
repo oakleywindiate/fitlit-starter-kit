@@ -25,7 +25,7 @@ describe('User Repository', () => {
       "strideLength": 4.5,
       "dailyStepGoal": 5000,
       "friends": [9, 18, 24, 19]
-    }],
+    }];
 
     userRepo = new UserRepository(userData);
     });

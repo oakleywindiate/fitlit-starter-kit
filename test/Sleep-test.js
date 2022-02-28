@@ -105,7 +105,7 @@ describe('Sleep', () => {
     "date": '2022/02/07',
     "hoursSlept": 10,
     "sleepQuality": 3,
-  },];
+  }];
 
     sleep1 = new Sleep(sleepData);
     sleep2 = new Sleep(sleepData);

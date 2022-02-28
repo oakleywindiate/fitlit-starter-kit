@@ -158,10 +158,6 @@ describe('Activity', () => {
     expect(activity2).to.be.an.instanceof(Activity);
   });
 
-  // it.skip('should be able to identify a user by userID', () => {
-  //   expect(activity1.identifyUser(1)).to.equal(activityData[0]);
-  // });
-
   it('should be able to calculate the miles a user has walked based on their steps for a specific day', () => {
     expect(activity1.calculateMiles(userData[0])).to.equal('4.89');
     expect(activity2.calculateMiles(userData[1])).to.equal('7.67');

@@ -28,7 +28,7 @@ describe('User', () => {
       "strideLength": 4.5,
       "dailyStepGoal": 5000,
       "friends": [9, 18, 24, 19]
-    }
+    };
 
     newUser1 = new User(user1);
     newUser2 = new User(user2);

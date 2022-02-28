@@ -27,7 +27,7 @@ header {
   display: none;
 }
 
-/* SECTION RULES */
+/* WELCOME BANNER RULES */
 
 .title-and-welcome {
   display: flex;
@@ -44,6 +44,16 @@ header {
 
 .welcome-banner {
   margin-left: 1%;
+}
+
+/* INFO AND INPUT RULES */
+
+.profile-icon {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-left: 3%;
+  width: 10vh;
 }
 
 ul {
@@ -117,6 +127,14 @@ form {
   width: 33vw;
 }
 
+/* ICONS AND GRAPHS RULES */
+
+img {
+  padding-top: 5%;
+  width: 10vh;
+  margin-left: 38%;
+}
+
 .grid {
   display: flex;
   flex-wrap: wrap;
@@ -127,19 +145,7 @@ form {
   width: 33%;
 }
 
-.profile-icon {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  margin-left: 3%;
-  width: 10vh;
-}
-
-img {
-  padding-top: 5%;
-  width: 10vh;
-  margin-left: 38%;
-}
+/* TICKER RULES */
 
 .ticker {
   margin-left: 2em;
@@ -165,7 +171,6 @@ img {
 }
 
 .ticker-item {
-  /* overflow: hidden; */
   display: flex;
   flex-direction: column;
   align-content: center;
