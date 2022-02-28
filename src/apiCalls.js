@@ -119,8 +119,8 @@ const submitActivityData = (e) => {
   const activityLog = {
     userID: parseInt(formData.get('activity-id')),
     date: formData.get('activity-date'),
-    enterNumSteps: parseInt(formData.get('num-steps')),
-    minutesActiveInput: parseInt(formData.get('min-active')),
+    numSteps: parseInt(formData.get('num-steps')),
+    minutesActive: parseInt(formData.get('min-active')),
     flightsOfStairs: parseInt(formData.get('flights-climbed')),
   };
   console.log(activityLog)
