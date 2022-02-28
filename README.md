@@ -2,16 +2,14 @@
 
 ## Overview
 
-Are you looking for a simple way to keep all your health and exercise goals in one easy-to-use place? Well look no further! The FitLit Activity Tracker is here to be your personal assistant for all things health related.
+Are you looking for a fast and simple way to keep your health goals all in one place? Well look no further! The FitLit: Health Yeah! activity tracker is here to be your personal assistant for all things health related.
 
-The FitLit Activity Tracker is a fast and easy way to see your steps for the day. You can even compare your steps with others to keep your motivation up.
-
-But wait, there's more! You can update and display your water intake with just a few clicks. Staying hydrated has never been easier! Did we mention that you can also keep track of your food for the day, too? The FitLit Activity Tracker can do it all.
+Easily track your activity for the day and compare your step goals with our community to keep your motivation up. Update your water intake with just a few clicks-- staying hydrated has never been easier! You can even track your sleep to ensure you're getting the quality rest you need. 
 
 
 ## Project Motivation
 
-The fitlit project is a kinesthetic learning activity that teaches developers how to work with a team as well as how to create interactive and functional web pages using JavaScript, CSS, and HTML.
+The FitLit project teaches developers how to work within a team as well as how to create interactive and functional web pages using JavaScript, CSS, and HTML.
 
 ***
 ## Project Information
@@ -22,7 +20,6 @@ The fitlit project is a kinesthetic learning activity that teaches developers ho
 * Chai
 * HTML
 * CSS
-* Webpack
 * Chart.js
 
 ### Installation
@@ -35,24 +32,21 @@ The fitlit project is a kinesthetic learning activity that teaches developers ho
 
 ### Features
 * Display User Profile
-* Display User Friends
-* Compare Step Goals
-* Daily and Weekly Water Intake
-* Activity Tracker
+* Log Water Intake
+* Log Activity
+* Log Sleep
+* Display Step Goals
 
 ### Code Sample
 The following is one example of code that played an integral role in our webpage:
 ```javascript
-const onLoad = () => {
-  Promise.all([userData, sleepData, hydrationData])
-  .then(data => manageData(data) )
-}
-
-const manageData = (data) => {
-  let users = data[0].userData.map(user => new User(user))
-  let userRepo = new UserRepository(users)
-  let hydroData = data[2].hydrationData.map(hydro => new Hydration(hydro))
-  displayUser(userRepo)
+const manageHydroData = (hydroData, user1) => {
+  const ctx = document.getElementById('myChart1').getContext('2d');
+  let h2oAvg = hydroData.calculateDailyDrinkAvg(user1.id)
+  let h2oToday = hydroData.showDailyDrinkAmount(user1.id)
+  let h2oSevenDay = hydroData.show7DaysDrinkAmount(user1.id)
+  displayHydroTicker(h2oSevenDay)
+  hydrationChart(ctx, h2oAvg, h2oToday)
 }
 ```
 ***
