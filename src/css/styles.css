@@ -210,13 +210,18 @@ img {
   /* display: flex; */
   /* justify-content: center; */
   /* align-items: center; */
+  padding-top: 5%;
   width: 10vh;
   margin-left: 38%;
 }
 
+.hydration-icon {
+  /* height: 9vh; */
+}
+
 .ticker {
   margin-left: 2em;
-  margin-top: 2em;
+  margin-top: 3em;
   overflow: hidden;
   display: flex;
   height: 30vh;
