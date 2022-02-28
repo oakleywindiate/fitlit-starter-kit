@@ -76,17 +76,15 @@ const manageSleepData = (sleepData, user1) => {
   sleepChart(ctx3, dailySleep, sleepQuality)
 }
 
-const manageActivityData = (data, user) => {
+const manageActivityData = (data, user1) => {
   const ctx2 = document.getElementById('myChart2').getContext('2d');
-  // const ctx4 = document.getElementById('myChart4').getContext('2d');
   const activityData = new Activity(data[3].activityData)
   let dailyMiles = activityData.calculateMiles(user)
   let avgUserSteps = activityData.calculateAllUserAvgSteps()
   let avgUserMinActive = activityData.calculateAllUserAvgMinActive()
   let avgUserStairsClimbed = activityData.calculateAllUserAvgStairClimb()
   displayActivityTicker(dailyMiles, avgUserSteps, avgUserMinActive, avgUserStairsClimbed)
-  activityChart(ctx2, data[3])
-  // foodChart(ctx4)
+  activityChart(ctx2, data[3], user1.id)
 }
 
 const openForm = () => {
@@ -130,3 +128,4 @@ function getRandomIndex(array) {
 
 window.addEventListener('load', onLoad)
 window.addEventListener('click', openForm)
+export {show, hide};

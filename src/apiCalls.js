@@ -1,3 +1,4 @@
+import {show, hide} from './scripts.js';
 const errorTag = document.querySelector('.js-error');
 
 let userData;
@@ -28,7 +29,6 @@ const addSleepData = (sleepLog) => {
   .then(response => {
     return checkErrors(response)
   })
-  // .then(data => addSleepToPage(data))
   .catch((error) => displayError(error))
 }
 getAllFetch();
@@ -42,7 +42,6 @@ const addHydrationData = (hydroLog) => {
   .then(response => {
     return checkErrors(response)
   })
-  // .then(data => addHydrationToPage(data))
   .catch((error) => displayError(error))
 }
 getAllFetch();
@@ -56,7 +55,6 @@ const addActivityData = (activityLog) => {
   .then(response => {
     return checkErrors(response)
   })
-  // .then(data => addActivityToPage(data))
   .catch((error) => displayError(error))
 }
 getAllFetch();
@@ -84,7 +82,6 @@ const hydroForm = document.querySelector('#hydrationForm')
 const sleepForm = document.querySelector('#sleepForm')
 const activityForm = document.querySelector('#activityForm')
 
-
 const submitHydroData = (e) => {
   e.preventDefault();
   const formData = new FormData(e.target);
@@ -96,6 +93,8 @@ const submitHydroData = (e) => {
   console.log(hydroLog)
   addHydrationData(hydroLog);
   e.target.reset();
+  hide(hydroForm)
+  show(buttonSection)
 }
 
 const submitSleepData = (e) => {
@@ -110,6 +109,8 @@ const submitSleepData = (e) => {
   console.log(sleepLog)
   addSleepData(sleepLog);
   e.target.reset();
+  hide(sleepForm)
+  show(buttonSection)
 }
 
 const submitActivityData = (e) => {
@@ -125,6 +126,8 @@ const submitActivityData = (e) => {
   console.log(activityLog)
   addActivityData(activityLog);
   e.target.reset();
+  hide(activityForm)
+  show(buttonSection)
 }
 
 hydroForm.addEventListener('submit', submitHydroData)
