@@ -15,25 +15,11 @@ import {hydrationChart, activityChart, sleepChart} from './charts.js';
 import {displayHydroData, displayUserData, displaySleepTicker, displayHydroTicker, displayActivityTicker} from './domUpdates.js';
 
 //----------QUERY-SELECTORS------
+
 const buttonSection = document.querySelector('#buttonSection')
-
 const hydrationForm = document.querySelector('#hydrationForm')
-const hydrationIdInput = document.querySelector('#hydrationIdInput')
-const hydrationDateInput = document.querySelector('#hydrationDateInput')
-const hydrationOuncesInput = document.querySelector('#hydrationOuncesInput')
-
 const sleepForm = document.querySelector('#sleepForm')
-const sleepIdInput = document.querySelector('#sleepIdInput')
-const sleepDateInput = document.querySelector('#sleepDateInput')
-const sleepHoursInput = document.querySelector('#sleepHoursInput')
-const sleepQualityInput = document.querySelector('#sleepQualityInput')
-
 const activityForm = document.querySelector('#activityForm')
-const activityIdInput = document.querySelector('#activityIdInput')
-const activityDateInput = document.querySelector('#activityDateInput')
-const activityNumStepsInput = document.querySelector('#numStepsInput')
-const activityMinutesActiveInput = document.querySelector('#minutesActiveInput')
-const activityFlightsOfStairsInput = document.querySelector('#flightsOfStairsInput')
 
 // --------- FUNCTIONS ---------
 
@@ -79,7 +65,7 @@ const manageSleepData = (sleepData, user1) => {
 const manageActivityData = (data, user1) => {
   const ctx2 = document.getElementById('myChart2').getContext('2d');
   const activityData = new Activity(data[3].activityData)
-  let dailyMiles = activityData.calculateMiles(user)
+  let dailyMiles = activityData.calculateMiles(user1)
   let avgUserSteps = activityData.calculateAllUserAvgSteps()
   let avgUserMinActive = activityData.calculateAllUserAvgMinActive()
   let avgUserStairsClimbed = activityData.calculateAllUserAvgStairClimb()
@@ -102,27 +88,15 @@ const openForm = () => {
   }
 }
 
-const manageHydroInputs = () => {
-
-}
-
-const manageSleepInputs = () => {
-
-}
-
-const manageActivityInputs = () => {
-
-}
-
-function show(section) {
+const show = (section) => {
   section.classList.toggle('hidden')
 }
 
-function hide(section) {
+const hide = (section) => {
   section.classList.toggle('hidden')
 }
 
-function getRandomIndex(array) {
+const getRandomIndex = (array) => {
     return Math.floor(Math.random() * array.length);
 };
 
