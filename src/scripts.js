@@ -21,6 +21,7 @@ const buttonSection = document.querySelector('#buttonSection')
 const hydrationForm = document.querySelector('#hydrationForm')
 const sleepForm = document.querySelector('#sleepForm')
 const activityForm = document.querySelector('#activityForm')
+const banner = document.querySelector('#bannerBottom')
 
 // --------- FUNCTIONS ---------
 
@@ -78,14 +79,17 @@ const openForm = () => {
   if (event.target.className == 'hydration-data' ) {
     show(hydrationForm)
     hide(buttonSection)
+    hide(banner)
   }
   else if (event.target.className == 'sleep-data' ) {
     show(sleepForm)
     hide(buttonSection)
+    hide(banner)
   }
   else if (event.target.className == 'activity-data' ) {
     show(activityForm)
     hide(buttonSection)
+    hide(banner)
   }
 }
 
