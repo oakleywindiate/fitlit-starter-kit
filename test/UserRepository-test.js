@@ -7,6 +7,7 @@ describe('User Repository', () => {
   let userData;
 
   beforeEach(() => {
+
     userData = [
     {
       "id": 1,
@@ -28,7 +29,7 @@ describe('User Repository', () => {
     }];
 
     userRepo = new UserRepository(userData);
-    });
+  });
 
   it('should be a function', () => {
     expect(UserRepository).to.be.a('function');

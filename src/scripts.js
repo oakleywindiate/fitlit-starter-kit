@@ -103,12 +103,14 @@ const hide = (section) => {
 }
 
 const getRandomIndex = (array) => {
-    return Math.floor(Math.random() * array.length);
+  return Math.floor(Math.random() * array.length);
 };
 
 // --------- EVENT LISTENERS ---------
 
 window.addEventListener('load', onLoad)
 window.addEventListener('click', openForm)
+
+// --------- EXPORTS ---------
 
 export {show, hide, banner};
