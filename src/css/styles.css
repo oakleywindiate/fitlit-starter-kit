@@ -103,10 +103,12 @@ button:hover{
 form {
   display: flex;
   flex-direction: column;
+  padding: 10%;
 }
 
 .data-and-friends-section {
-  height: 10vh;
+  margin-top: 10%;
+  height: 100%;
 }
 
 .grid {
@@ -128,11 +130,14 @@ form {
 }
 
 img {
-  height: 10vh;
+  padding-top: 5%;
+  width: 10vh;
   margin-left: 38%;
 }
 
 .ticker {
+  margin-left: 2em;
+  margin-top: 3em;
   overflow: hidden;
   display: flex;
   height: 30vh;
