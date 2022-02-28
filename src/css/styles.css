@@ -2,13 +2,11 @@
 
 * {
   font-family: 'Assistant', sans-serif;
-  /* box-sizing: border-box; */
 }
 
 html {
   height: 100%;
   width: auto;
-  /* padding-bottom: 10%; */
 }
 
 body {
@@ -18,12 +16,10 @@ body {
 main {
   display: flex;
   overflow: hidden;
-  /* padding-left: 1%; */
 }
 
 header {
   background-color: #555B6E;
-  /* width: 100vw; */
   height: 10vh;
 }
 
@@ -37,7 +33,6 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* padding-top: 5px; */
   color: #FFFFFF;
   font-weight: bold;
   text-shadow: 2px 2px red;
@@ -45,33 +40,11 @@ header {
 
 .activity-tracker-banner {
   margin-right: 1%;
-  /* float: right; */
 }
 
 .welcome-banner {
-  /* float: left; */
-  /* margin-right: 30em; */
   margin-left: 1%;
 }
-
-/* #userName {
-  font-size: 2.5em;
-}
-
-#userAddress {
-  margin-top: .4em;
-}
-
-#userEmail,
-#userStepAverage {
-  margin-top: .1em;
-}
-
-#userAddress,
-#userEmail,
-#userStepAverage {
-  font-size: .8em;
-} */
 
 ul {
   display: flex;
@@ -85,19 +58,16 @@ h2 {
   margin-left: -6%;
   list-style: none;
   text-align: center;
-  /* margin-top: 0; */
 }
 
 .user-info,
 .data-and-friends-section {
   color: #FFFFFF;
-  /* margin-bottom: 5%; */
   display: flex;
   flex-direction: column;
   background: #b1f2b8;
   color: #000000;
   font-weight: bold;
-  /* height: 100%; */
   width: 33vw;
   font-size: 20px;
   align-items: center;
@@ -111,11 +81,9 @@ button {
  display: flex;
  flex-direction: column;
  color: #FFFFFF;
- /* background-color: #6D9E9B; */
  background-color: #143b18;
  border-style: none;
  margin-top: 1em;
- /* margin-left: -.5em; */
  margin-bottom: 1em;
  padding-left: 3em;
  width: 100%;
@@ -142,86 +110,25 @@ form {
 }
 
 .grid {
-  /* margin-top: -1.4em; */
-  /* padding-left: 8%; */
   display: flex;
-  /* height: 50vh; */
-  /* flex-direction: column; */
   flex-wrap: wrap;
-
-}
-
-#myChart1,
-#myChart2,
-#myChart3 {
-
-  /* margin-left: -1em; */
-}
-
-#myChart2,
-#myChart4 {
-  /* margin-left: -1em; */
-}
-
-#myChart3,
-#myChart4 {
-  /* margin-top: -1.5em; */
 }
 
 .col-circle {
-  /* display: flex; */
-  /* flex-direction: column; */
   height: 50vh;
   width: 33%;
 }
-
-/* .background {
-  background-color: #FAF9F9;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  position: fixed;
-} */
-
-/* #Layer_1 {
-  margin-top: 20px;
-  margin-bottom: 15px;
-  width: 10vh;
-} */
 
 .profile-icon {
   display: flex;
   justify-content: center;
   margin-top: 20px;
   margin-left: 3%;
-  /* margin-bottom: 10px; */
   width: 10vh;
 }
-
-/* #sleepPicture {
-  height: 17vh;
-  position: absolute;
-  right: 42.5%;
-  top: 62%;
-}
-
-#waterGlass {
-  height: 14vh;
-  position: absolute;
-  right: 43.5%;
-  top: 23%;
-} */
-
-/* .friends-list {
-  margin-top: 25px;;
-} */
-
 
 img {
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  width: 10vh;
+  height: 10vh;
   margin-left: 38%;
 }
 
@@ -230,7 +137,6 @@ img {
   display: flex;
   height: 30vh;
   width: 100%;
-  /* float: left; */
 }
 
 .ticker-list {
@@ -258,7 +164,6 @@ img {
   font-size: 16px;
   font-weight: bold;
   text-align: center;
-  /* padding: 8px; */
   height: 30vh;
   width: 8vw;
 }
