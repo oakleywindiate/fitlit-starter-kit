@@ -40,14 +40,14 @@ const hydrationChart = (ctx, h2oAvg, h2oToday) =>    {
   });
 }
 
-const activityChart = (ctx2, data) => {
+const activityChart = (ctx2, data, id) => {
   const myChart2 = new Chart(ctx2, {
       type: 'doughnut',
       data: {
           labels: ['Number Steps', 'Minutes Active', ],
           datasets: [{
               label: ['Number Steps', 'Minutes Active', ],
-              data: [data.activityData[0].numSteps, data.activityData[0].minutesActive, ],
+              data: [data.activityData[id].numSteps, data.activityData[id].minutesActive, ],
               backgroundColor: [
                   '#FFD6BA',
                   '#FFF',
@@ -111,41 +111,5 @@ const sleepChart = (ctx3, dailySleep, sleepQuality) => {
         }
   });
 }
-
-// const foodChart = (ctx4, data) => {
-//   const myChart4 = new Chart(ctx4, {
-//       type: 'doughnut',
-//       data: {
-//           labels: ['Daily Calories', 'Calorie Goal'],
-//           datasets: [{
-//               label: ['Calories', 'Calorie Goal'],
-//               data: [ 1200, 3300 ],
-//               backgroundColor: [
-//                   '#BEE3DB',
-//                   '#FFF',
-//               ],
-//           }]
-//       },
-//       options: {
-//           cutout: 100,
-//           borderWidth: 1,
-//           borderColor: '#000000',
-//           hoverOffset: 0,
-//           plugins: {
-//           legend: {
-//             display: false
-//           },
-//           title: {
-//             display: true,
-//             font: {
-//               size: 20
-//             },
-//               text: "Calories",
-//               color: "#000000",
-//             }
-//           }
-//       }
-//   });
-// }
 
 export default Chart;
