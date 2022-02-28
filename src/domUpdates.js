@@ -1,4 +1,3 @@
-export {displayHydroData, displayUserData, displaySleepTicker, displayHydroTicker, displayActivityTicker};
 
 // --------- QUERY SELECTORS/VARIABLES ---------
 
@@ -45,3 +44,5 @@ ticker4.innerText = `You walked ${dailyMiles} miles today!`
 ticker5.innerText = `The average user took ${avgUserSteps} steps, climbed ${avgUserStairsClimbed} flights and was active for ${avgUserMinActive} mins today.`
 ticker6.innerText = '🚃 choo - choo!!!'
 }
+
+export {displayHydroData, displayUserData, displaySleepTicker, displayHydroTicker, displayActivityTicker};
